@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +20,55 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/products', label: 'Products' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: t.navbar.home },
+    { href: '/products', label: t.navbar.products },
+    { href: '/blog', label: t.navbar.blog },
+    { href: '/contact', label: t.navbar.contact },
   ];
+
+  const LanguageToggle = () => (
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      background: 'rgba(255,255,255,0.05)',
+      borderRadius: '20px',
+      padding: '2px',
+      border: '1px solid rgba(255,255,255,0.1)',
+    }}>
+      <button
+        onClick={() => setLanguage('id')}
+        style={{
+          padding: '4px 10px',
+          borderRadius: '18px',
+          fontSize: '0.75rem',
+          fontWeight: 700,
+          border: 'none',
+          background: language === 'id' ? 'linear-gradient(135deg, #6366f1, #8b5cf6)' : 'transparent',
+          color: language === 'id' ? 'white' : '#a1a1b5',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease',
+        }}
+      >
+        ID
+      </button>
+      <button
+        onClick={() => setLanguage('en')}
+        style={{
+          padding: '4px 10px',
+          borderRadius: '18px',
+          fontSize: '0.75rem',
+          fontWeight: 700,
+          border: 'none',
+          background: language === 'en' ? 'linear-gradient(135deg, #6366f1, #8b5cf6)' : 'transparent',
+          color: language === 'en' ? 'white' : '#a1a1b5',
+          cursor: 'pointer',
+          transition: 'all 0.2s ease',
+        }}
+      >
+        EN
+      </button>
+    </div>
+  );
 
   return (
     <>
@@ -117,8 +163,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="desktop-nav-cta" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          {/* CTA & Language */}
+          <div className="desktop-nav-cta" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            <LanguageToggle />
             <Link href="/contact" className="btn-primary" style={{
               padding: '10px 24px',
               borderRadius: '10px',
@@ -138,7 +185,7 @@ export default function Navbar() {
               e.currentTarget.style.boxShadow = '0 4px 15px rgba(99, 102, 241, 0.25)';
             }}
             >
-              Get Started →
+              {t.navbar.getStarted} →
             </Link>
           </div>
 
@@ -229,7 +276,7 @@ export default function Navbar() {
             textAlign: 'center',
             marginTop: '8px',
           }}>
-            Get Started →
+            {t.navbar.getStarted} →
           </Link>
         </div>
       )}

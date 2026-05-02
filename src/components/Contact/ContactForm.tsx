@@ -1,39 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-
-const contactInfo = [
-  {
-    icon: '📧',
-    title: 'Email Us',
-    detail: 'hello@erppro.com',
-    subDetail: 'We reply within 24 hours',
-    color: '#6366f1',
-  },
-  {
-    icon: '📞',
-    title: 'Call Us',
-    detail: '+1 (555) 123-4567',
-    subDetail: 'Mon-Fri, 9am-6pm EST',
-    color: '#06b6d4',
-  },
-  {
-    icon: '📍',
-    title: 'Visit Us',
-    detail: '100 Innovation Drive',
-    subDetail: 'San Francisco, CA 94105',
-    color: '#8b5cf6',
-  },
-  {
-    icon: '💬',
-    title: 'Live Chat',
-    detail: 'Available 24/7',
-    subDetail: 'Average response: 2 min',
-    color: '#10b981',
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactForm() {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,6 +14,37 @@ export default function ContactForm() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+
+  const contactInfo = [
+    {
+      icon: '📧',
+      title: language === 'id' ? 'Email Kami' : 'Email Us',
+      detail: 'hello@erppro.com',
+      subDetail: language === 'id' ? 'Kami membalas dalam 24 jam' : 'We reply within 24 hours',
+      color: '#6366f1',
+    },
+    {
+      icon: '📞',
+      title: language === 'id' ? 'Hubungi Kami' : 'Call Us',
+      detail: '+1 (555) 123-4567',
+      subDetail: 'Mon-Fri, 9am-6pm EST',
+      color: '#06b6d4',
+    },
+    {
+      icon: '📍',
+      title: language === 'id' ? 'Kunjungi Kami' : 'Visit Us',
+      detail: '100 Innovation Drive',
+      subDetail: 'San Francisco, CA 94105',
+      color: '#8b5cf6',
+    },
+    {
+      icon: '💬',
+      title: language === 'id' ? 'Chat Langsung' : 'Live Chat',
+      detail: language === 'id' ? 'Tersedia 24/7' : 'Available 24/7',
+      subDetail: language === 'id' ? 'Respon rata-rata: 2 mnt' : 'Average response: 2 min',
+      color: '#10b981',
+    },
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -99,7 +101,7 @@ export default function ContactForm() {
               color: 'var(--text-primary)',
               marginBottom: '12px',
             }}>
-              Contact Information
+              {language === 'id' ? 'Informasi Kontak' : 'Contact Information'}
             </h3>
             <p style={{
               fontSize: '0.95rem',
@@ -107,8 +109,9 @@ export default function ContactForm() {
               lineHeight: 1.7,
               marginBottom: '36px',
             }}>
-              Reach out through any channel. Our team is always ready to help you 
-              explore the right solution for your business.
+              {language === 'id' 
+                ? 'Hubungi kami melalui saluran apa pun. Tim kami selalu siap membantu Anda menemukan solusi yang tepat untuk bisnis Anda.'
+                : 'Reach out through any channel. Our team is always ready to help you explore the right solution for your business.'}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -252,13 +255,15 @@ export default function ContactForm() {
                   color: '#10b981',
                   marginBottom: '8px',
                 }}>
-                  Message Sent!
+                  {language === 'id' ? 'Pesan Terkirim!' : 'Message Sent!'}
                 </h3>
                 <p style={{
                   fontSize: '0.95rem',
                   color: 'var(--text-secondary)',
                 }}>
-                  Thank you for reaching out. We&apos;ll get back to you within 24 hours.
+                  {language === 'id' 
+                    ? 'Terima kasih telah menghubungi kami. Kami akan membalas Anda dalam waktu 24 jam.'
+                    : "Thank you for reaching out. We'll get back to you within 24 hours."}
                 </p>
               </div>
             ) : (
@@ -270,7 +275,7 @@ export default function ContactForm() {
                   color: 'var(--text-primary)',
                   marginBottom: '28px',
                 }}>
-                  Send us a message
+                  {language === 'id' ? 'Kirim pesan kepada kami' : 'Send us a message'}
                 </h3>
 
                 <div style={{
@@ -282,7 +287,7 @@ export default function ContactForm() {
                 className="form-grid"
                 >
                   <div>
-                    <label style={labelStyle}>Full Name</label>
+                    <label style={labelStyle}>{language === 'id' ? 'Nama Lengkap' : 'Full Name'}</label>
                     <input
                       type="text"
                       placeholder="John Doe"
@@ -320,7 +325,7 @@ export default function ContactForm() {
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Company</label>
+                    <label style={labelStyle}>{language === 'id' ? 'Perusahaan' : 'Company'}</label>
                     <input
                       type="text"
                       placeholder="Acme Inc."
@@ -338,7 +343,7 @@ export default function ContactForm() {
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Phone</label>
+                    <label style={labelStyle}>{language === 'id' ? 'Telepon' : 'Phone'}</label>
                     <input
                       type="tel"
                       placeholder="+1 (555) 000-0000"
@@ -358,7 +363,7 @@ export default function ContactForm() {
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
-                  <label style={labelStyle}>Subject</label>
+                  <label style={labelStyle}>{language === 'id' ? 'Subjek' : 'Subject'}</label>
                   <select
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -371,18 +376,18 @@ export default function ContactForm() {
                       backgroundPosition: 'right 16px center',
                     }}
                   >
-                    <option value="demo" style={{ background: '#1a1a25' }}>Request a Demo</option>
-                    <option value="quote" style={{ background: '#1a1a25' }}>Get a Quote</option>
-                    <option value="support" style={{ background: '#1a1a25' }}>Technical Support</option>
-                    <option value="partnership" style={{ background: '#1a1a25' }}>Partnership</option>
-                    <option value="other" style={{ background: '#1a1a25' }}>Other</option>
+                    <option value="demo" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Minta Demo' : 'Request a Demo'}</option>
+                    <option value="quote" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Minta Penawaran' : 'Get a Quote'}</option>
+                    <option value="support" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Dukungan Teknis' : 'Technical Support'}</option>
+                    <option value="partnership" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Kemitraan' : 'Partnership'}</option>
+                    <option value="other" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Lainnya' : 'Other'}</option>
                   </select>
                 </div>
 
                 <div style={{ marginBottom: '28px' }}>
-                  <label style={labelStyle}>Message</label>
+                  <label style={labelStyle}>{language === 'id' ? 'Pesan' : 'Message'}</label>
                   <textarea
-                    placeholder="Tell us about your project and requirements..."
+                    placeholder={language === 'id' ? 'Beri tahu kami tentang proyek dan kebutuhan Anda...' : 'Tell us about your project and requirements...'}
                     rows={5}
                     required
                     value={formData.message}
@@ -431,7 +436,7 @@ export default function ContactForm() {
                     e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.3)';
                   }}
                 >
-                  Send Message
+                  {language === 'id' ? 'Kirim Pesan' : 'Send Message'}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -443,7 +448,9 @@ export default function ContactForm() {
                   color: 'var(--text-muted)',
                   marginTop: '16px',
                 }}>
-                  By submitting, you agree to our Privacy Policy and Terms of Service.
+                  {language === 'id' 
+                    ? 'Dengan mengirimkan, Anda menyetujui Kebijakan Privasi dan Ketentuan Layanan kami.'
+                    : 'By submitting, you agree to our Privacy Policy and Terms of Service.'}
                 </p>
               </form>
             )}

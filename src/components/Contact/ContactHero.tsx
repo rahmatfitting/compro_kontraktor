@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ContactHero() {
+  const { language } = useLanguage();
   const [visible, setVisible] = useState(false);
   useEffect(() => setVisible(true), []);
 
@@ -48,7 +50,7 @@ export default function ContactHero() {
           letterSpacing: '1.5px',
           marginBottom: '24px',
         }}>
-          ✉ Get in Touch
+          ✉ {language === 'id' ? 'Hubungi Kami' : 'Get in Touch'}
         </div>
 
         <h1 style={{
@@ -58,14 +60,14 @@ export default function ContactHero() {
           lineHeight: 1.1,
           marginBottom: '20px',
         }}>
-          <span style={{ color: 'var(--text-primary)' }}>Let&apos;s Build </span>
+          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Mari Bangun ' : "Let's Build "}</span>
           <span style={{
             background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Something Great
+            {language === 'id' ? 'Sesuatu yang Luar Biasa' : 'Something Great'}
           </span>
         </h1>
 
@@ -76,8 +78,9 @@ export default function ContactHero() {
           margin: '0 auto',
           lineHeight: 1.8,
         }}>
-          Have questions? Need a demo? Our team is ready to help you 
-          find the perfect solution for your enterprise.
+          {language === 'id' 
+            ? 'Punya pertanyaan? Butuh demo? Tim kami siap membantu Anda menemukan solusi sempurna untuk perusahaan Anda.'
+            : 'Have questions? Need a demo? Our team is ready to help you find the perfect solution for your enterprise.'}
         </p>
       </div>
     </section>

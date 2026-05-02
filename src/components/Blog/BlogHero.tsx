@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function BlogHero() {
+  const { language } = useLanguage();
   const [visible, setVisible] = useState(false);
   useEffect(() => setVisible(true), []);
 
@@ -48,7 +50,7 @@ export default function BlogHero() {
           letterSpacing: '1.5px',
           marginBottom: '24px',
         }}>
-          ✎ Blog & Insights
+          ✎ {language === 'id' ? 'Blog & Wawasan' : 'Blog & Insights'}
         </div>
 
         <h1 style={{
@@ -58,14 +60,14 @@ export default function BlogHero() {
           lineHeight: 1.1,
           marginBottom: '20px',
         }}>
-          <span style={{ color: 'var(--text-primary)' }}>Latest </span>
+          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Wawasan ' : 'Latest '}</span>
           <span style={{
             background: 'linear-gradient(135deg, #06b6d4, #6366f1, #8b5cf6)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Industry Insights
+            {language === 'id' ? 'Industri Terbaru' : 'Industry Insights'}
           </span>
         </h1>
 
@@ -76,8 +78,9 @@ export default function BlogHero() {
           margin: '0 auto',
           lineHeight: 1.8,
         }}>
-          Expert articles, case studies, and thought leadership 
-          on ERP, digital transformation, and enterprise innovation.
+          {language === 'id' 
+            ? 'Artikel pakar, studi kasus, dan kepemimpinan pemikiran tentang ERP, transformasi digital, dan inovasi perusahaan.'
+            : 'Expert articles, case studies, and thought leadership on ERP, digital transformation, and enterprise innovation.'}
         </p>
       </div>
     </section>

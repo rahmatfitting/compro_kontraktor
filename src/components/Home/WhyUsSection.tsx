@@ -1,33 +1,37 @@
 'use client';
 
-const benefits = [
-  {
-    number: '01',
-    title: 'Cloud-Native Architecture',
-    description: 'Built from the ground up for the cloud. Auto-scaling, multi-tenant, and deployed across global data centers for lightning-fast performance wherever you operate.',
-    highlights: ['99.99% SLA', 'Auto-scaling', 'Global CDN'],
-  },
-  {
-    number: '02',
-    title: 'AI-Powered Automation',
-    description: 'Machine learning algorithms that predict demand, detect anomalies, automate workflows, and provide intelligent recommendations across all business functions.',
-    highlights: ['Predictive Analytics', 'Smart Workflows', 'NLP Processing'],
-  },
-  {
-    number: '03',
-    title: 'Enterprise-Grade Security',
-    description: 'SOC 2 Type II certified with end-to-end encryption, role-based access control, audit trails, and compliance with GDPR, HIPAA, and industry regulations.',
-    highlights: ['SOC 2 Certified', 'E2E Encryption', 'GDPR Compliant'],
-  },
-  {
-    number: '04',
-    title: 'Rapid Implementation',
-    description: 'Go live in weeks, not months. Our modular approach lets you start with what you need and expand over time, with dedicated customer success managers guiding you.',
-    highlights: ['2-Week Setup', 'Modular Deploy', '24/7 Support'],
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function WhyUsSection() {
+  const { t, language } = useLanguage();
+
+  const benefits = [
+    {
+      number: '01',
+      title: language === 'id' ? 'Arsitektur Cloud-Native' : 'Cloud-Native Architecture',
+      description: language === 'id' ? 'Dibangun khusus untuk cloud. Auto-scaling, multi-tenant, dan disebarkan di pusat data global untuk performa kilat di mana pun Anda beroperasi.' : 'Built from the ground up for the cloud. Auto-scaling, multi-tenant, and deployed across global data centers for lightning-fast performance wherever you operate.',
+      highlights: ['99.99% SLA', 'Auto-scaling', 'Global CDN'],
+    },
+    {
+      number: '02',
+      title: language === 'id' ? 'Otomasi Berbasis AI' : 'AI-Powered Automation',
+      description: language === 'id' ? 'Algoritma machine learning yang memprediksi permintaan, mendeteksi anomali, mengotomatiskan alur kerja, dan memberikan rekomendasi cerdas.' : 'Machine learning algorithms that predict demand, detect anomalies, automate workflows, and provide intelligent recommendations across all business functions.',
+      highlights: ['Predictive Analytics', 'Smart Workflows', 'NLP Processing'],
+    },
+    {
+      number: '03',
+      title: language === 'id' ? 'Keamanan Kelas Enterprise' : 'Enterprise-Grade Security',
+      description: language === 'id' ? 'Bersertifikat SOC 2 Type II dengan enkripsi ujung-ke-ujung, kontrol akses berbasis peran, jejak audit, dan kepatuhan GDPR.' : 'SOC 2 Type II certified with end-to-end encryption, role-based access control, audit trails, and compliance with GDPR, HIPAA, and industry regulations.',
+      highlights: ['SOC 2 Certified', 'E2E Encryption', 'GDPR Compliant'],
+    },
+    {
+      number: '04',
+      title: language === 'id' ? 'Implementasi Cepat' : 'Rapid Implementation',
+      description: language === 'id' ? 'Mulai beroperasi dalam hitungan minggu. Pendekatan modular kami memungkinkan Anda mulai dengan apa yang Anda butuhkan dan berkembang seiring waktu.' : 'Go live in weeks, not months. Our modular approach lets you start with what you need and expand over time, with dedicated customer success managers guiding you.',
+      highlights: ['2-Week Setup', 'Modular Deploy', '24/7 Support'],
+    },
+  ];
+
   return (
     <section style={{
       padding: '120px 0',
@@ -56,7 +60,7 @@ export default function WhyUsSection() {
             letterSpacing: '1.5px',
             marginBottom: '20px',
           }}>
-            ◈ Why ERPPro
+            ◈ {t.whyUs.badge}
           </div>
           <h2 style={{
             fontFamily: 'Space Grotesk, sans-serif',
@@ -69,7 +73,7 @@ export default function WhyUsSection() {
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Built for Scale,<br />Designed for Simplicity
+            {t.whyUs.title.split(',')[0]},<br />{t.whyUs.title.split(',')[1]}
           </h2>
           <p style={{
             fontSize: '1.1rem',
@@ -78,8 +82,7 @@ export default function WhyUsSection() {
             margin: '0 auto',
             lineHeight: 1.8,
           }}>
-            We combine enterprise-grade power with startup-level simplicity, 
-            so your team can focus on growth instead of complexity.
+            {t.whyUs.subtitle}
           </p>
         </div>
 
@@ -173,6 +176,10 @@ export default function WhyUsSection() {
       </div>
 
       <style jsx global>{`
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
         @media (max-width: 640px) {
           .benefit-card {
             flex-direction: column !important;

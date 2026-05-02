@@ -1,124 +1,92 @@
 'use client';
 
 import { useState } from 'react';
-
-const categories = ['All', 'Technology', 'Strategy', 'Case Study', 'Industry', 'Product Update'];
-
-const blogPosts = [
-  {
-    id: 1,
-    title: 'The Future of ERP: How AI is Reshaping Enterprise Operations',
-    excerpt: 'Discover how machine learning and artificial intelligence are transforming traditional ERP systems into intelligent, predictive platforms that anticipate business needs.',
-    category: 'Technology',
-    author: 'Dr. Emily Zhang',
-    authorRole: 'Head of AI Research',
-    date: 'Apr 28, 2026',
-    readTime: '8 min read',
-    color: '#6366f1',
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'Digital Transformation in Manufacturing: A Complete Roadmap',
-    excerpt: 'A step-by-step guide to modernizing your manufacturing operations with cloud ERP, IoT integration, and real-time analytics.',
-    category: 'Strategy',
-    author: 'James Rivera',
-    authorRole: 'Solutions Architect',
-    date: 'Apr 22, 2026',
-    readTime: '12 min read',
-    color: '#06b6d4',
-    featured: true,
-  },
-  {
-    id: 3,
-    title: 'How NovaCorp Reduced Operational Costs by 45% with ERPPro',
-    excerpt: 'An in-depth case study on how a mid-market manufacturer achieved dramatic cost savings through ERP modernization and process automation.',
-    category: 'Case Study',
-    author: 'Sarah Chen',
-    authorRole: 'Customer Success',
-    date: 'Apr 18, 2026',
-    readTime: '6 min read',
-    color: '#10b981',
-    featured: true,
-  },
-  {
-    id: 4,
-    title: 'Supply Chain Resilience: Lessons from Global Disruptions',
-    excerpt: 'How leading enterprises are building resilient supply chains with real-time visibility, diversified sourcing, and predictive risk management.',
-    category: 'Industry',
-    author: 'Michael Torres',
-    authorRole: 'Industry Analyst',
-    date: 'Apr 14, 2026',
-    readTime: '10 min read',
-    color: '#f59e0b',
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'Introducing ERPPro v4.0: Next-Generation Analytics Engine',
-    excerpt: 'Our biggest release yet brings real-time predictive analytics, natural language querying, and automated anomaly detection to every user.',
-    category: 'Product Update',
-    author: 'ERPPro Team',
-    authorRole: 'Product',
-    date: 'Apr 10, 2026',
-    readTime: '5 min read',
-    color: '#8b5cf6',
-    featured: false,
-  },
-  {
-    id: 6,
-    title: '10 ERP Implementation Mistakes and How to Avoid Them',
-    excerpt: 'Learn from the most common pitfalls in ERP implementations and discover proven strategies for a smooth, successful deployment.',
-    category: 'Strategy',
-    author: 'Amanda Blake',
-    authorRole: 'Senior Consultant',
-    date: 'Apr 5, 2026',
-    readTime: '9 min read',
-    color: '#f43f5e',
-    featured: false,
-  },
-  {
-    id: 7,
-    title: 'The Rise of Cloud-Native ERP: Why It Matters',
-    excerpt: 'Understanding the shift from on-premise to cloud-native ERP architectures and what it means for scalability, cost, and innovation.',
-    category: 'Technology',
-    author: 'David Kim',
-    authorRole: 'Cloud Architect',
-    date: 'Mar 30, 2026',
-    readTime: '7 min read',
-    color: '#06b6d4',
-    featured: false,
-  },
-  {
-    id: 8,
-    title: 'Streamlining Multi-Entity Financial Consolidation',
-    excerpt: 'Best practices for automating financial consolidation across multiple entities, currencies, and regulatory frameworks.',
-    category: 'Strategy',
-    author: 'Lisa Park',
-    authorRole: 'Finance Expert',
-    date: 'Mar 25, 2026',
-    readTime: '11 min read',
-    color: '#10b981',
-    featured: false,
-  },
-  {
-    id: 9,
-    title: 'How AI-Powered Demand Forecasting Cuts Inventory Costs',
-    excerpt: 'Explore how machine learning models analyze historical patterns and external signals to predict demand with 95% accuracy.',
-    category: 'Technology',
-    author: 'Dr. Emily Zhang',
-    authorRole: 'Head of AI Research',
-    date: 'Mar 20, 2026',
-    readTime: '8 min read',
-    color: '#6366f1',
-    featured: false,
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function BlogGrid() {
+  const { language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const filteredPosts = activeCategory === 'All'
+  const categories = language === 'id' 
+    ? ['Semua', 'Teknologi', 'Strategi', 'Studi Kasus', 'Industri', 'Pembaruan Produk']
+    : ['All', 'Technology', 'Strategy', 'Case Study', 'Industry', 'Product Update'];
+
+  const blogPosts = [
+    {
+      id: 1,
+      title: language === 'id' ? 'Masa Depan ERP: Bagaimana AI Mengubah Operasi Perusahaan' : 'The Future of ERP: How AI is Reshaping Enterprise Operations',
+      excerpt: language === 'id' ? 'Temukan bagaimana machine learning dan kecerdasan buatan mengubah sistem ERP tradisional menjadi platform prediktif yang cerdas.' : 'Discover how machine learning and artificial intelligence are transforming traditional ERP systems into intelligent, predictive platforms that anticipate business needs.',
+      category: language === 'id' ? 'Teknologi' : 'Technology',
+      author: 'Dr. Emily Zhang',
+      authorRole: 'Head of AI Research',
+      date: 'Apr 28, 2026',
+      readTime: language === 'id' ? 'Baca 8 mnt' : '8 min read',
+      color: '#6366f1',
+      featured: true,
+    },
+    {
+      id: 2,
+      title: language === 'id' ? 'Transformasi Digital di Manufaktur: Panduan Lengkap' : 'Digital Transformation in Manufacturing: A Complete Roadmap',
+      excerpt: language === 'id' ? 'Panduan langkah demi langkah untuk memodernisasi operasi manufaktur Anda dengan ERP cloud, integrasi IoT, dan analitik real-time.' : 'A step-by-step guide to modernizing your manufacturing operations with cloud ERP, IoT integration, and real-time analytics.',
+      category: language === 'id' ? 'Strategi' : 'Strategy',
+      author: 'James Rivera',
+      authorRole: 'Solutions Architect',
+      date: 'Apr 22, 2026',
+      readTime: language === 'id' ? 'Baca 12 mnt' : '12 min read',
+      color: '#06b6d4',
+      featured: true,
+    },
+    {
+      id: 3,
+      title: language === 'id' ? 'Bagaimana NovaCorp Mengurangi Biaya Operasional Sebesar 45% dengan ERPPro' : 'How NovaCorp Reduced Operational Costs by 45% with ERPPro',
+      excerpt: language === 'id' ? 'Studi kasus mendalam tentang bagaimana produsen pasar menengah mencapai penghematan biaya yang dramatis melalui modernisasi ERP.' : 'An in-depth case study on how a mid-market manufacturer achieved dramatic cost savings through ERP modernization and process automation.',
+      category: language === 'id' ? 'Studi Kasus' : 'Case Study',
+      author: 'Sarah Chen',
+      authorRole: 'Customer Success',
+      date: 'Apr 18, 2026',
+      readTime: language === 'id' ? 'Baca 6 mnt' : '6 min read',
+      color: '#10b981',
+      featured: true,
+    },
+    {
+      id: 4,
+      title: language === 'id' ? 'Ketahanan Rantai Pasok: Pelajaran dari Gangguan Global' : 'Supply Chain Resilience: Lessons from Global Disruptions',
+      excerpt: language === 'id' ? 'Bagaimana perusahaan terkemuka membangun rantai pasok yang tangguh dengan visibilitas real-time dan manajemen risiko prediktif.' : 'How leading enterprises are building resilient supply chains with real-time visibility, diversified sourcing, and predictive risk management.',
+      category: language === 'id' ? 'Industri' : 'Industry',
+      author: 'Michael Torres',
+      authorRole: 'Industry Analyst',
+      date: 'Apr 14, 2026',
+      readTime: language === 'id' ? 'Baca 10 mnt' : '10 min read',
+      color: '#f59e0b',
+      featured: false,
+    },
+    {
+      id: 5,
+      title: language === 'id' ? 'Memperkenalkan ERPPro v4.0: Mesin Analitik Generasi Berikutnya' : 'Introducing ERPPro v4.0: Next-Generation Analytics Engine',
+      excerpt: language === 'id' ? 'Rilisan terbesar kami menghadirkan analitik prediktif real-time, kueri bahasa alami, dan deteksi anomali otomatis.' : 'Our biggest release yet brings real-time predictive analytics, natural language querying, and automated anomaly detection to every user.',
+      category: language === 'id' ? 'Pembaruan Produk' : 'Product Update',
+      author: 'ERPPro Team',
+      authorRole: 'Product',
+      date: 'Apr 10, 2026',
+      readTime: language === 'id' ? 'Baca 5 mnt' : '5 min read',
+      color: '#8b5cf6',
+      featured: false,
+    },
+    {
+      id: 6,
+      title: language === 'id' ? '10 Kesalahan Implementasi ERP dan Cara Menghindarinya' : '10 ERP Implementation Mistakes and How to Avoid Them',
+      excerpt: language === 'id' ? 'Pelajari jebakan umum dalam implementasi ERP dan temukan strategi terbukti untuk penyebaran yang lancar dan sukses.' : 'Learn from the most common pitfalls in ERP implementations and discover proven strategies for a smooth, successful deployment.',
+      category: language === 'id' ? 'Strategi' : 'Strategy',
+      author: 'Amanda Blake',
+      authorRole: 'Senior Consultant',
+      date: 'Apr 5, 2026',
+      readTime: language === 'id' ? 'Baca 9 mnt' : '9 min read',
+      color: '#f43f5e',
+      featured: false,
+    },
+  ];
+
+  const filteredPosts = (activeCategory === 'All' || activeCategory === 'Semua')
     ? blogPosts
     : blogPosts.filter(p => p.category === activeCategory);
 
@@ -286,7 +254,7 @@ export default function BlogGrid() {
                       fontWeight: 600,
                       color: post.color,
                     }}>
-                      Read →
+                      {language === 'id' ? 'Baca' : 'Read'} →
                     </span>
                   </div>
                 </div>
@@ -376,7 +344,7 @@ export default function BlogGrid() {
                   {post.date}
                 </span>
                 <span style={{ fontSize: '0.78rem', fontWeight: 600, color: post.color }}>
-                  Read →
+                  {language === 'id' ? 'Baca' : 'Read'} →
                 </span>
               </div>
             </article>
@@ -405,7 +373,7 @@ export default function BlogGrid() {
             e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
           }}
           >
-            Load More Articles
+            {language === 'id' ? 'Muat Lebih Banyak Artikel' : 'Load More Articles'}
           </button>
         </div>
       </div>

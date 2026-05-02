@@ -1,8 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function CTASection() {
+  const { t, language } = useLanguage();
+
   return (
     <section style={{
       padding: '120px 0',
@@ -67,14 +70,16 @@ export default function CTASection() {
               marginBottom: '16px',
               color: 'var(--text-primary)',
             }}>
-              Ready to Transform{' '}
+              {language === 'id' 
+                ? t.cta.title.split('Bisnis Anda')[0]
+                : t.cta.title.split('Your Business')[0]}
               <span style={{
                 background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                Your Business?
+                {language === 'id' ? 'Bisnis Anda?' : 'Your Business?'}
               </span>
             </h2>
             <p style={{
@@ -84,8 +89,7 @@ export default function CTASection() {
               margin: '0 auto 36px',
               lineHeight: 1.8,
             }}>
-              Join 500+ enterprises that have already modernized their operations.
-              Start your free 30-day trial today — no credit card required.
+              {t.cta.subtitle}
             </p>
 
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -111,7 +115,7 @@ export default function CTASection() {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.3)';
               }}
               >
-                Start Free Trial
+                {t.cta.button}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -141,7 +145,7 @@ export default function CTASection() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
               >
-                Schedule Demo
+                {t.hero.ctaSecondary}
               </Link>
             </div>
 
@@ -150,7 +154,7 @@ export default function CTASection() {
               color: 'var(--text-muted)',
               marginTop: '24px',
             }}>
-              ✓ No credit card required &nbsp;&nbsp; ✓ 30-day free trial &nbsp;&nbsp; ✓ Cancel anytime
+              {t.cta.noCredit}
             </p>
           </div>
         </div>

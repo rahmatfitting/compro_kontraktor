@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     setVisible(true);
@@ -134,7 +136,7 @@ export default function HeroSection() {
                 boxShadow: '0 0 8px rgba(16, 185, 129, 0.5)',
                 animation: 'pulse-glow 2s ease-in-out infinite',
               }} />
-              Trusted by 500+ Enterprises
+              {t.hero.badge}
             </div>
 
             {/* Heading */}
@@ -146,7 +148,7 @@ export default function HeroSection() {
               marginBottom: '24px',
               letterSpacing: '-0.02em',
             }}>
-              <span style={{ color: 'var(--text-primary)' }}>Transform Your </span>
+              <span style={{ color: 'var(--text-primary)' }}>{t.hero.title1} </span>
               <br />
               <span style={{
                 background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
@@ -154,7 +156,7 @@ export default function HeroSection() {
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                Enterprise Operations
+                {t.hero.title2}
               </span>
             </h1>
 
@@ -166,8 +168,7 @@ export default function HeroSection() {
               marginBottom: '40px',
               maxWidth: '560px',
             }}>
-              Unify your finance, HR, supply chain, and manufacturing with our AI-powered 
-              ERP platform. Real-time insights, seamless automation, infinite scalability.
+              {t.hero.subtitle}
             </p>
 
             {/* CTA Buttons */}
@@ -196,7 +197,7 @@ export default function HeroSection() {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.3)';
               }}
               >
-                Start Free Trial
+                {t.hero.ctaPrimary}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -231,7 +232,7 @@ export default function HeroSection() {
                   <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.5"/>
                   <polygon points="6.5,5 11.5,8 6.5,11" fill="currentColor"/>
                 </svg>
-                Watch Demo
+                {t.hero.ctaSecondary}
               </Link>
             </div>
 
@@ -245,7 +246,7 @@ export default function HeroSection() {
                 fontWeight: 600,
                 marginBottom: '20px',
               }}>
-                Trusted by industry leaders
+                {t.hero.trusted}
               </p>
               <div style={{
                 display: 'flex',
@@ -311,9 +312,9 @@ export default function HeroSection() {
                 {/* Mini stat cards */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
                   {[
-                    { label: 'Revenue', value: '$2.4M', color: '#10b981', change: '+12.5%' },
-                    { label: 'Orders', value: '1,248', color: '#6366f1', change: '+8.2%' },
-                    { label: 'Clients', value: '432', color: '#06b6d4', change: '+23.1%' },
+                    { label: language === 'id' ? 'Pendapatan' : 'Revenue', value: '$2.4M', color: '#10b981', change: '+12.5%' },
+                    { label: language === 'id' ? 'Pesanan' : 'Orders', value: '1,248', color: '#6366f1', change: '+8.2%' },
+                    { label: language === 'id' ? 'Klien' : 'Clients', value: '432', color: '#06b6d4', change: '+23.1%' },
                   ].map((stat) => (
                     <div key={stat.label} style={{
                       padding: '16px',

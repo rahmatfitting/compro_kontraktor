@@ -1,28 +1,30 @@
 'use client';
 
 import Link from 'next/link';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     product: [
-      { label: 'Finance Module', href: '/products' },
-      { label: 'HR Management', href: '/products' },
-      { label: 'Supply Chain', href: '/products' },
-      { label: 'Manufacturing', href: '/products' },
-      { label: 'Analytics', href: '/products' },
+      { label: t.footer.links.features, href: '/products' },
+      { label: t.features.modules.finance.title, href: '/products' },
+      { label: t.features.modules.hr.title, href: '/products' },
+      { label: t.footer.links.pricing, href: '/products' },
+      { label: t.footer.links.solutions, href: '/products' },
     ],
     company: [
-      { label: 'About Us', href: '/' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Careers', href: '/' },
-      { label: 'Contact', href: '/contact' },
+      { label: t.footer.links.about, href: '/' },
+      { label: t.navbar.blog, href: '/blog' },
+      { label: t.footer.links.careers, href: '/' },
+      { label: t.footer.links.contact, href: '/contact' },
     ],
     resources: [
-      { label: 'Documentation', href: '/' },
+      { label: t.footer.links.docs, href: '/' },
       { label: 'API Reference', href: '/' },
-      { label: 'Help Center', href: '/' },
+      { label: t.footer.links.help, href: '/' },
       { label: 'Community', href: '/' },
     ],
   };
@@ -93,7 +95,7 @@ export default function Footer() {
               maxWidth: '320px',
               marginBottom: '24px',
             }}>
-              Transforming enterprise operations with intelligent, scalable ERP solutions. Built for the future of business.
+              {t.footer.tagline}
             </p>
             {/* Social Icons */}
             <div style={{ display: 'flex', gap: '12px' }}>
@@ -140,7 +142,7 @@ export default function Footer() {
               letterSpacing: '1.5px',
               color: 'var(--text-primary)',
               marginBottom: '20px',
-            }}>Product</h4>
+            }}>{t.footer.product}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {footerLinks.product.map((link) => (
                 <Link key={link.label} href={link.href} style={{
@@ -167,7 +169,7 @@ export default function Footer() {
               letterSpacing: '1.5px',
               color: 'var(--text-primary)',
               marginBottom: '20px',
-            }}>Company</h4>
+            }}>{t.footer.company}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {footerLinks.company.map((link) => (
                 <Link key={link.label} href={link.href} style={{
@@ -194,7 +196,7 @@ export default function Footer() {
               letterSpacing: '1.5px',
               color: 'var(--text-primary)',
               marginBottom: '20px',
-            }}>Resources</h4>
+            }}>{t.footer.resources}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {footerLinks.resources.map((link) => (
                 <Link key={link.label} href={link.href} style={{
@@ -228,10 +230,10 @@ export default function Footer() {
           gap: '16px',
         }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-            © {currentYear} ERPPro. All rights reserved.
+            © {currentYear} ERPPro. {t.footer.rights}
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
-            <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Privacy Policy</a>
+            <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{t.footer.links.privacy}</a>
             <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Terms of Service</a>
             <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Cookie Policy</a>
           </div>

@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProductsHero() {
+  const { t, language } = useLanguage();
   const [visible, setVisible] = useState(false);
   useEffect(() => setVisible(true), []);
 
@@ -49,7 +51,7 @@ export default function ProductsHero() {
           letterSpacing: '1.5px',
           marginBottom: '24px',
         }}>
-          ◇ Product Suite
+          ◇ {language === 'id' ? 'Rangkaian Produk' : 'Product Suite'}
         </div>
 
         <h1 style={{
@@ -59,14 +61,14 @@ export default function ProductsHero() {
           lineHeight: 1.1,
           marginBottom: '20px',
         }}>
-          <span style={{ color: 'var(--text-primary)' }}>Powerful Modules for </span>
+          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Modul Canggih untuk ' : 'Powerful Modules for '}</span>
           <span style={{
             background: 'linear-gradient(135deg, #8b5cf6, #6366f1, #06b6d4)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Every Department
+            {language === 'id' ? 'Setiap Departemen' : 'Every Department'}
           </span>
         </h1>
 
@@ -77,8 +79,9 @@ export default function ProductsHero() {
           margin: '0 auto',
           lineHeight: 1.8,
         }}>
-          Choose the modules you need today and expand as you grow. 
-          Every module integrates seamlessly for a unified experience.
+          {language === 'id' 
+            ? 'Pilih modul yang Anda butuhkan hari ini dan kembangkan seiring pertumbuhan Anda. Setiap modul terintegrasi secara mulus.'
+            : 'Choose the modules you need today and expand as you grow. Every module integrates seamlessly for a unified experience.'}
         </p>
       </div>
     </section>

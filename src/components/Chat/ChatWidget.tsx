@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 type Message = {
   text: string;
@@ -9,18 +10,24 @@ type Message = {
 };
 
 export default function ChatWidget() {
+  const { t, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const [messages, setMessages] = useState<Message[]>([
-    { 
-      text: 'Hi there! 👋 Welcome to ERPPro. How can I help you today?', 
-      sender: 'bot', 
-      timestamp: new Date() 
-    }
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Initialize welcome message when context is ready
+  useEffect(() => {
+    if (messages.length === 0) {
+      setMessages([{ 
+        text: t.chat.welcome, 
+        sender: 'bot', 
+        timestamp: new Date() 
+      }]);
+    }
+  }, [t.chat.welcome, messages.length]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -60,7 +67,7 @@ export default function ChatWidget() {
     setTimeout(() => {
       setIsTyping(false);
       const botMsg: Message = {
-        text: 'Thank you for your message! Our team has been notified and will get back to you shortly. In the meantime, feel free to explore our products or schedule a demo.',
+        text: language === 'id' ? 'Terima kasih atas pesan Anda! Tim kami telah diberitahu dan akan segera menghubungi Anda.' : 'Thank you for your message! Our team has been notified and will get back to you shortly.',
         sender: 'bot',
         timestamp: new Date()
       };
@@ -79,9 +86,9 @@ export default function ChatWidget() {
 
     setTimeout(() => {
       setIsTyping(false);
-      let response = "That's a great question! Let me connect you with a specialist.";
-      if (label.includes('Demo')) response = "I'd love to help you with a demo! What time works best for you tomorrow?";
-      if (label.includes('Pricing')) response = "Our pricing is flexible based on your needs. Can you tell me roughly how many users you'll have?";
+      let response = "I'll connect you with a specialist right away.";
+      if (label.includes('Demo')) response = "I'd love to help you with a demo! When are you free?";
+      if (label.includes('Pricing')) response = "Our pricing plans are flexible. Let me send you our latest catalog.";
       
       const botMsg: Message = {
         text: response,
@@ -126,7 +133,7 @@ export default function ChatWidget() {
               background: '#10b981',
               animation: 'pulse-glow 2s infinite',
             }} />
-            <span>Hey! Need help choosing the right plan?</span>
+            <span>Hey! Need help?</span>
           </div>
           <button 
             onClick={() => setShowNotification(false)}
@@ -185,7 +192,7 @@ export default function ChatWidget() {
               </h4>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
-                <span style={{ fontSize: '0.75rem', opacity: 0.9 }}>Support is Online</span>
+                <span style={{ fontSize: '0.75rem', opacity: 0.9 }}>Online</span>
               </div>
             </div>
             <button onClick={toggleChat} style={{ background: 'transparent', border: 'none', color: 'white', cursor: 'pointer', opacity: 0.7 }}>
@@ -241,12 +248,12 @@ export default function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Quick Options (Visible only when history is short) */}
-          {messages.length < 4 && (
+          {/* Quick Options */}
+          {messages.length < 3 && (
             <div style={{ padding: '0 24px 16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {[
-                '🚀 Request a Demo',
-                '💰 Pricing Inquiry',
+                t.chat.options.demo,
+                t.chat.options.pricing,
               ].map((opt) => (
                 <button
                   key={opt}
@@ -287,7 +294,7 @@ export default function ChatWidget() {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Type your message..."
+              placeholder={t.chat.placeholder}
               style={{
                 flex: 1,
                 background: 'rgba(255,255,255,0.05)',

@@ -1,13 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-
-const stats = [
-  { value: 500, suffix: '+', label: 'Enterprises', description: 'Trust ERPPro worldwide' },
-  { value: 99.9, suffix: '%', label: 'Uptime', description: 'Guaranteed availability' },
-  { value: 2, suffix: 'M+', label: 'Transactions', description: 'Processed daily' },
-  { value: 45, suffix: '%', label: 'Cost Reduction', description: 'Average savings' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 function AnimatedCounter({ value, suffix, duration = 2000 }: { value: number; suffix: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -60,6 +54,15 @@ function AnimatedCounter({ value, suffix, duration = 2000 }: { value: number; su
 }
 
 export default function StatsSection() {
+  const { t, language } = useLanguage();
+
+  const stats = [
+    { value: 500, suffix: '+', label: language === 'id' ? 'Perusahaan' : 'Enterprises', description: language === 'id' ? 'Dipercaya di seluruh dunia' : 'Trust ERPPro worldwide' },
+    { value: 99.9, suffix: '%', label: t.stats.uptime, description: language === 'id' ? 'Ketersediaan terjamin' : 'Guaranteed availability' },
+    { value: 2, suffix: 'M+', label: language === 'id' ? 'Transaksi' : 'Transactions', description: language === 'id' ? 'Diproses setiap hari' : 'Processed daily' },
+    { value: 45, suffix: '%', label: language === 'id' ? 'Pengurangan Biaya' : 'Cost Reduction', description: language === 'id' ? 'Rata-rata penghematan' : 'Average savings' },
+  ];
+
   return (
     <section style={{
       padding: '0 0 80px',
