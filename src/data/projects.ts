@@ -45,7 +45,7 @@ export const projects: Project[] = [
     lng: 106.8927,
     type: 'ruko',
     year: 2021,
-    image: '/projects/ruko-gading.jpg',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
     city: 'Jakarta Utara',
     value: 'Rp 3.1 Miliar',
     client: 'PT Maju Bersama'
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     lng: 106.8115,
     type: 'renovasi',
     year: 2023,
-    image: '/projects/scbd.jpg',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
     city: 'Jakarta Selatan',
     value: 'Rp 1.5 Miliar',
     client: 'Bpk. James Robertson'
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     lng: 107.6191,
     type: 'ruko',
     year: 2022,
-    image: '/projects/office-bdg.jpg',
+    image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=800',
     city: 'Bandung',
     value: 'Rp 5.8 Miliar',
     client: 'CV Kreatif Mandiri'
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     lng: 112.7521,
     type: 'rumah',
     year: 2023,
-    image: '/projects/surabaya.jpg',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800',
     city: 'Surabaya',
     value: 'Rp 2.9 Miliar',
     client: 'Ibu Linda'
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     lng: 98.6722,
     type: 'renovasi',
     year: 2021,
-    image: '/projects/klinik-medan.jpg',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800',
     city: 'Medan',
     value: 'Rp 1.2 Miliar',
     client: 'dr. Hendra Sp.A'
@@ -105,9 +105,10 @@ export const projects: Project[] = [
     lng: 106.6548,
     type: 'rumah',
     year: 2022,
-    image: '/projects/townhouse.jpg',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800',
     city: 'Tangerang',
     value: 'Rp 3.5 Miliar',
     client: 'Bpk. Rudy'
   }
+
 ];
