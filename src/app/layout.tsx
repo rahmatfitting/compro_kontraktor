@@ -4,15 +4,17 @@ import ChatWidget from '@/components/Chat/ChatWidget';
 import { LanguageProvider } from '@/context/LanguageContext';
 
 export const metadata: Metadata = {
-  title: 'ERPPro - Enterprise Resource Planning Solutions',
-  description: 'ERPPro delivers cutting-edge enterprise resource planning solutions that streamline your business operations, boost productivity, and drive growth. Trusted by 500+ enterprises worldwide.',
-  keywords: 'ERP, enterprise resource planning, business management, automation, cloud ERP, manufacturing ERP',
-  openGraph: {
-    title: 'ERPPro - Enterprise Resource Planning Solutions',
-    description: 'Streamline your business operations with our premium ERP solutions.',
-    type: 'website',
-  },
+  title: 'Arkana Konstruksi | Modern & Premium Construction',
+  description: 'Arkana Konstruksi menghadirkan standar baru dalam dunia pembangunan. Kami menggabungkan estetika modern, material premium, dan ketepatan waktu.',
+  keywords: 'kontraktor, konstruksi modern, renovasi rumah, desain interior, arkana konstruksi',
 };
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 
 export default function RootLayout({
   children,

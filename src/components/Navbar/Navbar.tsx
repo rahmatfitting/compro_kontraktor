@@ -197,7 +197,6 @@ export default function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
             style={{
-              display: 'none',
               flexDirection: 'column',
               gap: '6px',
               background: 'none',
@@ -206,6 +205,7 @@ export default function Navbar() {
               border: 'none',
             }}
           >
+
             {[1, 2, 3].map(i => (
               <span key={i} style={{
                 width: '24px',
@@ -292,7 +292,10 @@ export default function Navbar() {
           from { opacity: 0; transform: translateY(-20px); }
           to { opacity: 1; transform: translateY(0); }
         }
-        @media (max-width: 1024px) {
+        .mobile-nav-toggle {
+          display: none;
+        }
+        @media (max-width: 1100px) {
           .desktop-nav-links,
           .desktop-nav-cta {
             display: none !important;
@@ -302,6 +305,7 @@ export default function Navbar() {
           }
         }
       `}</style>
+
 
     </>
   );
