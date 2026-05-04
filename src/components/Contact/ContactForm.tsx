@@ -19,29 +19,29 @@ export default function ContactForm() {
     {
       icon: '📧',
       title: language === 'id' ? 'Email Kami' : 'Email Us',
-      detail: 'concierge@luxevoyage.com',
-      subDetail: language === 'id' ? 'Kami membalas dalam 24 jam' : 'We reply within 24 hours',
+      detail: 'info@arkanakonstruksi.com',
+      subDetail: language === 'id' ? 'Respon cepat dalam 24 jam' : 'Quick reply within 24 hours',
       color: '#d4af37',
     },
     {
       icon: '📞',
-      title: language === 'id' ? 'Hubungi Kami' : 'Call Us',
-      detail: '+62 21 555-8888',
-      subDetail: '24/7 Premium Support',
+      title: language === 'id' ? 'Telepon' : 'Call Us',
+      detail: '+62 21 555-0123',
+      subDetail: language === 'id' ? 'Senin - Jumat, 08:00 - 17:00' : 'Mon - Fri, 08:00 - 17:00',
       color: '#996515',
     },
     {
       icon: '📍',
-      title: language === 'id' ? 'Kunjungi Kami' : 'Visit Us',
-      detail: 'LuxeVoyage Plaza, Level 45',
-      subDetail: 'Jakarta, Indonesia 10220',
+      title: language === 'id' ? 'Kantor Utama' : 'Headquarters',
+      detail: 'Arkana Construction Tower, Lt. 12',
+      subDetail: 'Jakarta Selatan, Indonesia',
       color: '#d4af37',
     },
     {
       icon: '💬',
-      title: language === 'id' ? 'Chat Langsung' : 'Live Chat',
-      detail: language === 'id' ? 'Tersedia 24/7' : 'Available 24/7',
-      subDetail: language === 'id' ? 'Respon rata-rata: 2 mnt' : 'Average response: 2 min',
+      title: language === 'id' ? 'WhatsApp' : 'WhatsApp',
+      detail: '+62 812-3456-7890',
+      subDetail: language === 'id' ? 'Konsultasi Instan' : 'Instant Consultation',
       color: '#996515',
     },
   ];
@@ -54,31 +54,31 @@ export default function ContactForm() {
 
   const inputStyle = {
     width: '100%',
-    padding: '14px 18px',
-    borderRadius: '12px',
-    background: 'white',
-    border: '1px solid var(--border-default)',
+    padding: '16px 20px',
+    borderRadius: '0px',
+    background: 'var(--bg-secondary)',
+    border: '1px solid var(--border-subtle)',
     color: 'var(--text-primary)',
-    fontSize: '0.9rem',
-    transition: 'all 0.2s ease',
+    fontSize: '0.95rem',
+    transition: 'all 0.3s ease',
     outline: 'none',
   };
 
   const labelStyle = {
     display: 'block',
-    fontSize: '0.8rem',
-    fontWeight: 600 as const,
-    color: 'var(--text-secondary)',
-    marginBottom: '8px',
+    fontSize: '0.75rem',
+    fontWeight: 800 as const,
+    color: 'var(--text-primary)',
+    marginBottom: '10px',
     textTransform: 'uppercase' as const,
-    letterSpacing: '0.5px',
+    letterSpacing: '1.5px',
   };
 
   return (
     <section style={{
-      padding: '40px 0 120px',
+      padding: '60px 0 140px',
       position: 'relative',
-      background: 'var(--bg-primary)',
+      background: 'white',
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -88,7 +88,7 @@ export default function ContactForm() {
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1.3fr',
-          gap: '48px',
+          gap: '80px',
           alignItems: 'start',
         }}
         className="contact-grid"
@@ -96,83 +96,81 @@ export default function ContactForm() {
           {/* Left: Contact Info */}
           <div>
             <h3 style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontSize: '1.5rem',
-              fontWeight: 700,
+              fontFamily: 'var(--font-display)',
+              fontSize: '2rem',
+              fontWeight: 800,
               color: 'var(--text-primary)',
-              marginBottom: '12px',
+              marginBottom: '24px',
+              textTransform: 'uppercase'
             }}>
-              {language === 'id' ? 'Informasi Kontak' : 'Contact Information'}
+              {language === 'id' ? 'Informasi Kontak' : 'Contact Details'}
             </h3>
             <p style={{
-              fontSize: '0.95rem',
+              fontSize: '1.1rem',
               color: 'var(--text-secondary)',
-              lineHeight: 1.7,
-              marginBottom: '36px',
+              lineHeight: 1.8,
+              marginBottom: '48px',
             }}>
               {language === 'id' 
-                ? 'Hubungi spesialis kami melalui saluran apa pun. Kami siap membantu mewujudkan perjalanan impian Anda dengan layanan kelas dunia.'
-                : 'Reach out to our specialists through any channel. We are ready to make your dream journey a reality with world-class service.'}
+                ? 'Tim ahli kami siap mendiskusikan kebutuhan konstruksi Anda. Kunjungi kantor kami atau hubungi melalui saluran di bawah ini.'
+                : 'Our expert team is ready to discuss your construction needs. Visit our office or reach out through the channels below.'}
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {contactInfo.map((info) => (
                 <div
                   key={info.title}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '18px',
-                    padding: '22px',
-                    borderRadius: '16px',
-                    background: 'white',
+                    gap: '24px',
+                    padding: '30px',
+                    background: 'var(--bg-secondary)',
                     border: '1px solid var(--border-subtle)',
                     transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
-                    e.currentTarget.style.transform = 'translateX(6px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(212, 175, 55, 0.1)';
+                    e.currentTarget.style.borderColor = 'var(--accent-gold)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = 'var(--border-subtle)';
-                    e.currentTarget.style.transform = 'translateX(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.03)';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
                   <div style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '12px',
-                    background: `${info.color}12`,
-                    border: `1px solid ${info.color}20`,
+                    width: '56px',
+                    height: '56px',
+                    background: 'var(--bg-dark)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '1.3rem',
+                    fontSize: '1.5rem',
                     flexShrink: 0,
+                    color: 'var(--accent-gold)'
                   }}>
                     {info.icon}
                   </div>
                   <div>
                     <p style={{
-                      fontSize: '0.8rem',
-                      color: info.color,
-                      fontWeight: 600,
-                      marginBottom: '2px',
+                      fontSize: '0.75rem',
+                      color: 'var(--accent-gold)',
+                      fontWeight: 800,
+                      marginBottom: '4px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '1px'
                     }}>
                       {info.title}
                     </p>
                     <p style={{
-                      fontSize: '0.95rem',
-                      fontWeight: 600,
+                      fontSize: '1.1rem',
+                      fontWeight: 700,
                       color: 'var(--text-primary)',
                     }}>
                       {info.detail}
                     </p>
                     <p style={{
-                      fontSize: '0.78rem',
+                      fontSize: '0.85rem',
                       color: 'var(--text-muted)',
                     }}>
                       {info.subDetail}
@@ -181,234 +179,163 @@ export default function ContactForm() {
                 </div>
               ))}
             </div>
-
-            {/* Map placeholder */}
-            <div style={{
-              marginTop: '32px',
-              height: '200px',
-              borderRadius: '16px',
-              background: 'white',
-              border: '1px solid var(--border-subtle)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
-              overflow: 'hidden',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
-            }}>
-              {/* Grid pattern for map */}
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundImage: `
-                  linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px)
-                `,
-                backgroundSize: '30px 30px',
-              }} />
-              <div style={{
-                position: 'relative',
-                textAlign: 'center',
-              }}>
-                <div style={{
-                  width: '16px',
-                  height: '16px',
-                  borderRadius: '50%',
-                  background: '#d4af37',
-                  boxShadow: '0 0 20px rgba(212, 175, 55, 0.5)',
-                  margin: '0 auto 12px',
-                  animation: 'pulse-glow 2s ease infinite',
-                }} />
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-                  Jakarta, Indonesia
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Right: Form */}
           <div style={{
-            padding: '40px',
-            borderRadius: '24px',
-            background: 'white',
-            border: '1px solid var(--border-subtle)',
-            backdropFilter: 'blur(12px)',
-            boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
+            padding: '50px',
+            background: 'var(--bg-dark)',
+            position: 'relative',
           }}>
+            {/* Architectural accent */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              width: '80px',
+              height: '80px',
+              borderTop: '4px solid var(--accent-gold)',
+              borderRight: '4px solid var(--accent-gold)',
+            }} />
+
             {submitted ? (
               <div style={{
                 textAlign: 'center',
-                padding: '60px 20px',
+                padding: '80px 20px',
               }}>
                 <div style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '50%',
-                  background: 'rgba(212, 175, 55, 0.1)',
-                  border: '1px solid rgba(212, 175, 55, 0.2)',
+                  width: '80px',
+                  height: '80px',
+                  border: '2px solid var(--accent-gold)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 20px',
-                  fontSize: '1.5rem',
+                  margin: '0 auto 32px',
+                  fontSize: '2rem',
+                  color: 'var(--accent-gold)'
                 }}>
                   ✓
                 </div>
                 <h3 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontSize: '1.5rem',
-                  fontWeight: 700,
-                  color: '#996515',
-                  marginBottom: '8px',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.8rem',
+                  fontWeight: 800,
+                  color: 'white',
+                  marginBottom: '16px',
+                  textTransform: 'uppercase'
                 }}>
-                  {language === 'id' ? 'Pesan Terkirim!' : 'Message Sent!'}
+                  {language === 'id' ? 'Terima Kasih' : 'Thank You'}
                 </h3>
                 <p style={{
-                  fontSize: '0.95rem',
-                  color: 'var(--text-secondary)',
+                  fontSize: '1.1rem',
+                  color: 'rgba(255,255,255,0.6)',
                 }}>
                   {language === 'id' 
-                    ? 'Terima kasih telah menghubungi kami. Spesialis kami akan menghubungi Anda dalam waktu 24 jam.'
-                    : "Thank you for reaching out. Our specialist will get back to you within 24 hours."}
+                    ? 'Pesan Anda telah diterima. Tim konsultan Arkana akan menghubungi Anda segera.'
+                    : "Your message has been received. Arkana’s consultancy team will contact you shortly."}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <h3 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontSize: '1.3rem',
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
-                  marginBottom: '28px',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.5rem',
+                  fontWeight: 800,
+                  color: 'white',
+                  marginBottom: '40px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
                 }}>
-                  {language === 'id' ? 'Konsultasi Perjalanan' : 'Travel Consultation'}
+                  {language === 'id' ? 'Konsultasi Proyek' : 'Project Consultation'}
                 </h3>
 
                 <div style={{
                   display: 'grid',
                   gridTemplateColumns: '1fr 1fr',
-                  gap: '20px',
-                  marginBottom: '20px',
+                  gap: '24px',
+                  marginBottom: '24px',
                 }}
                 className="form-grid"
                 >
                   <div>
-                    <label style={labelStyle}>{language === 'id' ? 'Nama Lengkap' : 'Full Name'}</label>
+                    <label style={{ ...labelStyle, color: 'rgba(255,255,255,0.7)' }}>{language === 'id' ? 'Nama Lengkap' : 'Full Name'}</label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="e.g. Budi Santoso"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={inputStyle}
-                      onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--border-default)';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
+                      style={{ ...inputStyle, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>Email</label>
+                    <label style={{ ...labelStyle, color: 'rgba(255,255,255,0.7)' }}>Email</label>
                     <input
                       type="email"
-                      placeholder="john@luxury.com"
+                      placeholder="e.g. budi@company.com"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={inputStyle}
-                      onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--border-default)';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
+                      style={{ ...inputStyle, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>{language === 'id' ? 'Tipe Perjalanan' : 'Travel Type'}</label>
+                    <label style={{ ...labelStyle, color: 'rgba(255,255,255,0.7)' }}>{language === 'id' ? 'Tipe Proyek' : 'Project Type'}</label>
                     <input
                       type="text"
-                      placeholder="Leisure, Business, etc."
+                      placeholder="e.g. Residential, Office"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      style={inputStyle}
-                      onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--border-default)';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
+                      style={{ ...inputStyle, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>{language === 'id' ? 'Telepon' : 'Phone'}</label>
+                    <label style={{ ...labelStyle, color: 'rgba(255,255,255,0.7)' }}>{language === 'id' ? 'Telepon' : 'Phone'}</label>
                     <input
                       type="tel"
                       placeholder="+62 ..."
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      style={inputStyle}
-                      onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'var(--border-default)';
-                        e.currentTarget.style.boxShadow = 'none';
-                      }}
+                      style={{ ...inputStyle, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'white' }}
                     />
                   </div>
                 </div>
 
-                <div style={{ marginBottom: '20px' }}>
-                  <label style={labelStyle}>{language === 'id' ? 'Tujuan' : 'Objective'}</label>
+                <div style={{ marginBottom: '24px' }}>
+                  <label style={{ ...labelStyle, color: 'rgba(255,255,255,0.7)' }}>{language === 'id' ? 'Layanan' : 'Service'}</label>
                   <select
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     style={{
                       ...inputStyle,
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      color: 'white',
                       cursor: 'pointer',
                       appearance: 'none',
-                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' stroke='%236b6b80' fill='none' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E")`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundPosition: 'right 16px center',
                     }}
                   >
-                    <option value="planning">{language === 'id' ? 'Perencanaan Perjalanan' : 'Trip Planning'}</option>
-                    <option value="quote">{language === 'id' ? 'Minta Penawaran' : 'Request a Quote'}</option>
-                    <option value="partnership">{language === 'id' ? 'Kemitraan' : 'Partnership'}</option>
-                    <option value="other">{language === 'id' ? 'Lainnya' : 'Other'}</option>
+                    <option value="planning" style={{ background: 'var(--bg-dark)' }}>{language === 'id' ? 'Bangun Baru' : 'New Construction'}</option>
+                    <option value="quote" style={{ background: 'var(--bg-dark)' }}>{language === 'id' ? 'Renovasi' : 'Renovation'}</option>
+                    <option value="partnership" style={{ background: 'var(--bg-dark)' }}>{language === 'id' ? 'Desain Arsitektur' : 'Architectural Design'}</option>
+                    <option value="other" style={{ background: 'var(--bg-dark)' }}>{language === 'id' ? 'Lainnya' : 'Other'}</option>
                   </select>
                 </div>
 
-                <div style={{ marginBottom: '28px' }}>
-                  <label style={labelStyle}>{language === 'id' ? 'Pesan' : 'Message'}</label>
+                <div style={{ marginBottom: '40px' }}>
+                  <label style={{ ...labelStyle, color: 'rgba(255,255,255,0.7)' }}>{language === 'id' ? 'Pesan' : 'Message'}</label>
                   <textarea
-                    placeholder={language === 'id' ? 'Beri tahu kami tentang destinasi impian Anda...' : 'Tell us about your dream destination...'}
-                    rows={5}
+                    placeholder={language === 'id' ? 'Deskripsikan visi proyek Anda...' : 'Describe your project vision...'}
+                    rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     style={{
                       ...inputStyle,
+                      background: 'rgba(255,255,255,0.05)',
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      color: 'white',
                       resize: 'vertical',
-                      minHeight: '120px',
-                    }}
-                    onFocus={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
-                    }}
-                    onBlur={(e) => {
-                      e.currentTarget.style.borderColor = 'var(--border-default)';
-                      e.currentTarget.style.boxShadow = 'none';
                     }}
                   />
                 </div>
@@ -417,46 +344,33 @@ export default function ContactForm() {
                   type="submit"
                   style={{
                     width: '100%',
-                    padding: '16px 32px',
-                    borderRadius: '14px',
-                    background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
-                    color: 'white',
-                    fontWeight: 600,
-                    fontSize: '1rem',
+                    padding: '20px 32px',
+                    background: 'var(--accent-gold)',
+                    color: 'var(--bg-dark)',
+                    fontWeight: 800,
+                    fontSize: '0.9rem',
+                    textTransform: 'uppercase',
+                    letterSpacing: '2px',
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 20px rgba(212, 175, 55, 0.3)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    gap: '8px',
+                    gap: '12px',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(212, 175, 55, 0.45)';
+                    e.currentTarget.style.background = 'white';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(212, 175, 55, 0.3)';
+                    e.currentTarget.style.background = 'var(--accent-gold)';
                   }}
                 >
-                  {language === 'id' ? 'Kirim Pesan' : 'Send Message'}
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  {language === 'id' ? 'Kirim Permintaan' : 'Send Request'}
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
                   </svg>
                 </button>
-
-                <p style={{
-                  textAlign: 'center',
-                  fontSize: '0.78rem',
-                  color: 'var(--text-muted)',
-                  marginTop: '16px',
-                }}>
-                  {language === 'id' 
-                    ? 'Dengan mengirimkan, Anda menyetujui Kebijakan Privasi dan Ketentuan Layanan kami.'
-                    : 'By submitting, you agree to our Privacy Policy and Terms of Service.'}
-                </p>
               </form>
             )}
           </div>
@@ -464,15 +378,20 @@ export default function ContactForm() {
       </div>
 
       <style jsx global>{`
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
+            gap: 60px !important;
           }
+        }
+        @media (max-width: 640px) {
           .form-grid {
             grid-template-columns: 1fr !important;
+            gap: 20px !important;
           }
         }
       `}</style>
     </section>
   );
 }
+

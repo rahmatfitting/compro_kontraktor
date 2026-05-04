@@ -1,5 +1,4 @@
 'use client';
-// Refreshed HeroSection
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -7,24 +6,10 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export default function HeroSection() {
   const [visible, setVisible] = useState(false);
-  const { t, language } = useLanguage();
-
-  const carouselImages = [
-    '/exp_santorini.png',
-    '/exp_maldives.png',
-    '/exp_swiss_alps.png',
-    '/exp_paris.png',
-    '/exp_amalfi.png',
-  ];
-
-  const [currentImg, setCurrentImg] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setVisible(true);
-    const timer = setInterval(() => {
-      setCurrentImg((prev) => (prev + 1) % carouselImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -35,41 +20,30 @@ export default function HeroSection() {
       position: 'relative',
       overflow: 'hidden',
       paddingTop: '80px',
-      background: 'var(--bg-primary)',
+      background: 'var(--bg-dark)',
+      color: 'white'
     }}>
       {/* Background Image with Overlay */}
       <div style={{
         position: 'absolute',
         inset: 0,
-        backgroundImage: 'url(/hero_luxury_travel.png)',
+        backgroundImage: 'url(/images/hero.png)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.15,
+        opacity: 0.4,
         zIndex: 1,
       }} />
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(circle at center, transparent, var(--bg-primary) 90%)',
-        zIndex: 1,
-      }} />
-
-      {/* Background Effects */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: `
-          radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-          radial-gradient(ellipse at 80% 20%, rgba(241, 196, 15, 0.05) 0%, transparent 50%)
-        `,
-        pointerEvents: 'none',
-        zIndex: 1,
+        background: 'linear-gradient(to right, var(--bg-dark) 30%, transparent 80%)',
+        zIndex: 2,
       }} />
 
       <div className="container" style={{
         position: 'relative',
-        zIndex: 2,
-        maxWidth: '1280px',
+        zIndex: 10,
+        maxWidth: 'var(--container-max)',
         margin: '0 auto',
         padding: '0 24px',
       }}>
@@ -92,53 +66,50 @@ export default function HeroSection() {
               alignItems: 'center',
               gap: '8px',
               padding: '6px 16px',
-              borderRadius: '100px',
-              background: 'white',
-              border: '1px solid rgba(212, 175, 55, 0.3)',
+              borderRadius: 'var(--radius-none)',
+              background: 'rgba(212, 175, 55, 0.1)',
+              border: '1px solid var(--accent-gold)',
               fontSize: '0.8rem',
               fontWeight: 600,
-              color: '#d4af37',
+              color: 'var(--accent-gold)',
               textTransform: 'uppercase',
-              letterSpacing: '1.5px',
+              letterSpacing: '2px',
               marginBottom: '28px',
-              boxShadow: '0 4px 12px rgba(212, 175, 55, 0.1)',
             }}>
               <span style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                background: '#d4af37',
-                boxShadow: '0 0 8px rgba(212, 175, 55, 0.5)',
-                animation: 'pulse-glow 2s ease-in-out infinite',
+                width: '8px',
+                height: '8px',
+                background: 'var(--accent-gold)',
               }} />
               {t.hero.badge}
             </div>
 
             {/* Heading */}
             <h1 style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
-              fontWeight: 800,
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+              fontWeight: 700,
               lineHeight: 1.1,
               marginBottom: '24px',
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.03em',
+              textTransform: 'uppercase',
             }}>
-              <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Rasakan ' : 'Experience '}</span>
+              {t.hero.title1}
               <br />
               <span style={{
-                background: 'linear-gradient(135deg, #d4af37, #996515)',
+                background: 'var(--gradient-gold)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                {language === 'id' ? 'Kemewahan Tanpa Batas' : 'Limitless Luxury'}
+                {t.hero.title2}
               </span>
             </h1>
 
             {/* Subtitle */}
             <p style={{
               fontSize: '1.1rem',
-              color: 'var(--text-secondary)',
+              color: 'rgba(255,255,255,0.7)',
               lineHeight: 1.8,
               marginBottom: '40px',
               maxWidth: '560px',
@@ -148,156 +119,64 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-primary" style={{ padding: '16px 36px', borderRadius: '14px', fontSize: '1rem' }}>
+              <Link href="#portfolio" className="btn-primary" style={{ padding: '16px 40px', borderRadius: '0px', background: 'var(--accent-gold)', color: 'var(--bg-dark)', fontWeight: 700 }}>
                 {t.hero.ctaPrimary}
               </Link>
 
-              <Link href="/#destinations" className="btn-secondary" style={{ padding: '16px 36px', borderRadius: '14px', fontSize: '1rem' }}>
+              <Link href="#contact" className="btn-secondary" style={{ padding: '16px 40px', borderRadius: '0px', border: '1px solid white', color: 'white', fontWeight: 700, background: 'transparent' }}>
                 {t.hero.ctaSecondary}
               </Link>
             </div>
 
-            {/* Partner Brands */}
-            <div style={{ marginTop: '60px' }}>
-              <p style={{
-                fontSize: '0.75rem',
-                color: 'var(--text-muted)',
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                fontWeight: 600,
-                marginBottom: '20px',
-              }}>
-                {t.hero.trusted}
-              </p>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '32px',
-                flexWrap: 'wrap',
-                opacity: 0.6,
-              }}>
-                {['Emirates', 'Qatar Airways', 'Four Seasons', 'Ritz-Carlton', 'Aman'].map((brand) => (
-                  <span key={brand} style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
-                    fontSize: '1.1rem',
-                    fontWeight: 700,
-                    color: 'var(--text-muted)',
-                    letterSpacing: '0.5px',
-                  }}>
-                    {brand}
-                  </span>
-                ))}
+            {/* Stats/Trusted */}
+            <div style={{ marginTop: '60px', display: 'flex', gap: '40px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '40px' }}>
+              <div>
+                <h4 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-gold)' }}>150+</h4>
+                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Proyek Selesai</p>
+              </div>
+              <div>
+                <h4 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-gold)' }}>12+</h4>
+                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Tahun Pengalaman</p>
+              </div>
+              <div>
+                <h4 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-gold)' }}>50+</h4>
+                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Tim Profesional</p>
               </div>
             </div>
           </div>
 
-          {/* Right: Featured Card with Carousel */}
-          <div style={{ position: 'relative' }}>
-            <div style={{
-              borderRadius: '32px',
-              overflow: 'hidden',
-              background: 'white',
-              border: '1px solid var(--border-default)',
-              backdropFilter: 'blur(24px)',
-              boxShadow: '0 20px 50px rgba(0,0,0,0.1)',
-            }}>
-              <div style={{
-                height: '400px',
-                position: 'relative',
-                overflow: 'hidden',
-              }}>
-                {carouselImages.map((img, idx) => (
-                  <div
-                    key={img}
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      backgroundImage: `url(${img})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      opacity: currentImg === idx ? 1 : 0,
-                      transform: currentImg === idx ? 'scale(1)' : 'scale(1.1)',
-                      transition: 'all 1.5s ease-in-out',
-                    }}
-                  />
-                ))}
-                
-                {/* Overlay Badge */}
+          {/* Right: Modern Geometric Element */}
+          <div style={{ position: 'relative', display: 'flex', justifyContent: 'flex-end' }}>
+             <div style={{
+               width: '400px',
+               height: '500px',
+               border: '2px solid var(--accent-gold)',
+               position: 'relative',
+               zIndex: 1,
+               transform: 'translate(20px, -20px)'
+             }}>
                 <div style={{
                   position: 'absolute',
-                  top: '24px',
-                  right: '24px',
-                  padding: '10px 20px',
-                  borderRadius: '100px',
-                  background: 'rgba(255,255,255,0.9)',
-                  backdropFilter: 'blur(10px)',
-                  color: 'var(--text-primary)',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  border: '1px solid rgba(212, 175, 55, 0.3)',
+                  inset: '20px',
+                  backgroundImage: 'url(/images/service-1.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                   zIndex: 2,
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-                }}>
-                  {currentImg === 0 && 'Featured: Santorini'}
-                  {currentImg === 1 && 'Featured: Maldives'}
-                  {currentImg === 2 && 'Featured: Swiss Alps'}
-                  {currentImg === 3 && 'Featured: Paris'}
-                  {currentImg === 4 && 'Featured: Amalfi Coast'}
-                </div>
-
-                {/* Progress Indicators */}
+                }} />
                 <div style={{
                   position: 'absolute',
-                  bottom: '24px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  display: 'flex',
-                  gap: '8px',
-                  zIndex: 2,
+                  bottom: '-30px',
+                  left: '-30px',
+                  background: 'var(--accent-gold)',
+                  padding: '24px',
+                  color: 'var(--bg-dark)',
+                  zIndex: 3,
+                  width: '200px'
                 }}>
-                  {carouselImages.map((_, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        width: currentImg === idx ? '32px' : '8px',
-                        height: '8px',
-                        borderRadius: '4px',
-                        background: currentImg === idx ? '#d4af37' : 'rgba(255,255,255,0.5)',
-                        transition: 'all 0.3s ease',
-                      }}
-                    />
-                  ))}
+                   <p style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '4px' }}>Latest Project</p>
+                   <p style={{ fontSize: '1rem', fontWeight: 700 }}>Amarta Hills Villa</p>
                 </div>
-              </div>
-
-              <div style={{ padding: '24px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-                  <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                    The Aegean Dream
-                  </h3>
-                  <div style={{ display: 'flex', gap: '4px' }}>
-                    {[1,2,3,4,5].map(i => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#d4af37">
-                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
-                  Enjoy exclusive access to a private caldera-view villa with a personal chef and sunset yacht tour.
-                </p>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                   <div style={{ flex: 1, padding: '12px', borderRadius: '16px', background: 'var(--bg-tertiary)', border: '1px solid var(--border-subtle)' }}>
-                     <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Package</p>
-                     <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)' }}>7 Days / 6 Nights</p>
-                   </div>
-                   <div style={{ flex: 1, padding: '12px', borderRadius: '16px', background: 'var(--bg-tertiary)', border: '1px solid var(--border-subtle)' }}>
-                     <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Starting from</p>
-                     <p style={{ fontSize: '0.9rem', fontWeight: 600, color: '#d4af37' }}>Premium Only</p>
-                   </div>
-                </div>
-              </div>
-            </div>
+             </div>
           </div>
         </div>
       </div>
@@ -312,13 +191,18 @@ export default function HeroSection() {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
           }
           .hero-grid p {
             margin-left: auto;
             margin-right: auto;
+          }
+          .hero-grid > div:last-child {
+            display: none;
           }
         }
       `}</style>
     </section>
   );
 }
+

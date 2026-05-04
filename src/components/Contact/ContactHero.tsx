@@ -10,18 +10,18 @@ export default function ContactHero() {
 
   return (
     <section style={{
-      paddingTop: '160px',
-      paddingBottom: '40px',
+      paddingTop: '180px',
+      paddingBottom: '60px',
       position: 'relative',
       overflow: 'hidden',
-      background: 'var(--bg-primary)',
+      background: 'white',
     }}>
       <div style={{
         position: 'absolute',
         inset: 0,
         background: `
-          radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 70% 70%, rgba(241, 196, 15, 0.05) 0%, transparent 50%)
+          radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+          radial-gradient(circle at 70% 70%, rgba(241, 196, 15, 0.03) 0%, transparent 50%)
         `,
         pointerEvents: 'none',
       }} />
@@ -40,51 +40,53 @@ export default function ContactHero() {
           display: 'inline-flex',
           alignItems: 'center',
           gap: '8px',
-          padding: '6px 16px',
-          borderRadius: '100px',
-          background: 'white',
-          border: '1px solid rgba(212, 175, 55, 0.3)',
+          padding: '8px 20px',
+          background: 'var(--bg-secondary)',
+          border: '1px solid var(--border-subtle)',
           fontSize: '0.8rem',
-          fontWeight: 600,
-          color: '#d4af37',
+          fontWeight: 700,
+          color: 'var(--accent-gold)',
           textTransform: 'uppercase',
-          letterSpacing: '1.5px',
-          marginBottom: '24px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+          letterSpacing: '2px',
+          marginBottom: '32px',
         }}>
-          ✉ {language === 'id' ? 'Hubungi Kami' : 'Get in Touch'}
+          {language === 'id' ? 'Hubungi Arkana' : 'Contact Arkana'}
         </div>
 
         <h1 style={{
-          fontFamily: 'Space Grotesk, sans-serif',
-          fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+          fontFamily: 'var(--font-display)',
+          fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
           fontWeight: 800,
           lineHeight: 1.1,
-          marginBottom: '20px',
+          marginBottom: '32px',
+          textTransform: 'uppercase',
+          letterSpacing: '-1px'
         }}>
-          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Mulai Perjalanan ' : "Start Your "}</span>
+          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Wujudkan ' : "Build Your "}</span>
+          <br />
           <span style={{
-            background: 'linear-gradient(135deg, #d4af37, #996515)',
+            background: 'var(--gradient-gold)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            {language === 'id' ? 'Eksklusif Anda' : 'Exclusive Journey'}
+            {language === 'id' ? 'Visi Arsitektur Anda' : 'Architectural Vision'}
           </span>
         </h1>
 
         <p style={{
-          fontSize: '1.15rem',
+          fontSize: '1.2rem',
           color: 'var(--text-secondary)',
-          maxWidth: '560px',
+          maxWidth: '650px',
           margin: '0 auto',
           lineHeight: 1.8,
         }}>
           {language === 'id' 
-            ? 'Siap merencanakan liburan impian? Spesialis perjalanan kami siap membantu menyusun itinerary yang dipersonalisasi khusus untuk Anda.'
-            : 'Ready to plan your dream escape? Our travel specialists are ready to curate a personalized itinerary tailored just for you.'}
+            ? 'Siap membangun hunian atau gedung impian Anda? Konsultasikan rencana pembangunan Anda dengan tim ahli konstruksi Arkana hari ini.'
+            : 'Ready to build your dream home or commercial space? Consult your construction plans with Arkana’s expert team today.'}
         </p>
       </div>
     </section>
   );
 }
+

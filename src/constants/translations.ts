@@ -4,106 +4,106 @@ export const translations = {
       home: 'Beranda',
       about: 'Tentang Kami',
       services: 'Layanan',
-      destinations: 'Destinasi',
+      portfolio: 'Portfolio',
       contact: 'Kontak',
-      getStarted: 'Reservasi Sekarang',
+      getStarted: 'Konsultasi Gratis',
     },
     hero: {
-      badge: 'Destinasi Elit & Pengalaman Kurasi',
-      title1: 'Jelajahi Dunia dengan',
-      title2: 'Kemewahan Mutlak',
-      subtitle: 'Kurasi perjalanan eksklusif yang dirancang khusus untuk kenyamanan dan pengalaman personal Anda. Dari jet pribadi hingga vila tersembunyi, kami mewujudkan impian Anda.',
-      ctaPrimary: 'Mulai Perjalanan',
-      ctaSecondary: 'Lihat Destinasi',
-      trusted: 'Dipercaya oleh traveler dunia yang mengutamakan kualitas',
+      badge: 'Konstruksi Modern & Premium',
+      title1: 'Mewujudkan Imajinasi dalam',
+      title2: 'Struktur yang Presisi',
+      subtitle: 'Arkana Konstruksi menghadirkan standar baru dalam dunia pembangunan. Kami menggabungkan estetika modern, material premium, dan ketepatan waktu untuk menciptakan properti impian Anda.',
+      ctaPrimary: 'Lihat Portfolio',
+      ctaSecondary: 'Konsultasi Sekarang',
+      trusted: 'Dipercaya oleh pemilik rumah mewah dan investor properti ternama',
     },
     stats: {
-      destinations: 'Destinasi Global',
+      projects: 'Proyek Selesai',
       clients: 'Klien Puas',
       experience: 'Tahun Pengalaman',
-      support: 'Layanan 24/7',
+      guarantee: 'Garansi Kualitas',
     },
     about: {
-      badge: 'Tentang Kami',
-      title: 'Menyusun Cerita Perjalanan yang Tak Terlupakan',
-      subtitle: 'Di LuxeVoyage, kami percaya bahwa perjalanan bukan hanya tentang berpindah tempat, tetapi tentang menemukan makna baru dalam setiap langkah.',
-      storytelling: 'Bayangkan terbangun dengan pemandangan pegunungan Alpen yang bersalju atau menikmati makan malam privat di bawah bintang-bintang Maladewa. Kami hadir untuk memastikan setiap detail kecil dari mimpi tersebut menjadi kenyataan dengan standar kemewahan tertinggi.',
+      badge: 'Tentang Arkana',
+      title: 'Lebih dari Sekadar Membangun Dinding',
+      subtitle: 'Kami adalah mitra strategis Anda dalam menciptakan ruang yang fungsional, indah, dan tahan lama.',
+      storytelling: 'Berawal dari visi untuk meningkatkan standar kualitas bangunan di Indonesia, Arkana Konstruksi tumbuh menjadi firma konstruksi butik yang fokus pada detail. Kami percaya bahwa setiap rumah atau gedung memiliki jiwa, dan tugas kami adalah menghidupkannya melalui pengerjaan yang teliti dan transparan.',
       vision: {
         title: 'Visi Kami',
-        desc: 'Menjadi jembatan utama dalam mewujudkan perjalanan impian yang eksklusif, aman, dan tak terlupakan bagi jiwa yang mendamba kualitas.'
+        desc: 'Menjadi pemimpin dalam industri konstruksi premium yang mengedepankan inovasi desain dan keberlanjutan kualitas.'
       },
       mission: {
         title: 'Misi Kami',
-        desc: 'Memberikan pelayanan personal yang melampaui ekspektasi, mengutamakan kenyamanan, dan menghadirkan akses ke destinasi paling unik di dunia.'
+        desc: 'Memberikan transparansi biaya, ketepatan waktu pengerjaan, dan hasil akhir yang melampaui ekspektasi klien di setiap proyek.'
       }
     },
-    features: {
+    services: {
       badge: 'Layanan Utama',
-      title: 'Kenyamanan Tanpa Kompromi di Setiap Langkah',
-      subtitle: 'Layanan kami dirancang untuk memberikan kemudahan total, memungkinkan Anda untuk fokus sepenuhnya pada pengalaman perjalanan Anda.',
-      learnMore: 'Pelajari lebih lanjut',
+      title: 'Solusi Konstruksi Terintegrasi',
+      subtitle: 'Dari perencanaan hingga serah terima, kami menangani setiap tahap dengan profesionalisme tinggi.',
+      learnMore: 'Detail layanan',
       modules: {
-        luxury_tours: {
-          title: 'Luxury Tour Packages',
-          desc: 'Paket perjalanan kurasi ke destinasi ikonik dunia dengan fasilitas bintang lima dan akses eksklusif ke tempat-tempat tersembunyi.',
+        new_build: {
+          title: 'Bangunan Baru',
+          desc: 'Pembangunan rumah tinggal, villa, dan gedung komersial dari nol dengan sistem manajemen proyek yang ketat.',
         },
-        private_charter: {
-          title: 'Private Jet & Yacht',
-          desc: 'Perjalanan privat dengan jet pribadi atau yacht mewah. Fleksibilitas waktu dan privasi total untuk perjalanan yang benar-benar personal.',
+        renovation: {
+          title: 'Renovasi Mewah',
+          desc: 'Transformasi ruang lama menjadi hunian modern yang elegan dengan peningkatan struktur dan estetika.',
         },
-        concierge: {
-          title: 'Executive Concierge',
-          desc: 'Asisten pribadi perjalanan yang siap menangani reservasi restoran, tiket acara eksklusif, hingga kebutuhan logistik mendadak Anda.',
+        design_build: {
+          title: 'Design & Build',
+          desc: 'Layanan satu pintu mulai dari arsitektur, desain interior, hingga pelaksanaan konstruksi fisik.',
         },
-        visa_logistics: {
-          title: 'Visa & Global Logistics',
-          desc: 'Pengurusan dokumen perjalanan internasional yang cepat dan aman, memastikan Anda siap terbang tanpa hambatan birokrasi.',
+        interior: {
+          title: 'Interior Custom',
+          desc: 'Pembuatan furniture custom dan penataan interior yang disesuaikan dengan karakter dan kebutuhan Anda.',
         },
-        stay: {
-          title: 'Exclusive Stays',
-          desc: 'Akses ke koleksi properti paling prestisius di dunia, mulai dari kastil bersejarah di Eropa hingga resort privat di pulau terpencil.',
+        consultancy: {
+          title: 'Konsultasi Teknik',
+          desc: 'Layanan audit struktur dan estimasi biaya (RAB) yang akurat untuk memastikan efisiensi anggaran.',
         },
-        experience: {
-          title: 'Tailored Experiences',
-          desc: 'Aktivitas yang dirancang khusus berdasarkan minat Anda, seperti workshop kuliner privat atau tur sejarah dengan ahli lokal.',
+        maintenance: {
+          title: 'Pemeliharaan',
+          desc: 'Layanan perawatan berkala untuk memastikan bangunan Anda tetap dalam kondisi prima sepanjang waktu.',
         },
       },
     },
     whyUs: {
-      badge: 'Mengapa LuxeVoyage',
-      title: 'Standar Emas dalam Industri Travel',
-      subtitle: 'Kami tidak hanya merencanakan perjalanan; kami mengurasi pengalaman yang akan Anda kenang seumur hidup.',
+      badge: 'Keunggulan Kami',
+      title: 'Mengapa Memilih Arkana?',
+      subtitle: 'Komitmen kami pada kualitas adalah alasan utama mengapa klien mempercayakan proyek mereka kepada kami.',
       features: [
-        { title: 'Akses Eksklusif', desc: 'Jaringan global yang memberikan Anda akses ke tempat yang tidak terjangkau traveler biasa.' },
-        { title: 'Privasi & Keamanan', desc: 'Protokol keamanan ketat dan perlindungan privasi untuk setiap tamu VVIP kami.' },
-        { title: 'Layanan Personalisasi', desc: 'Setiap itinerary dibuat dari nol sesuai dengan preferensi unik Anda.' }
+        { title: 'Material Premium', desc: 'Kami hanya menggunakan material bersertifikat untuk menjamin ketahanan bangunan jangka panjang.' },
+        { title: 'Ketepatan Waktu', desc: 'Manajemen proyek yang disiplin memastikan setiap milestone tercapai sesuai jadwal yang disepakati.' },
+        { title: 'Transparansi Biaya', desc: 'Laporan keuangan yang jelas dan tidak ada biaya tersembunyi selama proses pembangunan.' }
       ]
     },
-    booking: {
-      badge: 'Cara Pemesanan',
-      title: 'Proses Sederhana untuk Perjalanan Luar Biasa',
+    workflow: {
+      badge: 'Proses Kerja',
+      title: 'Langkah Menuju Bangunan Impian',
       steps: [
-        { title: 'Konsultasi Privat', desc: 'Diskusikan keinginan dan preferensi perjalanan Anda dengan konsultan ahli kami.' },
-        { title: 'Perencanaan Kurasi', desc: 'Kami menyusun itinerary detail yang mencakup semua aspek kemewahan yang Anda inginkan.' },
-        { title: 'Keberangkatan', desc: 'Nikmati perjalanan Anda dengan tenang sementara tim concierge kami menangani segalanya.' }
+        { title: 'Konsultasi & Survey', desc: 'Diskusi awal mengenai konsep, anggaran, dan survey lokasi untuk pemahaman mendalam.' },
+        { title: 'Perencanaan & Desain', desc: 'Penyusunan gambar kerja, visualisasi 3D, dan Rencana Anggaran Biaya (RAB) yang detail.' },
+        { title: 'Konstruksi & Serah Terima', desc: 'Proses pembangunan dengan pengawasan ketat hingga tahap penyelesaian dan serah terima kunci.' }
       ]
     },
     cta: {
-      title: 'Siap Menulis Cerita Baru?',
-      subtitle: 'Bergabunglah dengan komunitas traveler elit dan rasakan perbedaan layanan kelas atas yang sesungguhnya.',
-      button: 'Mulai Konsultasi Gratis',
-      noCredit: 'Konsultasi awal tanpa kewajiban. Privasi Anda adalah prioritas kami.'
+      title: 'Mulai Proyek Impian Anda?',
+      subtitle: 'Jadwalkan pertemuan dengan tim ahli kami untuk mendiskusikan visi Anda tanpa komitmen awal.',
+      button: 'Hubungi Arkana Sekarang',
+      noCredit: 'Konsultasi gratis tersedia melalui WhatsApp atau pertemuan tatap muka.'
     },
     footer: {
-      tagline: 'Mewujudkan standar kemewahan baru dalam industri travel global. Setiap perjalanan adalah sebuah karya seni.',
+      tagline: 'Membangun masa depan dengan integritas dan keunggulan artistik. Arkana Konstruksi - Strukturia Premium Build.',
       product: 'Layanan',
       company: 'Perusahaan',
       resources: 'Informasi',
       rights: 'Semua hak dilindungi undang-undang.',
       links: {
-        features: 'Tur Mewah',
-        pricing: 'Jet & Yacht',
-        solutions: 'Destinasi',
+        features: 'Bangun Baru',
+        pricing: 'Renovasi',
+        solutions: 'Portfolio',
         about: 'Tentang Kami',
         careers: 'Karir',
         contact: 'Kontak',
@@ -112,17 +112,33 @@ export const translations = {
         privacy: 'Kebijakan Privasi'
       }
     },
+    clientMap: {
+      badge: 'Jangkauan Klien',
+      title: 'Kepercayaan di Seluruh Wilayah',
+      subtitle: 'Arkana Konstruksi telah melayani berbagai klien premium di kota-kota besar Indonesia dengan standar kualitas yang konsisten.',
+      regions: {
+        jabodetabek: 'Jabodetabek',
+        bandung: 'Bandung',
+        surabaya: 'Surabaya',
+        bali: 'Bali',
+        medan: 'Medan'
+      },
+      stats: {
+        projects: 'Proyek Aktif',
+        locations: 'Titik Wilayah'
+      }
+    },
     chat: {
       id: true,
-      welcome: 'Selamat siang! 👋 Saya asisten pribadi LuxeVoyage. Ada destinasi impian yang ingin Anda wujudkan hari ini?',
-      typing: 'Sedang memproses...',
+      welcome: 'Halo! 👋 Saya asisten Arkana Konstruksi. Sedang berencana membangun atau renovasi? Saya siap membantu estimasi Anda.',
+      typing: 'Menghitung...',
       options: {
-        demo: '📅 Jadwalkan Konsultasi',
-        pricing: '✈️ Tanya Paket Tour',
-        support: '🗺️ Rekomendasi Destinasi',
+        demo: '📅 Jadwal Survey Lokasi',
+        pricing: '💰 Tanya Estimasi Biaya',
+        support: '🏗️ Lihat Contoh Portfolio',
       },
       placeholder: 'Ketik pesan Anda...',
-      wa: 'Hubungi via WhatsApp',
+      wa: 'WhatsApp Arkana',
     }
   },
   en: {
@@ -130,106 +146,106 @@ export const translations = {
       home: 'Home',
       about: 'About Us',
       services: 'Services',
-      destinations: 'Destinations',
+      portfolio: 'Portfolio',
       contact: 'Contact',
-      getStarted: 'Book Now',
+      getStarted: 'Free Consultation',
     },
     hero: {
-      badge: 'Elite Destinations & Curated Experiences',
-      title1: 'Explore the World in',
-      title2: 'Absolute Luxury',
-      subtitle: 'Bespoke travel experiences meticulously designed for your comfort and personal joy. From private jets to hidden villas, we make your dreams a reality.',
-      ctaPrimary: 'Start Journey',
-      ctaSecondary: 'View Destinations',
-      trusted: 'Trusted by world travelers who prioritize quality',
+      badge: 'Modern & Premium Construction',
+      title1: 'Realizing Imagination in',
+      title2: 'Precise Structures',
+      subtitle: 'Arkana Konstruksi brings a new standard to the world of construction. We combine modern aesthetics, premium materials, and punctuality to create your dream property.',
+      ctaPrimary: 'View Portfolio',
+      ctaSecondary: 'Consult Now',
+      trusted: 'Trusted by luxury homeowners and renowned property investors',
     },
     stats: {
-      destinations: 'Global Destinations',
+      projects: 'Projects Completed',
       clients: 'Happy Clients',
       experience: 'Years of Experience',
-      support: '24/7 Support',
+      guarantee: 'Quality Guarantee',
     },
     about: {
-      badge: 'About Us',
-      title: 'Crafting Unforgettable Travel Stories',
-      subtitle: 'At LuxeVoyage, we believe that travel is not just about moving places, but about discovering new meanings in every step.',
-      storytelling: 'Imagine waking up to the view of the snow-capped Swiss Alps or enjoying a private dinner under the Maldivian stars. We are here to ensure every small detail of that dream becomes a reality with the highest standards of luxury.',
+      badge: 'About Arkana',
+      title: 'More Than Just Building Walls',
+      subtitle: 'We are your strategic partner in creating functional, beautiful, and durable spaces.',
+      storytelling: 'Starting from a vision to raise building quality standards in Indonesia, Arkana Konstruksi grew into a boutique construction firm focused on detail. We believe every house or building has a soul, and our task is to bring it to life through meticulous and transparent workmanship.',
       vision: {
         title: 'Our Vision',
-        desc: 'To be the primary bridge in realizing exclusive, safe, and unforgettable dream journeys for souls craving quality.'
+        desc: 'To be a leader in the premium construction industry that prioritizes design innovation and quality sustainability.'
       },
       mission: {
         title: 'Our Mission',
-        desc: 'To provide personal service that exceeds expectations, prioritizes comfort, and provides access to the most unique destinations in the world.'
+        desc: 'To provide cost transparency, on-time delivery, and final results that exceed client expectations in every project.'
       }
     },
-    features: {
+    services: {
       badge: 'Core Services',
-      title: 'Uncompromising Comfort at Every Step',
-      subtitle: 'Our services are designed to provide total ease, allowing you to focus entirely on your travel experience.',
-      learnMore: 'Learn more',
+      title: 'Integrated Construction Solutions',
+      subtitle: 'From planning to handover, we handle every stage with high professionalism.',
+      learnMore: 'Service details',
       modules: {
-        luxury_tours: {
-          title: 'Luxury Tour Packages',
-          desc: 'Curated travel packages to iconic world destinations with five-star facilities and exclusive access to hidden gems.',
+        new_build: {
+          title: 'New Build',
+          desc: 'Construction of residential houses, villas, and commercial buildings from scratch with a strict project management system.',
         },
-        private_charter: {
-          title: 'Private Jet & Yacht',
-          desc: 'Private travel by private jet or luxury yacht. Flexibility of time and total privacy for a truly personal journey.',
+        renovation: {
+          title: 'Luxury Renovation',
+          desc: 'Transforming old spaces into elegant modern dwellings with structural and aesthetic upgrades.',
         },
-        concierge: {
-          title: 'Executive Concierge',
-          desc: 'Personal travel assistants ready to handle restaurant reservations, exclusive event tickets, to urgent logistical needs.',
+        design_build: {
+          title: 'Design & Build',
+          desc: 'One-stop service starting from architecture, interior design, to physical construction execution.',
         },
-        visa_logistics: {
-          title: 'Visa & Global Logistics',
-          desc: 'Fast and secure processing of international travel documents, ensuring you are ready to fly without bureaucratic hurdles.',
+        interior: {
+          title: 'Custom Interior',
+          desc: 'Creation of custom furniture and interior arrangement tailored to your character and needs.',
         },
-        stay: {
-          title: 'Exclusive Stays',
-          desc: 'Access to a collection of the world\'s most prestigious properties, from historic castles in Europe to private resorts on remote islands.',
+        consultancy: {
+          title: 'Technical Consultancy',
+          desc: 'Structural audit and accurate cost estimation (RAB) services to ensure budget efficiency.',
         },
-        experience: {
-          title: 'Tailored Experiences',
-          desc: 'Activities specifically designed based on your interests, such as private culinary workshops or history tours with local experts.',
+        maintenance: {
+          title: 'Maintenance',
+          desc: 'Periodic maintenance services to ensure your building remains in top condition at all times.',
         },
       },
     },
     whyUs: {
-      badge: 'Why LuxeVoyage',
-      title: 'The Gold Standard in Travel Industry',
-      subtitle: 'We don\'t just plan journeys; we curate experiences that you will remember for a lifetime.',
+      badge: 'Our Advantages',
+      title: 'Why Choose Arkana?',
+      subtitle: 'Our commitment to quality is the main reason why clients entrust their projects to us.',
       features: [
-        { title: 'Exclusive Access', desc: 'A global network that gives you access to places unreachable by ordinary travelers.' },
-        { title: 'Privacy & Security', desc: 'Strict security protocols and privacy protection for each of our VVIP guests.' },
-        { title: 'Personalized Service', desc: 'Every itinerary is built from scratch according to your unique preferences.' }
+        { title: 'Premium Material', desc: 'We only use certified materials to ensure long-term building durability.' },
+        { title: 'Punctuality', desc: 'Disciplined project management ensures every milestone is reached according to the agreed schedule.' },
+        { title: 'Cost Transparency', desc: 'Clear financial reports and no hidden costs during the construction process.' }
       ]
     },
-    booking: {
-      badge: 'How to Book',
-      title: 'Simple Process for Extraordinary Journeys',
+    workflow: {
+      badge: 'Workflow',
+      title: 'Steps to Your Dream Building',
       steps: [
-        { title: 'Private Consultation', desc: 'Discuss your travel wishes and preferences with our expert consultants.' },
-        { title: 'Curated Planning', desc: 'We compose a detailed itinerary covering all aspects of luxury you desire.' },
-        { title: 'Departure', desc: 'Enjoy your journey with peace of mind while our concierge team handles everything.' }
+        { title: 'Consultation & Survey', desc: 'Initial discussion on concept, budget, and site survey for deep understanding.' },
+        { title: 'Planning & Design', desc: 'Preparation of working drawings, 3D visualization, and detailed cost budget (RAB).' },
+        { title: 'Construction & Handover', desc: 'Construction process with strict supervision until the completion and key handover stage.' }
       ]
     },
     cta: {
-      title: 'Ready to Write a New Story?',
-      subtitle: 'Join a community of elite travelers and feel the difference of truly high-end service.',
-      button: 'Start Free Consultation',
-      noCredit: 'Initial consultation with no obligation. Your privacy is our priority.'
+      title: 'Start Your Dream Project?',
+      subtitle: 'Schedule a meeting with our expert team to discuss your vision without initial commitment.',
+      button: 'Contact Arkana Now',
+      noCredit: 'Free consultation available via WhatsApp or face-to-face meeting.'
     },
     footer: {
-      tagline: 'Realizing a new standard of luxury in the global travel industry. Every journey is a work of art.',
+      tagline: 'Building the future with integrity and artistic excellence. Arkana Konstruksi - Strukturia Premium Build.',
       product: 'Services',
       company: 'Company',
       resources: 'Information',
       rights: 'All rights reserved.',
       links: {
-        features: 'Luxury Tours',
-        pricing: 'Jet & Yacht',
-        solutions: 'Destinations',
+        features: 'New Build',
+        pricing: 'Renovation',
+        solutions: 'Portfolio',
         about: 'About Us',
         careers: 'Careers',
         contact: 'Contact',
@@ -238,17 +254,33 @@ export const translations = {
         privacy: 'Privacy Policy'
       }
     },
+    clientMap: {
+      badge: 'Client Reach',
+      title: 'Trust Across Regions',
+      subtitle: 'Arkana Konstruksi has served various premium clients in major Indonesian cities with consistent quality standards.',
+      regions: {
+        jabodetabek: 'Jabodetabek',
+        bandung: 'Bandung',
+        surabaya: 'Surabaya',
+        bali: 'Bali',
+        medan: 'Medan'
+      },
+      stats: {
+        projects: 'Active Projects',
+        locations: 'Regional Points'
+      }
+    },
     chat: {
       id: false,
-      welcome: 'Good afternoon! 👋 I am LuxeVoyage\'s personal assistant. Is there a dream destination you want to realize today?',
-      typing: 'Processing...',
+      welcome: 'Hello! 👋 I am Arkana\'s assistant. Planning to build or renovate? I am ready to help with your estimation.',
+      typing: 'Calculating...',
       options: {
-        demo: '📅 Schedule Consultation',
-        pricing: '✈️ Tour Packages',
-        support: '🗺️ Destination Recommendations',
+        demo: '📅 Schedule Site Survey',
+        pricing: '💰 Ask for Cost Estimate',
+        support: '🏗️ View Portfolio Examples',
       },
       placeholder: 'Type your message...',
-      wa: 'Contact via WhatsApp',
+      wa: 'WhatsApp Arkana',
     }
   }
 };

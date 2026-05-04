@@ -2,11 +2,13 @@ import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import HeroSection from '@/components/Home/HeroSection';
 import AboutSection from '@/components/Home/AboutSection';
-import FeaturesSection from '@/components/Home/FeaturesSection';
-import ExperienceSection from '@/components/Home/ExperienceSection';
+import ServicesSection from '@/components/Home/ServicesSection';
 import WhyUsSection from '@/components/Home/WhyUsSection';
+import ClientProjectMap from '@/components/Map';
+import PortfolioSection from '@/components/Home/PortfolioSection';
+import WorkflowSection from '@/components/Home/WorkflowSection';
 import TestimonialsSection from '@/components/Home/TestimonialsSection';
-import BookingFlowSection from '@/components/Home/BookingFlowSection';
+import CommitmentSection from '@/components/Home/CommitmentSection';
 import CTASection from '@/components/Home/CTASection';
 
 export default function Home() {
@@ -16,14 +18,17 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
-        <FeaturesSection />
-        <ExperienceSection />
+        <ServicesSection />
         <WhyUsSection />
+        <ClientProjectMap />
+        <PortfolioSection />
+        <WorkflowSection />
         <TestimonialsSection />
-        <BookingFlowSection />
+        <CommitmentSection />
         <CTASection />
       </main>
       <Footer />
     </>
   );
 }
+// Force refresh

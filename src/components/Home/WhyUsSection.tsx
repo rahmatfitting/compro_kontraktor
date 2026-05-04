@@ -3,55 +3,56 @@
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function WhyUsSection() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const benefits = [
     {
       number: '01',
       title: t.whyUs.features[0].title,
       description: t.whyUs.features[0].desc,
-      highlights: ['Global Network', 'Private Access', 'VIP Entrance'],
+      highlights: ['SNI Certified', 'Premium Brands', 'Durability Focus'],
     },
     {
       number: '02',
       title: t.whyUs.features[1].title,
       description: t.whyUs.features[1].desc,
-      highlights: ['SOC 2 Security', 'Data Privacy', 'Discreet Service'],
+      highlights: ['Strict Timeline', 'Weekly Reports', 'On-Time Handover'],
     },
     {
       number: '03',
       title: t.whyUs.features[2].title,
       description: t.whyUs.features[2].desc,
-      highlights: ['Custom Itinerary', '24/7 Support', 'Tailored Detail'],
+      highlights: ['Detailed RAB', 'No Hidden Fees', 'Fixed Price Contract'],
     },
   ];
 
   return (
     <section id="why-us" style={{
-      padding: '120px 0',
+      padding: 'var(--section-padding) 0',
       position: 'relative',
-      background: 'linear-gradient(180deg, var(--bg-primary) 0%, white 50%, var(--bg-primary) 100%)',
+      background: 'white',
     }}>
-      <div style={{
-        maxWidth: '1280px',
-        margin: '0 auto',
-        padding: '0 24px',
-      }}>
+      <div className="container">
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <div className="section-label">
-            ◈ {t.whyUs.badge}
+        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <div style={{ width: '40px', height: '1px', background: 'var(--accent-gold)' }} />
+            <span style={{ 
+              fontSize: '0.85rem', 
+              fontWeight: 700, 
+              textTransform: 'uppercase', 
+              color: 'var(--accent-gold)',
+              letterSpacing: '2px'
+            }}>
+              {t.whyUs.badge}
+            </span>
+            <div style={{ width: '40px', height: '1px', background: 'var(--accent-gold)' }} />
           </div>
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(2rem, 4vw, 3rem)',
-            fontWeight: 700,
-            lineHeight: 1.2,
-            marginBottom: '16px',
-            background: 'linear-gradient(135deg, var(--text-primary), #996515)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
+          <h2 className="section-title" style={{ 
+            color: 'var(--text-primary)', 
+            background: 'none', 
+            WebkitTextFillColor: 'initial',
+            fontSize: 'clamp(2rem, 4vw, 3rem)'
           }}>
             {t.whyUs.title}
           </h2>
@@ -70,8 +71,8 @@ export default function WhyUsSection() {
         <div style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '24px',
-          maxWidth: '900px',
+          gap: '30px',
+          maxWidth: '1000px',
           margin: '0 auto',
         }}>
           {benefits.map((benefit, i) => (
@@ -79,72 +80,81 @@ export default function WhyUsSection() {
               key={benefit.number}
               style={{
                 display: 'flex',
-                gap: '32px',
-                padding: '40px',
-                borderRadius: '20px',
-                background: 'white',
+                gap: '40px',
+                padding: '50px',
+                background: 'var(--bg-secondary)',
                 border: '1px solid var(--border-subtle)',
-                backdropFilter: 'blur(12px)',
-                transition: 'all 0.3s ease',
-                alignItems: 'flex-start',
-                animation: `fadeInUp 0.6s ease ${i * 0.15}s both`,
-                boxShadow: '0 4px 15px rgba(0,0,0,0.03)',
+                transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+                alignItems: 'center',
+                position: 'relative',
+                overflow: 'hidden'
               }}
               className="benefit-card"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.2)';
-                e.currentTarget.style.transform = 'translateX(8px)';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(212, 175, 55, 0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'var(--border-subtle)';
-                e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.03)';
-              }}
             >
-              {/* Number */}
+              {/* Number Background */}
               <div style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '2rem',
-                fontWeight: 800,
-                background: 'linear-gradient(135deg, #d4af37, #996515)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                minWidth: '60px',
-                lineHeight: 1,
+                position: 'absolute',
+                top: '-20px',
+                right: '-20px',
+                fontSize: '10rem',
+                fontWeight: 900,
+                color: 'var(--accent-gold)',
+                opacity: 0.03,
+                fontFamily: 'var(--font-display)',
+                lineHeight: 1
               }}>
                 {benefit.number}
               </div>
 
-              <div style={{ flex: 1 }}>
+              {/* Number indicator */}
+              <div style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.2rem',
+                fontWeight: 800,
+                color: 'var(--accent-gold)',
+                width: '60px',
+                height: '60px',
+                border: '1px solid var(--accent-gold)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                {benefit.number}
+              </div>
+
+              <div style={{ flex: 1, position: 'relative', zIndex: 1 }}>
                 <h3 style={{
-                  fontFamily: 'Space Grotesk, sans-serif',
-                  fontSize: '1.3rem',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.6rem',
                   fontWeight: 700,
                   color: 'var(--text-primary)',
-                  marginBottom: '12px',
+                  marginBottom: '16px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1px'
                 }}>
                   {benefit.title}
                 </h3>
                 <p style={{
-                  fontSize: '0.95rem',
+                  fontSize: '1.05rem',
                   color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
-                  marginBottom: '16px',
+                  lineHeight: 1.8,
+                  marginBottom: '24px',
+                  maxWidth: '700px'
                 }}>
                   {benefit.description}
                 </p>
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   {benefit.highlights.map((h) => (
                     <span key={h} style={{
-                      padding: '4px 12px',
-                      borderRadius: '6px',
-                      background: 'rgba(212, 175, 55, 0.08)',
-                      border: '1px solid rgba(212, 175, 55, 0.1)',
+                      padding: '6px 16px',
+                      background: 'white',
+                      border: '1px solid var(--border-subtle)',
                       fontSize: '0.75rem',
-                      fontWeight: 600,
-                      color: '#996515',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '1px'
                     }}>
                       {h}
                     </span>
@@ -157,18 +167,22 @@ export default function WhyUsSection() {
       </div>
 
       <style jsx global>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
+        .benefit-card:hover {
+          background: white !important;
+          border-color: var(--accent-gold) !important;
+          transform: scale(1.02);
+          box-shadow: 0 40px 80px rgba(0,0,0,0.06);
         }
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .benefit-card {
             flex-direction: column !important;
-            gap: 16px !important;
-            padding: 28px !important;
+            align-items: flex-start !important;
+            padding: 40px !important;
+            gap: 24px !important;
           }
         }
       `}</style>
     </section>
   );
 }
+

@@ -10,118 +10,112 @@ export default function Footer() {
   const footerLinks = {
     services: [
       { label: t.footer.links.features, href: '/#services' },
-      { label: t.footer.links.pricing, href: '/#services' },
-      { label: t.footer.links.solutions, href: '/#destinations' },
-      { label: 'Executive Concierge', href: '/#services' },
+      { label: t.services.modules.new_build.title, href: '/#services' },
+      { label: t.services.modules.renovation.title, href: '/#services' },
+      { label: t.services.modules.design_build.title, href: '/#services' },
     ],
     company: [
       { label: t.footer.links.about, href: '/#about' },
-      { label: t.footer.links.careers, href: '/' },
-      { label: t.footer.links.contact, href: '/contact' },
+      { label: t.navbar.portfolio, href: '/#portfolio' },
+      { label: t.footer.links.contact, href: '/#contact' },
     ],
     information: [
-      { label: t.footer.links.docs, href: '/' },
-      { label: t.footer.links.help, href: '/' },
       { label: t.footer.links.privacy, href: '/' },
+      { label: 'Terms of Service', href: '/' },
+      { label: 'Cookie Policy', href: '/' },
     ],
   };
 
   return (
     <footer style={{
-      background: 'linear-gradient(180deg, var(--bg-primary) 0%, white 100%)',
-      borderTop: '1px solid var(--border-subtle)',
+      background: 'var(--bg-dark)',
+      borderTop: '1px solid rgba(255,255,255,0.05)',
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Glow effects */}
-      <div style={{
-        position: 'absolute',
-        bottom: '-200px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '600px',
-        height: '400px',
-        background: 'radial-gradient(ellipse, rgba(212, 175, 55, 0.08) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-
-      <div className="container" style={{ padding: '80px 24px 40px' }}>
+      <div className="container" style={{ padding: '100px 24px 60px' }}>
         {/* Top Section */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: '2fr 1fr 1fr 1fr',
-          gap: '48px',
-          marginBottom: '60px',
+          gap: '60px',
+          marginBottom: '80px',
         }}
         className="footer-grid"
         >
           {/* Brand */}
           <div>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
               <div style={{
                 width: '40px',
                 height: '40px',
-                borderRadius: '12px',
-                background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
+                border: '2px solid var(--accent-gold)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '1.4rem',
                 color: 'white',
-                fontWeight: 800,
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontWeight: 900,
+                fontFamily: 'var(--font-display)',
               }}>
-                L
+                A
               </div>
-              <span style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '1.4rem',
-                fontWeight: 700,
-                background: 'linear-gradient(135deg, var(--text-primary), #996515)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}>
-                LuxeVoyage
-              </span>
+              <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+                <span style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.4rem',
+                  fontWeight: 800,
+                  color: 'white',
+                  letterSpacing: '1px',
+                  textTransform: 'uppercase'
+                }}>
+                  Arkana
+                </span>
+                <span style={{
+                  fontFamily: 'var(--font-primary)',
+                  fontSize: '0.7rem',
+                  fontWeight: 700,
+                  color: 'var(--accent-gold)',
+                  letterSpacing: '2px',
+                  textTransform: 'uppercase'
+                }}>
+                  Konstruksi
+                </span>
+              </div>
             </Link>
             <p style={{
-              color: 'var(--text-secondary)',
-              fontSize: '0.95rem',
+              color: 'rgba(255,255,255,0.5)',
+              fontSize: '1rem',
               lineHeight: 1.8,
-              maxWidth: '320px',
-              marginBottom: '24px',
+              maxWidth: '350px',
+              marginBottom: '32px',
             }}>
               {t.footer.tagline}
             </p>
             {/* Social Icons */}
-            <div style={{ display: 'flex', gap: '12px' }}>
-              {['Instagram', 'Twitter', 'LinkedIn', 'YouTube'].map((social) => (
+            <div style={{ display: 'flex', gap: '16px' }}>
+              {['Instagram', 'LinkedIn', 'YouTube'].map((social) => (
                 <a key={social} href="#" style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '10px',
-                  background: 'white',
-                  border: '1px solid var(--border-default)',
+                  width: '44px',
+                  height: '44px',
+                  border: '1px solid rgba(255,255,255,0.1)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '0.75rem',
-                  color: 'var(--text-muted)',
-                  transition: 'all 0.2s ease',
-                  fontWeight: 600,
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                  fontSize: '0.8rem',
+                  color: 'white',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 700,
+                  textTransform: 'uppercase'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(212, 175, 55, 0.1)';
-                  e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
-                  e.currentTarget.style.color = '#996515';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.borderColor = 'var(--accent-gold)';
+                  e.currentTarget.style.color = 'var(--accent-gold)';
+                  e.currentTarget.style.transform = 'translateY(-3px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'white';
-                  e.currentTarget.style.borderColor = 'var(--border-default)';
-                  e.currentTarget.style.color = 'var(--text-muted)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                  e.currentTarget.style.color = 'white';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
                 aria-label={social}
@@ -135,23 +129,24 @@ export default function Footer() {
           {/* Service Links */}
           <div>
             <h4 style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '0.85rem',
-              fontWeight: 600,
+              fontWeight: 800,
               textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-primary)',
-              marginBottom: '20px',
+              letterSpacing: '2px',
+              color: 'var(--accent-gold)',
+              marginBottom: '32px',
             }}>{t.footer.product}</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {footerLinks.services.map((link) => (
                 <Link key={link.label} href={link.href} style={{
-                  color: 'var(--text-muted)',
-                  fontSize: '0.9rem',
-                  transition: 'color 0.2s ease',
+                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: '0.95rem',
+                  transition: 'all 0.3s ease',
+                  textDecoration: 'none'
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#d4af37'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'white'; e.currentTarget.style.paddingLeft = '5px'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.paddingLeft = '0'; }}
                 >
                   {link.label}
                 </Link>
@@ -162,23 +157,23 @@ export default function Footer() {
           {/* Company Links */}
           <div>
             <h4 style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '0.85rem',
-              fontWeight: 600,
+              fontWeight: 800,
               textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-primary)',
-              marginBottom: '20px',
+              letterSpacing: '2px',
+              color: 'var(--accent-gold)',
+              marginBottom: '32px',
             }}>{t.footer.company}</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {footerLinks.company.map((link) => (
                 <Link key={link.label} href={link.href} style={{
-                  color: 'var(--text-muted)',
-                  fontSize: '0.9rem',
-                  transition: 'color 0.2s ease',
+                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: '0.95rem',
+                  transition: 'all 0.3s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#d4af37'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'white'; e.currentTarget.style.paddingLeft = '5px'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.paddingLeft = '0'; }}
                 >
                   {link.label}
                 </Link>
@@ -189,23 +184,23 @@ export default function Footer() {
           {/* Information Links */}
           <div>
             <h4 style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'var(--font-display)',
               fontSize: '0.85rem',
-              fontWeight: 600,
+              fontWeight: 800,
               textTransform: 'uppercase',
-              letterSpacing: '1.5px',
-              color: 'var(--text-primary)',
-              marginBottom: '20px',
+              letterSpacing: '2px',
+              color: 'var(--accent-gold)',
+              marginBottom: '32px',
             }}>{t.footer.resources}</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {footerLinks.information.map((link) => (
                 <Link key={link.label} href={link.href} style={{
-                  color: 'var(--text-muted)',
-                  fontSize: '0.9rem',
-                  transition: 'color 0.2s ease',
+                  color: 'rgba(255,255,255,0.6)',
+                  fontSize: '0.95rem',
+                  transition: 'all 0.3s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#d4af37'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'white'; e.currentTarget.style.paddingLeft = '5px'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.paddingLeft = '0'; }}
                 >
                   {link.label}
                 </Link>
@@ -214,45 +209,46 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
-        <div style={{
-          height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent)',
-          marginBottom: '32px',
-        }} />
-
         {/* Bottom */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           flexWrap: 'wrap',
-          gap: '16px',
+          gap: '24px',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          paddingTop: '40px'
         }}>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-            © {currentYear} LuxeVoyage. {t.footer.rights}
+          <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem', letterSpacing: '1px' }}>
+            © {currentYear} ARKANA KONSTRUKSI. {t.footer.rights}
           </p>
-          <div style={{ display: 'flex', gap: '24px' }}>
-            <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{t.footer.links.privacy}</a>
-            <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Terms of Service</a>
-            <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Cookie Policy</a>
+          <div style={{ display: 'flex', gap: '32px' }}>
+            {['Privacy', 'Terms', 'Sitemap'].map(item => (
+              <a key={item} href="#" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem', textDecoration: 'none', transition: 'color 0.3s ease' }}
+                 onMouseEnter={(e) => e.currentTarget.style.color = 'white'}
+                 onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
       <style jsx global>{`
-        @media (max-width: 768px) {
-          .footer-grid {
-            grid-template-columns: 1fr !important;
-            gap: 32px !important;
-          }
-        }
-        @media (min-width: 769px) and (max-width: 1024px) {
+        @media (max-width: 992px) {
           .footer-grid {
             grid-template-columns: 1fr 1fr !important;
+            gap: 48px !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .footer-grid {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>
     </footer>
   );
 }
+

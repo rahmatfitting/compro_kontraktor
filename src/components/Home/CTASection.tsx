@@ -4,133 +4,113 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function CTASection() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
-    <section style={{
-      padding: '120px 0',
+    <section id="contact" style={{
+      padding: 'var(--section-padding) 0',
       position: 'relative',
       overflow: 'hidden',
+      background: 'var(--bg-dark)'
     }}>
-      <div style={{
-        maxWidth: '1280px',
-        margin: '0 auto',
-        padding: '0 24px',
-      }}>
+      <div className="container">
         <div style={{
           position: 'relative',
-          padding: '80px 60px',
-          borderRadius: '28px',
-          background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05))',
-          border: '1px solid var(--border-accent)',
+          padding: '100px 60px',
+          background: 'rgba(255,255,255,0.02)',
+          border: '1px solid rgba(212, 175, 55, 0.2)',
           textAlign: 'center',
           overflow: 'hidden',
-          boxShadow: '0 20px 50px rgba(0,0,0,0.05)',
         }}>
-          {/* Background patterns */}
-          <div style={{
-            position: 'absolute',
-            top: '-100px',
-            right: '-100px',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }} />
-          <div style={{
-            position: 'absolute',
-            bottom: '-100px',
-            left: '-100px',
-            width: '300px',
-            height: '300px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(241, 196, 15, 0.1) 0%, transparent 70%)',
-            pointerEvents: 'none',
-          }} />
-
-          {/* Grid overlay */}
+          {/* Background pattern */}
           <div style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: `
-              linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
-            `,
-            backgroundSize: '40px 40px',
+            backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 70%)',
             pointerEvents: 'none',
-            borderRadius: '28px',
           }} />
 
           <div style={{ position: 'relative', zIndex: 2 }}>
-            <h2 style={{
-              fontFamily: 'Space Grotesk, sans-serif',
-              fontSize: 'clamp(2rem, 4vw, 2.8rem)',
-              fontWeight: 800,
-              lineHeight: 1.2,
-              marginBottom: '16px',
-              color: 'var(--text-primary)',
-            }}>
-              {t.cta.title.split('Cerita Baru')[0]}
-              <span style={{
-                background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
+              <div style={{ width: '40px', height: '1px', background: 'var(--accent-gold)' }} />
+              <span style={{ 
+                fontSize: '0.85rem', 
+                fontWeight: 700, 
+                textTransform: 'uppercase', 
+                color: 'var(--accent-gold)',
+                letterSpacing: '3px'
               }}>
-                {language === 'id' ? 'Cerita Baru?' : 'New Story?'}
+                Ready to Build?
               </span>
+              <div style={{ width: '40px', height: '1px', background: 'var(--accent-gold)' }} />
+            </div>
+
+            <h2 style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontWeight: 700,
+              lineHeight: 1.1,
+              marginBottom: '24px',
+              color: 'white',
+              textTransform: 'uppercase'
+            }}>
+              {t.cta.title}
             </h2>
+            
             <p style={{
-              fontSize: '1.1rem',
-              color: 'var(--text-secondary)',
-              maxWidth: '520px',
-              margin: '0 auto 36px',
+              fontSize: '1.2rem',
+              color: 'rgba(255,255,255,0.6)',
+              maxWidth: '600px',
+              margin: '0 auto 48px',
               lineHeight: 1.8,
             }}>
               {t.cta.subtitle}
             </p>
 
-            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/contact" style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
-                padding: '16px 40px',
-                borderRadius: '14px',
-                background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
-                color: 'white',
-                fontWeight: 600,
+                gap: '12px',
+                padding: '20px 50px',
+                background: 'var(--accent-gold)',
+                color: 'var(--bg-dark)',
+                fontWeight: 800,
                 fontSize: '1rem',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 20px rgba(212, 175, 55, 0.3)',
+                textTransform: 'uppercase',
+                letterSpacing: '1px',
+                transition: 'all 0.4s ease',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 8px 30px rgba(212, 175, 55, 0.5)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(212, 175, 55, 0.3)';
-              }}
+              className="cta-btn-primary"
               >
                 {t.cta.button}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
               </Link>
             </div>
 
             <p style={{
-              fontSize: '0.8rem',
-              color: 'var(--text-muted)',
-              marginTop: '24px',
+              fontSize: '0.85rem',
+              color: 'rgba(255,255,255,0.4)',
+              marginTop: '32px',
+              letterSpacing: '0.5px'
             }}>
               {t.cta.noCredit}
             </p>
           </div>
         </div>
       </div>
+
+      <style jsx global>{`
+        .cta-btn-primary:hover {
+          transform: translateY(-5px);
+          background: white;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+      `}</style>
     </section>
   );
 }
+

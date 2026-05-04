@@ -5,9 +5,10 @@ import ContactHero from '@/components/Contact/ContactHero';
 import ContactForm from '@/components/Contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - LuxeVoyage | Plan Your Luxury Escape',
-  description: 'Get in touch with LuxeVoyage. Start planning your bespoke luxury travel experience. Our specialists are ready to curate your perfect journey.',
+  title: 'Hubungi Arkana Konstruksi - Konsultasi Proyek & Estimasi Biaya',
+  description: 'Hubungi tim ahli Arkana Konstruksi untuk konsultasi proyek pembangunan, renovasi, dan desain arsitektur. Kami siap membantu mewujudkan visi bangunan Anda.',
 };
+
 
 export default function ContactPage() {
   return (

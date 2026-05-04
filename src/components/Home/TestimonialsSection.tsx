@@ -1,77 +1,59 @@
 'use client';
 
-import { useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const testimonials = [
   {
-    quote: "LuxeVoyage benar-benar mengerti arti kemewahan yang sesungguhnya. Itinerary di Maladewa yang mereka susun sangat personal, mulai dari villa terapung hingga makan malam privat di pulau tak berpenghuni. Pengalaman yang tak akan terlupakan bagi keluarga kami.",
-    author: 'Adi Pratama',
-    role: 'CEO',
-    company: 'Capital Group',
-    avatar: 'AP',
-    color: '#d4af37',
+    quote: "Membangun rumah impian dengan Arkana adalah keputusan terbaik. Transparansi biaya sejak awal sangat membantu kami dalam mengelola budget. Hasil akhirnya sangat detail dan presisi, persis seperti visualisasi 3D yang dipresentasikan di awal.",
+    author: 'Budi Setiawan',
+    role: 'Pemilik Hunian',
+    location: 'Kemang, Jakarta',
+    avatar: 'BS',
   },
   {
-    quote: "Sebagai profesional dengan jadwal padat, saya menghargai efisiensi dan privasi. Layanan jet pribadi dan concierge 24/7 dari LuxeVoyage memastikan perjalanan bisnis saya ke Eropa berjalan mulus tanpa hambatan sedikit pun.",
-    author: 'Elena Wijaya',
-    role: 'Managing Director',
-    company: 'Global Ventures',
-    avatar: 'EW',
-    color: '#f1c40f',
+    quote: "Ketepatan waktu adalah segalanya bagi saya sebagai investor. Arkana berhasil menyelesaikan pembangunan ruko premium saya dua minggu lebih cepat dari jadwal tanpa mengompromikan kualitas material sedikit pun. Sangat profesional.",
+    author: 'Siska Amelia',
+    role: 'Property Investor',
+    location: 'Surabaya',
+    avatar: 'SA',
   },
   {
-    quote: "Menjelajahi pegunungan Alpen dengan panduan ahli lokal dan akses eksklusif ke chalet mewah adalah mimpi yang menjadi kenyataan. Detail kecil yang diperhatikan tim LuxeVoyage membuat perbedaan besar dalam kualitas perjalanan kami.",
-    author: 'Robert Santoso',
-    role: 'Entrepreneur',
-    company: 'Santoso Holdings',
-    avatar: 'RS',
-    color: '#996515',
+    quote: "Renovasi kantor startup kami menjadi ruang kerja modern yang inspiratif dilakukan dengan sangat rapi oleh tim Arkana. Mereka sangat akomodatif terhadap perubahan desain di tengah jalan dan komunikasi tim lapangannya sangat baik.",
+    author: 'David Kurnia',
+    role: 'CEO & Founder',
+    location: 'BSD City',
+    avatar: 'DK',
   },
 ];
 
 export default function TestimonialsSection() {
-  const [activeIdx, setActiveIdx] = useState(0);
+  const { t } = useLanguage();
 
   return (
-    <section id="testimonials" style={{
-      padding: '120px 0',
-      position: 'relative',
-    }}>
-      <div style={{
-        maxWidth: '1280px',
-        margin: '0 auto',
-        padding: '0 24px',
-      }}>
+    <section id="testimonials" className="section" style={{ background: 'var(--bg-primary)' }}>
+      <div className="container">
         {/* Header */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 16px',
-            borderRadius: '100px',
-            background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(241, 196, 15, 0.15))',
-            border: '1px solid rgba(212, 175, 55, 0.3)',
-            fontSize: '0.8rem',
-            fontWeight: 600,
-            color: '#d4af37',
-            textTransform: 'uppercase',
-            letterSpacing: '1.5px',
-            marginBottom: '20px',
-          }}>
-            ★ Client Stories
+        <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <div style={{ width: '40px', height: '1px', background: 'var(--accent-gold)' }} />
+            <span style={{ 
+              fontSize: '0.85rem', 
+              fontWeight: 700, 
+              textTransform: 'uppercase', 
+              color: 'var(--accent-gold)',
+              letterSpacing: '2px'
+            }}>
+              Testimonials
+            </span>
+            <div style={{ width: '40px', height: '1px', background: 'var(--accent-gold)' }} />
           </div>
-          <h2 style={{
-            fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(2rem, 4vw, 3rem)',
-            fontWeight: 700,
-            lineHeight: 1.2,
-            background: 'linear-gradient(135deg, var(--text-primary), #d4af37)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
+          <h2 className="section-title" style={{ 
+            color: 'var(--text-primary)', 
+            background: 'none', 
+            WebkitTextFillColor: 'initial',
+            fontSize: 'clamp(2rem, 4vw, 3rem)'
           }}>
-            Dipercaya oleh Traveler Terpilih
+            Apa Kata Klien Kami
           </h2>
         </div>
 
@@ -79,7 +61,7 @@ export default function TestimonialsSection() {
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '24px',
+          gap: '30px',
         }}
         className="testimonials-grid"
         >
@@ -87,66 +69,59 @@ export default function TestimonialsSection() {
             <div
               key={t.author}
               style={{
-                padding: '36px',
-                borderRadius: '20px',
-                background: activeIdx === i
-                  ? 'white'
-                  : 'var(--bg-tertiary)',
-                border: `1px solid ${activeIdx === i ? 'rgba(212, 175, 55, 0.4)' : 'var(--border-subtle)'}`,
-                backdropFilter: 'blur(12px)',
-                transition: 'all 0.3s ease',
-                cursor: 'pointer',
-                position: 'relative',
-                boxShadow: activeIdx === i ? '0 10px 30px rgba(212, 175, 55, 0.12)' : '0 4px 12px rgba(0,0,0,0.03)',
+                padding: '50px 40px',
+                background: 'white',
+                border: '1px solid var(--border-subtle)',
+                transition: 'all 0.4s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative'
               }}
-              onMouseEnter={() => setActiveIdx(i)}
+              className="testimonial-card"
             >
-              {/* Quote mark */}
-              <div style={{
-                fontSize: '3rem',
-                lineHeight: 1,
-                fontFamily: 'Georgia, serif',
-                background: `linear-gradient(135deg, ${t.color}, transparent)`,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                marginBottom: '16px',
-                opacity: 0.5,
-              }}>
-                &ldquo;
+              {/* Stars */}
+              <div style={{ display: 'flex', gap: '4px', marginBottom: '30px' }}>
+                {[1,2,3,4,5].map(star => (
+                  <svg key={star} width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-gold)">
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                  </svg>
+                ))}
               </div>
 
               <p style={{
-                fontSize: '0.95rem',
+                fontSize: '1.05rem',
                 color: 'var(--text-secondary)',
                 lineHeight: 1.8,
-                marginBottom: '28px',
-                fontStyle: 'italic',
+                marginBottom: '40px',
+                flex: 1,
+                fontStyle: 'italic'
               }}>
-                {t.quote}
+                "{t.quote}"
               </p>
 
               {/* Author */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', borderTop: '1px solid var(--border-subtle)', paddingTop: '30px' }}>
                 <div style={{
-                  width: '44px',
-                  height: '44px',
-                  borderRadius: '12px',
-                  background: `linear-gradient(135deg, ${t.color}, ${t.color}88)`,
+                  width: '50px',
+                  height: '50px',
+                  background: 'var(--bg-dark)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '0.85rem',
+                  fontSize: '0.9rem',
                   fontWeight: 700,
-                  color: 'white',
+                  color: 'var(--accent-gold)',
+                  fontFamily: 'var(--font-display)'
                 }}>
                   {t.avatar}
                 </div>
                 <div>
                   <p style={{
-                    fontSize: '0.9rem',
-                    fontWeight: 600,
+                    fontSize: '1rem',
+                    fontWeight: 700,
                     color: 'var(--text-primary)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px'
                   }}>
                     {t.author}
                   </p>
@@ -154,22 +129,9 @@ export default function TestimonialsSection() {
                     fontSize: '0.8rem',
                     color: 'var(--text-muted)',
                   }}>
-                    {t.role}, {t.company}
+                    {t.role} — {t.location}
                   </p>
                 </div>
-              </div>
-
-              {/* Stars */}
-              <div style={{
-                position: 'absolute',
-                top: '36px',
-                right: '36px',
-                display: 'flex',
-                gap: '2px',
-              }}>
-                {[1,2,3,4,5].map((star) => (
-                  <span key={star} style={{ color: '#f59e0b', fontSize: '0.8rem' }}>★</span>
-                ))}
               </div>
             </div>
           ))}
@@ -177,14 +139,18 @@ export default function TestimonialsSection() {
       </div>
 
       <style jsx global>{`
+        .testimonial-card:hover {
+          border-color: var(--accent-gold);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+          transform: translateY(-10px);
+        }
         @media (max-width: 1024px) {
           .testimonials-grid {
             grid-template-columns: 1fr !important;
-            max-width: 600px !important;
-            margin: 0 auto !important;
           }
         }
       `}</style>
     </section>
   );
 }
+

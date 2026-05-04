@@ -1,132 +1,146 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
-import Image from 'next/image';
 
 export default function AboutSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="section" style={{ overflow: 'hidden' }}>
+    <section id="about" className="section" style={{ background: 'var(--bg-primary)', overflow: 'hidden' }}>
       <div className="container">
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.2fr)',
           gap: '80px',
           alignItems: 'center'
-        }} className="grid-2">
+        }} className="about-grid">
           
           {/* Left Side: Image Content */}
           <div style={{ position: 'relative' }}>
             <div style={{
               position: 'relative',
-              borderRadius: '32px',
+              borderRadius: 'var(--radius-none)',
               overflow: 'hidden',
-              boxShadow: '0 20px 50px rgba(0,0,0,0.08)',
+              boxShadow: 'var(--shadow-premium)',
               border: '1px solid var(--border-subtle)'
             }}>
               <img 
-                src="/exp_swiss_alps.png" 
-                alt="Luxury Travel Experience" 
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                src="/images/about.png" 
+                alt="Arkana Konstruksi Team" 
+                style={{ width: '100%', height: '600px', objectFit: 'cover', display: 'block' }}
               />
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to top, rgba(255,255,255,0.9), transparent 50%)'
+                background: 'linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent 50%)'
               }} />
               <div style={{
                 position: 'absolute',
-                bottom: '30px',
-                left: '30px',
-                right: '30px'
+                bottom: '40px',
+                left: '40px',
               }}>
                 <p style={{ 
-                  color: '#996515', 
+                  color: 'var(--accent-gold)', 
                   fontSize: '0.9rem', 
                   fontWeight: 700, 
                   textTransform: 'uppercase', 
-                  letterSpacing: '2px',
-                  marginBottom: '8px'
+                  letterSpacing: '3px',
+                  marginBottom: '12px'
                 }}>
-                  Established 2015
+                  Since 2012
                 </p>
-                <h3 style={{ color: 'var(--text-primary)', fontSize: '1.5rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif' }}>
-                  A Decade of Excellence
+                <h3 style={{ color: 'white', fontSize: '1.8rem', fontWeight: 700, fontFamily: 'var(--font-display)' }}>
+                  A Legacy of Precision
                 </h3>
               </div>
             </div>
             
-            {/* Floating Decorative Element */}
+            {/* Geometric Accent */}
             <div style={{
               position: 'absolute',
-              top: '-30px',
-              right: '-30px',
-              width: '120px',
-              height: '120px',
-              background: 'linear-gradient(135deg, #d4af37, #996515)',
-              borderRadius: '24px',
+              bottom: '-40px',
+              right: '-40px',
+              width: '240px',
+              height: '240px',
+              border: '10px solid var(--accent-gold)',
               zIndex: -1,
-              opacity: 0.2,
-              animation: 'spin-slow 20s linear infinite'
+              opacity: 0.1,
             }} />
           </div>
 
           {/* Right Side: Text Content */}
           <div>
-            <span className="section-label">
-              {t.about.badge}
-            </span>
-            <h2 className="section-title" style={{ marginBottom: '32px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+              <div style={{ width: '40px', height: '2px', background: 'var(--accent-gold)' }} />
+              <span style={{ 
+                fontSize: '0.85rem', 
+                fontWeight: 700, 
+                textTransform: 'uppercase', 
+                color: 'var(--accent-gold)',
+                letterSpacing: '2px'
+              }}>
+                {t.about.badge}
+              </span>
+            </div>
+            
+            <h2 className="section-title" style={{ 
+              marginBottom: '32px', 
+              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+              background: 'none',
+              WebkitTextFillColor: 'initial',
+              color: 'var(--text-primary)'
+            }}>
               {t.about.title}
             </h2>
+            
             <p style={{ 
-              fontSize: '1.2rem', 
+              fontSize: '1.25rem', 
               color: 'var(--text-primary)', 
-              fontWeight: 500, 
-              lineHeight: 1.6, 
-              marginBottom: '24px' 
+              fontWeight: 600, 
+              lineHeight: 1.5, 
+              marginBottom: '32px',
+              fontFamily: 'var(--font-display)'
             }}>
               {t.about.subtitle}
             </p>
+            
             <p style={{ 
               fontSize: '1rem', 
               color: 'var(--text-secondary)', 
               lineHeight: 1.8, 
-              marginBottom: '40px',
-              fontStyle: 'italic',
-              borderLeft: '3px solid #d4af37',
-              paddingLeft: '24px'
+              marginBottom: '48px',
             }}>
-              "{t.about.storytelling}"
+              {t.about.storytelling}
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-              <div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '24px' }}>
                 <h4 style={{ 
-                  fontFamily: 'Space Grotesk, sans-serif', 
+                  fontFamily: 'var(--font-display)', 
                   fontSize: '1.1rem', 
                   fontWeight: 700, 
-                  color: '#d4af37', 
-                  marginBottom: '12px' 
+                  color: 'var(--text-primary)', 
+                  marginBottom: '16px',
+                  textTransform: 'uppercase'
                 }}>
                   {t.about.vision.title}
                 </h4>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   {t.about.vision.desc}
                 </p>
               </div>
-              <div>
+              <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '24px' }}>
                 <h4 style={{ 
-                  fontFamily: 'Space Grotesk, sans-serif', 
+                  fontFamily: 'var(--font-display)', 
                   fontSize: '1.1rem', 
                   fontWeight: 700, 
-                  color: '#d4af37', 
-                  marginBottom: '12px' 
+                  color: 'var(--text-primary)', 
+                  marginBottom: '16px',
+                  textTransform: 'uppercase'
                 }}>
                   {t.about.mission.title}
                 </h4>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                   {t.about.mission.desc}
                 </p>
               </div>
@@ -137,12 +151,16 @@ export default function AboutSection() {
       
       <style jsx>{`
         @media (max-width: 992px) {
-          .grid-2 {
+          .about-grid {
             grid-template-columns: 1fr !important;
             gap: 60px !important;
+          }
+          .about-grid img {
+            height: 400px !important;
           }
         }
       `}</style>
     </section>
   );
 }
+
