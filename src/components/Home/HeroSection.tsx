@@ -8,8 +8,19 @@ export default function HeroSection() {
   const [visible, setVisible] = useState(false);
   const { t } = useLanguage();
 
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const carouselImages = [
+    { url: '/images/service-1.png', name: 'Amarta Hills Villa' },
+    { url: '/images/portfolio-1.png', name: 'Menteng Residence' },
+    { url: '/images/service-2.png', name: 'The Arkana Office' },
+  ];
+
   useEffect(() => {
     setVisible(true);
+    const timer = setInterval(() => {
+      setCurrentIdx((prev) => (prev + 1) % carouselImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -27,11 +38,12 @@ export default function HeroSection() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        backgroundImage: 'url(/images/hero.png)',
+        backgroundImage: `url(${carouselImages[currentIdx].url})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.4,
+        opacity: 0.2,
         zIndex: 1,
+        transition: 'background-image 1s ease-in-out'
       }} />
       <div style={{
         position: 'absolute',
@@ -145,7 +157,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Modern Geometric Element */}
+          {/* Right: Carousel Geometric Element */}
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'flex-end' }}>
              <div style={{
                width: '400px',
@@ -155,14 +167,23 @@ export default function HeroSection() {
                zIndex: 1,
                transform: 'translate(20px, -20px)'
              }}>
-                <div style={{
-                  position: 'absolute',
-                  inset: '20px',
-                  backgroundImage: 'url(/images/service-1.png)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  zIndex: 2,
-                }} />
+                {carouselImages.map((img, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      position: 'absolute',
+                      inset: '20px',
+                      backgroundImage: `url(${img.url})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      zIndex: 2,
+                      opacity: currentIdx === idx ? 1 : 0,
+                      transition: 'opacity 1s ease-in-out',
+                    }}
+                  />
+                ))}
+                
+                {/* Overlay text with animation */}
                 <div style={{
                   position: 'absolute',
                   bottom: '-30px',
@@ -171,10 +192,44 @@ export default function HeroSection() {
                   padding: '24px',
                   color: 'var(--bg-dark)',
                   zIndex: 3,
-                  width: '200px'
+                  width: '220px',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
                 }}>
-                   <p style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '4px' }}>Latest Project</p>
-                   <p style={{ fontSize: '1rem', fontWeight: 700 }}>Amarta Hills Villa</p>
+                   <p style={{ fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '4px', letterSpacing: '1px' }}>Latest Project</p>
+                   <p style={{ 
+                     fontSize: '1rem', 
+                     fontWeight: 700,
+                     opacity: 1,
+                     transition: 'all 0.5s ease',
+                   }}>
+                     {carouselImages[currentIdx].name}
+                   </p>
+                </div>
+
+                {/* Carousel Indicators */}
+                <div style={{
+                  position: 'absolute',
+                  right: '-10px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '12px',
+                  zIndex: 10
+                }}>
+                  {carouselImages.map((_, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => setCurrentIdx(idx)}
+                      style={{
+                        width: '4px',
+                        height: currentIdx === idx ? '40px' : '20px',
+                        background: currentIdx === idx ? 'var(--accent-gold)' : 'rgba(255,255,255,0.3)',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease'
+                      }}
+                    />
+                  ))}
                 </div>
              </div>
           </div>
@@ -186,6 +241,7 @@ export default function HeroSection() {
           .hero-grid {
             grid-template-columns: 1fr !important;
             text-align: center;
+            padding-bottom: 60px;
           }
           .hero-grid > div {
             display: flex;
@@ -203,6 +259,7 @@ export default function HeroSection() {
         }
       `}</style>
     </section>
+
   );
 }
 
