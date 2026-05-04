@@ -141,21 +141,34 @@ export default function HeroSection() {
             </div>
 
             {/* Stats/Trusted */}
-            <div style={{ marginTop: '60px', display: 'flex', gap: '40px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '40px' }}>
-              <div>
-                <h4 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-gold)' }}>150+</h4>
-                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Proyek Selesai</p>
+            <div 
+              className="hero-stats"
+              style={{ 
+                marginTop: '60px', 
+                display: 'flex', 
+                gap: '20px', 
+                borderTop: '1px solid rgba(255,255,255,0.1)', 
+                paddingTop: '40px',
+                flexWrap: 'wrap',
+                justifyContent: 'center'
+              }}
+            >
+              <div style={{ flex: '1', minWidth: '80px', textAlign: 'center' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent-gold)' }}>150+</h4>
+                <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Proyek Selesai</p>
               </div>
-              <div>
-                <h4 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-gold)' }}>12+</h4>
-                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Tahun Pengalaman</p>
+              <div style={{ flex: '1', minWidth: '80px', textAlign: 'center' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent-gold)' }}>12+</h4>
+                <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Tahun Pengalaman</p>
               </div>
-              <div>
-                <h4 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--accent-gold)' }}>50+</h4>
-                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Tim Profesional</p>
+              <div style={{ flex: '1', minWidth: '80px', textAlign: 'center' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 700, color: 'var(--accent-gold)' }}>50+</h4>
+                <p style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>Tim Profesional</p>
               </div>
             </div>
+
           </div>
+
 
           {/* Right: Carousel Geometric Element */}
           <div style={{ position: 'relative', display: 'flex', justifyContent: 'flex-end' }}>
