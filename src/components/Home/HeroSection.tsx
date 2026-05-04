@@ -241,7 +241,8 @@ export default function HeroSection() {
           .hero-grid {
             grid-template-columns: 1fr !important;
             text-align: center;
-            padding-bottom: 60px;
+            padding-bottom: 40px;
+            gap: 40px !important;
           }
           .hero-grid > div {
             display: flex;
@@ -252,12 +253,26 @@ export default function HeroSection() {
           .hero-grid p {
             margin-left: auto;
             margin-right: auto;
+            font-size: 1rem !important;
+          }
+          .hero-grid h1 {
+            font-size: 2.5rem !important;
           }
           .hero-grid > div:last-child {
-            display: none;
+            display: none !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-grid h1 {
+            font-size: 2rem !important;
+          }
+          .hero-grid .btn-primary, .hero-grid .btn-secondary {
+            width: 100%;
+            padding: 14px 20px !important;
           }
         }
       `}</style>
+
     </section>
 
   );

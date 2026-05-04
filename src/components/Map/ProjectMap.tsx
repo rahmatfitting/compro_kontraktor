@@ -71,12 +71,15 @@ export default function ProjectMap({ projects }: Props) {
   return (
     <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '24px' }}>
       {/* Stats Bar */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '20px',
-        marginBottom: '10px'
-      }}>
+      <div 
+        className="stats-grid-map"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '20px',
+          marginBottom: '10px'
+        }}
+      >
         {[
           { label: 'Total Proyek', value: stats.total, icon: <Building2 size={20} /> },
           { label: 'Kota Jangkauan', value: stats.cities, icon: <MapPin size={20} /> },
@@ -102,13 +105,17 @@ export default function ProjectMap({ projects }: Props) {
       </div>
 
       {/* Control Bar */}
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: '20px',
-        flexWrap: 'wrap'
-      }}>
+      <div 
+        className="map-controls"
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: '20px',
+          flexWrap: 'wrap'
+        }}
+      >
+
         <div style={{ display: 'flex', gap: '10px' }}>
           {(['all', 'rumah', 'ruko', 'renovasi'] as const).map(type => (
             <button
@@ -274,7 +281,25 @@ export default function ProjectMap({ projects }: Props) {
         .leaflet-container {
           font-family: var(--font-primary) !important;
         }
+        @media (max-width: 768px) {
+          .map-controls {
+            flex-direction: column;
+            align-items: stretch !important;
+          }
+          .stats-grid-map {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .stats-grid-map {
+            grid-template-columns: 1fr !important;
+          }
+          .leaflet-popup-content {
+            width: 240px !important;
+          }
+        }
       `}</style>
+
     </div>
   );
 }
