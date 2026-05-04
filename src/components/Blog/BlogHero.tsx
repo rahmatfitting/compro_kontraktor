@@ -14,13 +14,14 @@ export default function BlogHero() {
       paddingBottom: '60px',
       position: 'relative',
       overflow: 'hidden',
+      background: 'var(--bg-primary)',
     }}>
       <div style={{
         position: 'absolute',
         inset: 0,
         background: `
-          radial-gradient(ellipse at 50% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-          radial-gradient(ellipse at 20% 60%, rgba(99, 102, 241, 0.06) 0%, transparent 50%)
+          radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 20% 60%, rgba(241, 196, 15, 0.05) 0%, transparent 50%)
         `,
         pointerEvents: 'none',
       }} />
@@ -41,16 +42,17 @@ export default function BlogHero() {
           gap: '8px',
           padding: '6px 16px',
           borderRadius: '100px',
-          background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(99, 102, 241, 0.15))',
-          border: '1px solid rgba(6, 182, 212, 0.3)',
+          background: 'white',
+          border: '1px solid rgba(212, 175, 55, 0.3)',
           fontSize: '0.8rem',
           fontWeight: 600,
-          color: '#67e8f9',
+          color: '#d4af37',
           textTransform: 'uppercase',
           letterSpacing: '1.5px',
           marginBottom: '24px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
         }}>
-          ✎ {language === 'id' ? 'Blog & Wawasan' : 'Blog & Insights'}
+          ✎ {language === 'id' ? 'Jurnal Perjalanan' : 'Travel Journal'}
         </div>
 
         <h1 style={{
@@ -60,14 +62,14 @@ export default function BlogHero() {
           lineHeight: 1.1,
           marginBottom: '20px',
         }}>
-          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Wawasan ' : 'Latest '}</span>
+          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Inspirasi ' : 'Luxury '}</span>
           <span style={{
-            background: 'linear-gradient(135deg, #06b6d4, #6366f1, #8b5cf6)',
+            background: 'linear-gradient(135deg, #d4af37, #996515)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            {language === 'id' ? 'Industri Terbaru' : 'Industry Insights'}
+            {language === 'id' ? 'Gaya Hidup Mewah' : 'Travel Insights'}
           </span>
         </h1>
 
@@ -79,8 +81,8 @@ export default function BlogHero() {
           lineHeight: 1.8,
         }}>
           {language === 'id' 
-            ? 'Artikel pakar, studi kasus, dan kepemimpinan pemikiran tentang ERP, transformasi digital, dan inovasi perusahaan.'
-            : 'Expert articles, case studies, and thought leadership on ERP, digital transformation, and enterprise innovation.'}
+            ? 'Temukan panduan destinasi eksklusif, tips perjalanan kelas atas, dan cerita dari balik layar petualangan paling menakjubkan di dunia.'
+            : 'Discover exclusive destination guides, high-end travel tips, and behind-the-scenes stories from the world’s most breathtaking adventures.'}
         </p>
       </div>
     </section>

@@ -4,28 +4,28 @@ import { useState } from 'react';
 
 const testimonials = [
   {
-    quote: "ERPPro transformed our entire supply chain operations. We reduced processing time by 60% and achieved real-time visibility across 12 warehouses. The ROI was visible within the first quarter.",
-    author: 'Sarah Chen',
-    role: 'COO',
-    company: 'TechVista Global',
-    avatar: 'SC',
-    color: '#6366f1',
+    quote: "LuxeVoyage benar-benar mengerti arti kemewahan yang sesungguhnya. Itinerary di Maladewa yang mereka susun sangat personal, mulai dari villa terapung hingga makan malam privat di pulau tak berpenghuni. Pengalaman yang tak akan terlupakan bagi keluarga kami.",
+    author: 'Adi Pratama',
+    role: 'CEO',
+    company: 'Capital Group',
+    avatar: 'AP',
+    color: '#d4af37',
   },
   {
-    quote: "The AI-powered forecasting module alone justified the investment. Our inventory carrying costs dropped by 35% while maintaining 99.5% order fulfillment rates. Absolutely game-changing.",
-    author: 'Marcus Johnson',
-    role: 'VP Supply Chain',
-    company: 'NovaCorp Industries',
-    avatar: 'MJ',
-    color: '#06b6d4',
+    quote: "Sebagai profesional dengan jadwal padat, saya menghargai efisiensi dan privasi. Layanan jet pribadi dan concierge 24/7 dari LuxeVoyage memastikan perjalanan bisnis saya ke Eropa berjalan mulus tanpa hambatan sedikit pun.",
+    author: 'Elena Wijaya',
+    role: 'Managing Director',
+    company: 'Global Ventures',
+    avatar: 'EW',
+    color: '#f1c40f',
   },
   {
-    quote: "Implementation was incredibly smooth. We went live in 3 weeks across all departments. The customer success team's expertise made the transition feel effortless for our 500+ employees.",
-    author: 'Amara Okafor',
-    role: 'CTO',
-    company: 'Meridian Solutions',
-    avatar: 'AO',
-    color: '#8b5cf6',
+    quote: "Menjelajahi pegunungan Alpen dengan panduan ahli lokal dan akses eksklusif ke chalet mewah adalah mimpi yang menjadi kenyataan. Detail kecil yang diperhatikan tim LuxeVoyage membuat perbedaan besar dalam kualitas perjalanan kami.",
+    author: 'Robert Santoso',
+    role: 'Entrepreneur',
+    company: 'Santoso Holdings',
+    avatar: 'RS',
+    color: '#996515',
   },
 ];
 
@@ -33,7 +33,7 @@ export default function TestimonialsSection() {
   const [activeIdx, setActiveIdx] = useState(0);
 
   return (
-    <section style={{
+    <section id="testimonials" style={{
       padding: '120px 0',
       position: 'relative',
     }}>
@@ -50,11 +50,11 @@ export default function TestimonialsSection() {
             gap: '8px',
             padding: '6px 16px',
             borderRadius: '100px',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.15))',
-            border: '1px solid rgba(99, 102, 241, 0.3)',
+            background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(241, 196, 15, 0.15))',
+            border: '1px solid rgba(212, 175, 55, 0.3)',
             fontSize: '0.8rem',
             fontWeight: 600,
-            color: '#9eb3ff',
+            color: '#d4af37',
             textTransform: 'uppercase',
             letterSpacing: '1.5px',
             marginBottom: '20px',
@@ -66,12 +66,12 @@ export default function TestimonialsSection() {
             fontSize: 'clamp(2rem, 4vw, 3rem)',
             fontWeight: 700,
             lineHeight: 1.2,
-            background: 'linear-gradient(135deg, var(--text-primary), #9eb3ff)',
+            background: 'linear-gradient(135deg, var(--text-primary), #d4af37)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            Loved by Industry Leaders
+            Dipercaya oleh Traveler Terpilih
           </h2>
         </div>
 
@@ -90,13 +90,14 @@ export default function TestimonialsSection() {
                 padding: '36px',
                 borderRadius: '20px',
                 background: activeIdx === i
-                  ? 'rgba(99, 102, 241, 0.06)'
-                  : 'rgba(20, 20, 32, 0.5)',
-                border: `1px solid ${activeIdx === i ? 'rgba(99, 102, 241, 0.2)' : 'rgba(255,255,255,0.04)'}`,
+                  ? 'white'
+                  : 'var(--bg-tertiary)',
+                border: `1px solid ${activeIdx === i ? 'rgba(212, 175, 55, 0.4)' : 'var(--border-subtle)'}`,
                 backdropFilter: 'blur(12px)',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer',
                 position: 'relative',
+                boxShadow: activeIdx === i ? '0 10px 30px rgba(212, 175, 55, 0.12)' : '0 4px 12px rgba(0,0,0,0.03)',
               }}
               onMouseEnter={() => setActiveIdx(i)}
             >

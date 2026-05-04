@@ -1,132 +1,117 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
+
+const blogPosts = [
+  {
+    id: 1,
+    title: {
+      id: '5 Destinasi Rahasia di Maladewa untuk Liburan Privat',
+      en: '5 Hidden Gems in Maldives for a Private Getaway'
+    },
+    excerpt: {
+      id: 'Temukan pulau-pulau tak berpenghuni dengan pasir putih kristal yang jarang diketahui oleh turis umum.',
+      en: 'Discover uninhabited islands with crystal white sand that are rarely known by general tourists.'
+    },
+    category: { id: 'Destinasi', en: 'Destination' },
+    date: '2024-05-15',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=800',
+    readTime: '6 min read',
+    author: 'Elena Wijaya'
+  },
+  {
+    id: 2,
+    title: {
+      id: 'Tren Wisata Mewah 2024: Fokus pada Kesejahteraan',
+      en: 'Luxury Travel Trends 2024: Focusing on Wellness'
+    },
+    excerpt: {
+      id: 'Bagaimana wellness retreat menjadi prioritas utama bagi para traveler elit saat ini.',
+      en: 'How wellness retreats have become a top priority for today’s elite travelers.'
+    },
+    category: { id: 'Gaya Hidup', en: 'Lifestyle' },
+    date: '2024-05-10',
+    image: 'https://images.unsplash.com/photo-1544126592-807daa2b565b?auto=format&fit=crop&q=80&w=800',
+    readTime: '8 min read',
+    author: 'Robert Santoso'
+  },
+  {
+    id: 3,
+    title: {
+      id: 'Pengalaman Jet Pribadi: Kebebasan Tanpa Batas',
+      en: 'The Private Jet Experience: Boundless Freedom'
+    },
+    excerpt: {
+      id: 'Eksplorasi kemudahan dan kenyamanan terbang dengan jet pribadi untuk efisiensi waktu perjalanan Anda.',
+      en: 'Exploration of the ease and comfort of flying by private jet for your travel time efficiency.'
+    },
+    category: { id: 'Layanan', en: 'Service' },
+    date: '2024-05-05',
+    image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?auto=format&fit=crop&q=80&w=800',
+    readTime: '5 min read',
+    author: 'Adi Pratama'
+  }
+];
 
 export default function BlogGrid() {
   const { language } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('All');
 
   const categories = language === 'id' 
-    ? ['Semua', 'Teknologi', 'Strategi', 'Studi Kasus', 'Industri', 'Pembaruan Produk']
-    : ['All', 'Technology', 'Strategy', 'Case Study', 'Industry', 'Product Update'];
-
-  const blogPosts = [
-    {
-      id: 1,
-      title: language === 'id' ? 'Masa Depan ERP: Bagaimana AI Mengubah Operasi Perusahaan' : 'The Future of ERP: How AI is Reshaping Enterprise Operations',
-      excerpt: language === 'id' ? 'Temukan bagaimana machine learning dan kecerdasan buatan mengubah sistem ERP tradisional menjadi platform prediktif yang cerdas.' : 'Discover how machine learning and artificial intelligence are transforming traditional ERP systems into intelligent, predictive platforms that anticipate business needs.',
-      category: language === 'id' ? 'Teknologi' : 'Technology',
-      author: 'Dr. Emily Zhang',
-      authorRole: 'Head of AI Research',
-      date: 'Apr 28, 2026',
-      readTime: language === 'id' ? 'Baca 8 mnt' : '8 min read',
-      color: '#6366f1',
-      featured: true,
-    },
-    {
-      id: 2,
-      title: language === 'id' ? 'Transformasi Digital di Manufaktur: Panduan Lengkap' : 'Digital Transformation in Manufacturing: A Complete Roadmap',
-      excerpt: language === 'id' ? 'Panduan langkah demi langkah untuk memodernisasi operasi manufaktur Anda dengan ERP cloud, integrasi IoT, dan analitik real-time.' : 'A step-by-step guide to modernizing your manufacturing operations with cloud ERP, IoT integration, and real-time analytics.',
-      category: language === 'id' ? 'Strategi' : 'Strategy',
-      author: 'James Rivera',
-      authorRole: 'Solutions Architect',
-      date: 'Apr 22, 2026',
-      readTime: language === 'id' ? 'Baca 12 mnt' : '12 min read',
-      color: '#06b6d4',
-      featured: true,
-    },
-    {
-      id: 3,
-      title: language === 'id' ? 'Bagaimana NovaCorp Mengurangi Biaya Operasional Sebesar 45% dengan ERPPro' : 'How NovaCorp Reduced Operational Costs by 45% with ERPPro',
-      excerpt: language === 'id' ? 'Studi kasus mendalam tentang bagaimana produsen pasar menengah mencapai penghematan biaya yang dramatis melalui modernisasi ERP.' : 'An in-depth case study on how a mid-market manufacturer achieved dramatic cost savings through ERP modernization and process automation.',
-      category: language === 'id' ? 'Studi Kasus' : 'Case Study',
-      author: 'Sarah Chen',
-      authorRole: 'Customer Success',
-      date: 'Apr 18, 2026',
-      readTime: language === 'id' ? 'Baca 6 mnt' : '6 min read',
-      color: '#10b981',
-      featured: true,
-    },
-    {
-      id: 4,
-      title: language === 'id' ? 'Ketahanan Rantai Pasok: Pelajaran dari Gangguan Global' : 'Supply Chain Resilience: Lessons from Global Disruptions',
-      excerpt: language === 'id' ? 'Bagaimana perusahaan terkemuka membangun rantai pasok yang tangguh dengan visibilitas real-time dan manajemen risiko prediktif.' : 'How leading enterprises are building resilient supply chains with real-time visibility, diversified sourcing, and predictive risk management.',
-      category: language === 'id' ? 'Industri' : 'Industry',
-      author: 'Michael Torres',
-      authorRole: 'Industry Analyst',
-      date: 'Apr 14, 2026',
-      readTime: language === 'id' ? 'Baca 10 mnt' : '10 min read',
-      color: '#f59e0b',
-      featured: false,
-    },
-    {
-      id: 5,
-      title: language === 'id' ? 'Memperkenalkan ERPPro v4.0: Mesin Analitik Generasi Berikutnya' : 'Introducing ERPPro v4.0: Next-Generation Analytics Engine',
-      excerpt: language === 'id' ? 'Rilisan terbesar kami menghadirkan analitik prediktif real-time, kueri bahasa alami, dan deteksi anomali otomatis.' : 'Our biggest release yet brings real-time predictive analytics, natural language querying, and automated anomaly detection to every user.',
-      category: language === 'id' ? 'Pembaruan Produk' : 'Product Update',
-      author: 'ERPPro Team',
-      authorRole: 'Product',
-      date: 'Apr 10, 2026',
-      readTime: language === 'id' ? 'Baca 5 mnt' : '5 min read',
-      color: '#8b5cf6',
-      featured: false,
-    },
-    {
-      id: 6,
-      title: language === 'id' ? '10 Kesalahan Implementasi ERP dan Cara Menghindarinya' : '10 ERP Implementation Mistakes and How to Avoid Them',
-      excerpt: language === 'id' ? 'Pelajari jebakan umum dalam implementasi ERP dan temukan strategi terbukti untuk penyebaran yang lancar dan sukses.' : 'Learn from the most common pitfalls in ERP implementations and discover proven strategies for a smooth, successful deployment.',
-      category: language === 'id' ? 'Strategi' : 'Strategy',
-      author: 'Amanda Blake',
-      authorRole: 'Senior Consultant',
-      date: 'Apr 5, 2026',
-      readTime: language === 'id' ? 'Baca 9 mnt' : '9 min read',
-      color: '#f43f5e',
-      featured: false,
-    },
-  ];
-
-  const filteredPosts = (activeCategory === 'All' || activeCategory === 'Semua')
-    ? blogPosts
-    : blogPosts.filter(p => p.category === activeCategory);
-
-  const featuredPosts = filteredPosts.filter(p => p.featured);
-  const regularPosts = filteredPosts.filter(p => !p.featured);
+    ? ['Semua', 'Destinasi', 'Gaya Hidup', 'Layanan']
+    : ['All', 'Destination', 'Lifestyle', 'Service'];
 
   return (
     <section style={{
-      padding: '20px 0 120px',
-      position: 'relative',
+      padding: '40px 0 120px',
+      background: 'var(--bg-primary)',
     }}>
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
         padding: '0 24px',
       }}>
-        {/* Category Filter */}
+        {/* Categories */}
         <div style={{
           display: 'flex',
-          gap: '8px',
-          marginBottom: '48px',
-          flexWrap: 'wrap',
+          gap: '12px',
           justifyContent: 'center',
+          marginBottom: '60px',
+          flexWrap: 'wrap'
         }}>
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
               style={{
-                padding: '8px 20px',
+                padding: '10px 24px',
                 borderRadius: '100px',
-                background: activeCategory === cat
-                  ? 'linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.15))'
-                  : 'rgba(255,255,255,0.03)',
-                border: `1px solid ${activeCategory === cat ? 'rgba(99, 102, 241, 0.3)' : 'rgba(255,255,255,0.06)'}`,
-                color: activeCategory === cat ? '#c3d0ff' : 'var(--text-muted)',
-                fontSize: '0.85rem',
-                fontWeight: 500,
+                background: (activeCategory === cat || (cat === 'All' && activeCategory === 'All') || (cat === 'Semua' && activeCategory === 'Semua'))
+                  ? 'linear-gradient(135deg, #d4af37, #996515)'
+                  : 'white',
+                border: '1px solid var(--border-subtle)',
+                color: (activeCategory === cat || (cat === 'All' && activeCategory === 'All') || (cat === 'Semua' && activeCategory === 'Semua'))
+                  ? 'white'
+                  : 'var(--text-secondary)',
+                fontSize: '0.9rem',
+                fontWeight: 600,
                 cursor: 'pointer',
-                transition: 'all 0.2s ease',
+                transition: 'all 0.3s ease',
+                boxShadow: (activeCategory === cat) ? '0 4px 15px rgba(212, 175, 55, 0.2)' : '0 2px 8px rgba(0,0,0,0.02)',
+              }}
+              onMouseEnter={(e) => {
+                if (activeCategory !== cat) {
+                  e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                  e.currentTarget.style.color = '#d4af37';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeCategory !== cat) {
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                }
               }}
             >
               {cat}
@@ -134,260 +119,125 @@ export default function BlogGrid() {
           ))}
         </div>
 
-        {/* Featured Posts Row */}
-        {featuredPosts.length > 0 && (
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '24px',
-            marginBottom: '32px',
-          }}
-          className="blog-featured-grid"
-          >
-            {featuredPosts.map((post) => (
-              <article
-                key={post.id}
-                style={{
-                  borderRadius: '20px',
-                  background: 'rgba(20, 20, 32, 0.5)',
-                  border: '1px solid rgba(255,255,255,0.04)',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = `${post.color}33`;
-                  e.currentTarget.style.transform = 'translateY(-6px)';
-                  e.currentTarget.style.boxShadow = `0 12px 40px ${post.color}10`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                {/* Colored top bar */}
-                <div style={{
-                  height: '4px',
-                  background: `linear-gradient(90deg, ${post.color}, ${post.color}66)`,
-                }} />
-
-                <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    marginBottom: '16px',
-                  }}>
-                    <span style={{
-                      padding: '4px 10px',
-                      borderRadius: '6px',
-                      background: `${post.color}15`,
-                      border: `1px solid ${post.color}25`,
-                      fontSize: '0.72rem',
-                      fontWeight: 600,
-                      color: post.color,
-                    }}>
-                      {post.category}
-                    </span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                      {post.readTime}
-                    </span>
-                  </div>
-
-                  <h3 style={{
-                    fontFamily: 'Space Grotesk, sans-serif',
-                    fontSize: '1.15rem',
-                    fontWeight: 700,
-                    color: 'var(--text-primary)',
-                    lineHeight: 1.4,
-                    marginBottom: '12px',
-                  }}>
-                    {post.title}
-                  </h3>
-
-                  <p style={{
-                    fontSize: '0.88rem',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.7,
-                    marginBottom: '20px',
-                    flex: 1,
-                  }}>
-                    {post.excerpt}
-                  </p>
-
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingTop: '16px',
-                    borderTop: '1px solid rgba(255,255,255,0.04)',
-                  }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <div style={{
-                        width: '32px',
-                        height: '32px',
-                        borderRadius: '8px',
-                        background: `${post.color}20`,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '0.7rem',
-                        fontWeight: 700,
-                        color: post.color,
-                      }}>
-                        {post.author.split(' ').map(n => n[0]).join('')}
-                      </div>
-                      <div>
-                        <p style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-                          {post.author}
-                        </p>
-                        <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
-                          {post.date}
-                        </p>
-                      </div>
-                    </div>
-                    <span style={{
-                      fontSize: '0.8rem',
-                      fontWeight: 600,
-                      color: post.color,
-                    }}>
-                      {language === 'id' ? 'Baca' : 'Read'} →
-                    </span>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
-
-        {/* Regular Posts Grid */}
+        {/* Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '24px',
+          gap: '32px',
         }}
-        className="blog-regular-grid"
+        className="blog-grid"
         >
-          {regularPosts.map((post) => (
+          {blogPosts.map((post) => (
             <article
               key={post.id}
               style={{
-                padding: '28px',
-                borderRadius: '16px',
-                background: 'rgba(20, 20, 32, 0.4)',
-                border: '1px solid rgba(255,255,255,0.04)',
-                transition: 'all 0.3s ease',
-                cursor: 'pointer',
-                display: 'flex',
-                flexDirection: 'column',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                background: 'white',
+                border: '1px solid var(--border-subtle)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.15)';
-                e.currentTarget.style.transform = 'translateY(-4px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
+              className="blog-card"
             >
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                marginBottom: '14px',
-              }}>
-                <span style={{
-                  padding: '3px 8px',
-                  borderRadius: '5px',
-                  background: `${post.color}12`,
-                  fontSize: '0.7rem',
-                  fontWeight: 600,
-                  color: post.color,
+              <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+                <img
+                  src={post.image}
+                  alt={post.title[language]}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.6s ease',
+                  }}
+                  className="card-image"
+                />
+                <div style={{
+                  position: 'absolute',
+                  top: '20px',
+                  left: '20px',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  background: 'rgba(255,255,255,0.95)',
+                  backdropFilter: 'blur(4px)',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: '#996515',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                 }}>
-                  {post.category}
-                </span>
-                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                  {post.readTime}
-                </span>
+                  {post.category[language]}
+                </div>
               </div>
 
-              <h3 style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '1rem',
-                fontWeight: 700,
-                color: 'var(--text-primary)',
-                lineHeight: 1.4,
-                marginBottom: '10px',
-              }}>
-                {post.title}
-              </h3>
-
-              <p style={{
-                fontSize: '0.83rem',
-                color: 'var(--text-secondary)',
-                lineHeight: 1.7,
-                marginBottom: '16px',
-                flex: 1,
-              }}>
-                {post.excerpt}
-              </p>
-
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-              }}>
-                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                  {post.date}
-                </span>
-                <span style={{ fontSize: '0.78rem', fontWeight: 600, color: post.color }}>
-                  {language === 'id' ? 'Baca' : 'Read'} →
-                </span>
+              <div style={{ padding: '32px' }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  fontSize: '0.8rem',
+                  color: 'var(--text-muted)',
+                  marginBottom: '16px',
+                }}>
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+                <h3 style={{
+                  fontFamily: 'Space Grotesk, sans-serif',
+                  fontSize: '1.25rem',
+                  fontWeight: 700,
+                  lineHeight: 1.4,
+                  marginBottom: '16px',
+                  color: 'var(--text-primary)',
+                  transition: 'color 0.3s ease',
+                }}>
+                  {post.title[language]}
+                </h3>
+                <p style={{
+                  fontSize: '0.95rem',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.7,
+                  marginBottom: '24px',
+                }}>
+                  {post.excerpt[language]}
+                </p>
+                <Link href={`/blog/${post.id}`} style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
+                  color: '#d4af37',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease',
+                }}>
+                  {language === 'id' ? 'Baca Selengkapnya' : 'Read More'}
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
               </div>
             </article>
           ))}
         </div>
-
-        {/* Load More */}
-        <div style={{ textAlign: 'center', marginTop: '48px' }}>
-          <button style={{
-            padding: '14px 36px',
-            borderRadius: '12px',
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.08)',
-            color: 'var(--text-primary)',
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
-            e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.3)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
-            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
-          }}
-          >
-            {language === 'id' ? 'Muat Lebih Banyak Artikel' : 'Load More Articles'}
-          </button>
-        </div>
       </div>
 
       <style jsx global>{`
+        .blog-card:hover {
+          transform: translateY(-8px);
+          border-color: rgba(212, 175, 55, 0.3);
+          box-shadow: 0 20px 40px rgba(212, 175, 55, 0.08);
+        }
+        .blog-card:hover .card-image {
+          transform: scale(1.05);
+        }
         @media (max-width: 1024px) {
-          .blog-featured-grid,
-          .blog-regular-grid {
+          .blog-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
         }
         @media (max-width: 640px) {
-          .blog-featured-grid,
-          .blog-regular-grid {
+          .blog-grid {
             grid-template-columns: 1fr !important;
           }
         }

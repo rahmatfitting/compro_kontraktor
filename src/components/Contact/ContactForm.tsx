@@ -10,7 +10,7 @@ export default function ContactForm() {
     email: '',
     company: '',
     phone: '',
-    subject: 'demo',
+    subject: 'planning',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
@@ -19,30 +19,30 @@ export default function ContactForm() {
     {
       icon: '📧',
       title: language === 'id' ? 'Email Kami' : 'Email Us',
-      detail: 'hello@erppro.com',
+      detail: 'concierge@luxevoyage.com',
       subDetail: language === 'id' ? 'Kami membalas dalam 24 jam' : 'We reply within 24 hours',
-      color: '#6366f1',
+      color: '#d4af37',
     },
     {
       icon: '📞',
       title: language === 'id' ? 'Hubungi Kami' : 'Call Us',
-      detail: '+1 (555) 123-4567',
-      subDetail: 'Mon-Fri, 9am-6pm EST',
-      color: '#06b6d4',
+      detail: '+62 21 555-8888',
+      subDetail: '24/7 Premium Support',
+      color: '#996515',
     },
     {
       icon: '📍',
       title: language === 'id' ? 'Kunjungi Kami' : 'Visit Us',
-      detail: '100 Innovation Drive',
-      subDetail: 'San Francisco, CA 94105',
-      color: '#8b5cf6',
+      detail: 'LuxeVoyage Plaza, Level 45',
+      subDetail: 'Jakarta, Indonesia 10220',
+      color: '#d4af37',
     },
     {
       icon: '💬',
       title: language === 'id' ? 'Chat Langsung' : 'Live Chat',
       detail: language === 'id' ? 'Tersedia 24/7' : 'Available 24/7',
       subDetail: language === 'id' ? 'Respon rata-rata: 2 mnt' : 'Average response: 2 min',
-      color: '#10b981',
+      color: '#996515',
     },
   ];
 
@@ -56,8 +56,8 @@ export default function ContactForm() {
     width: '100%',
     padding: '14px 18px',
     borderRadius: '12px',
-    background: 'rgba(255,255,255,0.03)',
-    border: '1px solid rgba(255,255,255,0.08)',
+    background: 'white',
+    border: '1px solid var(--border-default)',
     color: 'var(--text-primary)',
     fontSize: '0.9rem',
     transition: 'all 0.2s ease',
@@ -78,6 +78,7 @@ export default function ContactForm() {
     <section style={{
       padding: '40px 0 120px',
       position: 'relative',
+      background: 'var(--bg-primary)',
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -110,8 +111,8 @@ export default function ContactForm() {
               marginBottom: '36px',
             }}>
               {language === 'id' 
-                ? 'Hubungi kami melalui saluran apa pun. Tim kami selalu siap membantu Anda menemukan solusi yang tepat untuk bisnis Anda.'
-                : 'Reach out through any channel. Our team is always ready to help you explore the right solution for your business.'}
+                ? 'Hubungi spesialis kami melalui saluran apa pun. Kami siap membantu mewujudkan perjalanan impian Anda dengan layanan kelas dunia.'
+                : 'Reach out to our specialists through any channel. We are ready to make your dream journey a reality with world-class service.'}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -124,17 +125,20 @@ export default function ContactForm() {
                     gap: '18px',
                     padding: '22px',
                     borderRadius: '16px',
-                    background: 'rgba(20, 20, 32, 0.5)',
-                    border: '1px solid rgba(255,255,255,0.04)',
+                    background: 'white',
+                    border: '1px solid var(--border-subtle)',
                     transition: 'all 0.3s ease',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = `${info.color}25`;
+                    e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
                     e.currentTarget.style.transform = 'translateX(6px)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(212, 175, 55, 0.1)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)';
+                    e.currentTarget.style.borderColor = 'var(--border-subtle)';
                     e.currentTarget.style.transform = 'translateX(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.03)';
                   }}
                 >
                   <div style={{
@@ -183,21 +187,22 @@ export default function ContactForm() {
               marginTop: '32px',
               height: '200px',
               borderRadius: '16px',
-              background: 'rgba(20, 20, 32, 0.5)',
-              border: '1px solid rgba(255,255,255,0.04)',
+              background: 'white',
+              border: '1px solid var(--border-subtle)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               position: 'relative',
               overflow: 'hidden',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
             }}>
               {/* Grid pattern for map */}
               <div style={{
                 position: 'absolute',
                 inset: 0,
                 backgroundImage: `
-                  linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px)
+                  linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px)
                 `,
                 backgroundSize: '30px 30px',
               }} />
@@ -209,13 +214,13 @@ export default function ContactForm() {
                   width: '16px',
                   height: '16px',
                   borderRadius: '50%',
-                  background: '#6366f1',
-                  boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)',
+                  background: '#d4af37',
+                  boxShadow: '0 0 20px rgba(212, 175, 55, 0.5)',
                   margin: '0 auto 12px',
                   animation: 'pulse-glow 2s ease infinite',
                 }} />
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-                  San Francisco, CA
+                  Jakarta, Indonesia
                 </p>
               </div>
             </div>
@@ -225,9 +230,10 @@ export default function ContactForm() {
           <div style={{
             padding: '40px',
             borderRadius: '24px',
-            background: 'rgba(20, 20, 32, 0.5)',
-            border: '1px solid rgba(255,255,255,0.06)',
+            background: 'white',
+            border: '1px solid var(--border-subtle)',
             backdropFilter: 'blur(12px)',
+            boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
           }}>
             {submitted ? (
               <div style={{
@@ -238,8 +244,8 @@ export default function ContactForm() {
                   width: '64px',
                   height: '64px',
                   borderRadius: '50%',
-                  background: 'rgba(16, 185, 129, 0.1)',
-                  border: '1px solid rgba(16, 185, 129, 0.2)',
+                  background: 'rgba(212, 175, 55, 0.1)',
+                  border: '1px solid rgba(212, 175, 55, 0.2)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -252,7 +258,7 @@ export default function ContactForm() {
                   fontFamily: 'Space Grotesk, sans-serif',
                   fontSize: '1.5rem',
                   fontWeight: 700,
-                  color: '#10b981',
+                  color: '#996515',
                   marginBottom: '8px',
                 }}>
                   {language === 'id' ? 'Pesan Terkirim!' : 'Message Sent!'}
@@ -262,8 +268,8 @@ export default function ContactForm() {
                   color: 'var(--text-secondary)',
                 }}>
                   {language === 'id' 
-                    ? 'Terima kasih telah menghubungi kami. Kami akan membalas Anda dalam waktu 24 jam.'
-                    : "Thank you for reaching out. We'll get back to you within 24 hours."}
+                    ? 'Terima kasih telah menghubungi kami. Spesialis kami akan menghubungi Anda dalam waktu 24 jam.'
+                    : "Thank you for reaching out. Our specialist will get back to you within 24 hours."}
                 </p>
               </div>
             ) : (
@@ -275,7 +281,7 @@ export default function ContactForm() {
                   color: 'var(--text-primary)',
                   marginBottom: '28px',
                 }}>
-                  {language === 'id' ? 'Kirim pesan kepada kami' : 'Send us a message'}
+                  {language === 'id' ? 'Konsultasi Perjalanan' : 'Travel Consultation'}
                 </h3>
 
                 <div style={{
@@ -296,11 +302,11 @@ export default function ContactForm() {
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       style={inputStyle}
                       onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.08)';
+                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                        e.currentTarget.style.borderColor = 'var(--border-default)';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
@@ -309,35 +315,35 @@ export default function ContactForm() {
                     <label style={labelStyle}>Email</label>
                     <input
                       type="email"
-                      placeholder="john@company.com"
+                      placeholder="john@luxury.com"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       style={inputStyle}
                       onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.08)';
+                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                        e.currentTarget.style.borderColor = 'var(--border-default)';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
                   </div>
                   <div>
-                    <label style={labelStyle}>{language === 'id' ? 'Perusahaan' : 'Company'}</label>
+                    <label style={labelStyle}>{language === 'id' ? 'Tipe Perjalanan' : 'Travel Type'}</label>
                     <input
                       type="text"
-                      placeholder="Acme Inc."
+                      placeholder="Leisure, Business, etc."
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       style={inputStyle}
                       onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.08)';
+                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                        e.currentTarget.style.borderColor = 'var(--border-default)';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
@@ -346,16 +352,16 @@ export default function ContactForm() {
                     <label style={labelStyle}>{language === 'id' ? 'Telepon' : 'Phone'}</label>
                     <input
                       type="tel"
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="+62 ..."
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       style={inputStyle}
                       onFocus={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.4)';
-                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.08)';
+                        e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                        e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                        e.currentTarget.style.borderColor = 'var(--border-default)';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
@@ -363,7 +369,7 @@ export default function ContactForm() {
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
-                  <label style={labelStyle}>{language === 'id' ? 'Subjek' : 'Subject'}</label>
+                  <label style={labelStyle}>{language === 'id' ? 'Tujuan' : 'Objective'}</label>
                   <select
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -376,18 +382,17 @@ export default function ContactForm() {
                       backgroundPosition: 'right 16px center',
                     }}
                   >
-                    <option value="demo" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Minta Demo' : 'Request a Demo'}</option>
-                    <option value="quote" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Minta Penawaran' : 'Get a Quote'}</option>
-                    <option value="support" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Dukungan Teknis' : 'Technical Support'}</option>
-                    <option value="partnership" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Kemitraan' : 'Partnership'}</option>
-                    <option value="other" style={{ background: '#1a1a25' }}>{language === 'id' ? 'Lainnya' : 'Other'}</option>
+                    <option value="planning">{language === 'id' ? 'Perencanaan Perjalanan' : 'Trip Planning'}</option>
+                    <option value="quote">{language === 'id' ? 'Minta Penawaran' : 'Request a Quote'}</option>
+                    <option value="partnership">{language === 'id' ? 'Kemitraan' : 'Partnership'}</option>
+                    <option value="other">{language === 'id' ? 'Lainnya' : 'Other'}</option>
                   </select>
                 </div>
 
                 <div style={{ marginBottom: '28px' }}>
                   <label style={labelStyle}>{language === 'id' ? 'Pesan' : 'Message'}</label>
                   <textarea
-                    placeholder={language === 'id' ? 'Beri tahu kami tentang proyek dan kebutuhan Anda...' : 'Tell us about your project and requirements...'}
+                    placeholder={language === 'id' ? 'Beri tahu kami tentang destinasi impian Anda...' : 'Tell us about your dream destination...'}
                     rows={5}
                     required
                     value={formData.message}
@@ -398,11 +403,11 @@ export default function ContactForm() {
                       minHeight: '120px',
                     }}
                     onFocus={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.4)';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(99, 102, 241, 0.08)';
+                      e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.08)';
                     }}
                     onBlur={(e) => {
-                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                      e.currentTarget.style.borderColor = 'var(--border-default)';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
                   />
@@ -414,14 +419,14 @@ export default function ContactForm() {
                     width: '100%',
                     padding: '16px 32px',
                     borderRadius: '14px',
-                    background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
+                    background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
                     color: 'white',
                     fontWeight: 600,
                     fontSize: '1rem',
                     border: 'none',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease',
-                    boxShadow: '0 4px 20px rgba(99, 102, 241, 0.3)',
+                    boxShadow: '0 4px 20px rgba(212, 175, 55, 0.3)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -429,11 +434,11 @@ export default function ContactForm() {
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.45)';
+                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(212, 175, 55, 0.45)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(212, 175, 55, 0.3)';
                   }}
                 >
                   {language === 'id' ? 'Kirim Pesan' : 'Send Message'}

@@ -14,13 +14,14 @@ export default function ContactHero() {
       paddingBottom: '40px',
       position: 'relative',
       overflow: 'hidden',
+      background: 'var(--bg-primary)',
     }}>
       <div style={{
         position: 'absolute',
         inset: 0,
         background: `
-          radial-gradient(ellipse at 40% 40%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-          radial-gradient(ellipse at 60% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 50%)
+          radial-gradient(circle at 30% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 70% 70%, rgba(241, 196, 15, 0.05) 0%, transparent 50%)
         `,
         pointerEvents: 'none',
       }} />
@@ -41,14 +42,15 @@ export default function ContactHero() {
           gap: '8px',
           padding: '6px 16px',
           borderRadius: '100px',
-          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15))',
-          border: '1px solid rgba(99, 102, 241, 0.3)',
+          background: 'white',
+          border: '1px solid rgba(212, 175, 55, 0.3)',
           fontSize: '0.8rem',
           fontWeight: 600,
-          color: '#9eb3ff',
+          color: '#d4af37',
           textTransform: 'uppercase',
           letterSpacing: '1.5px',
           marginBottom: '24px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
         }}>
           ✉ {language === 'id' ? 'Hubungi Kami' : 'Get in Touch'}
         </div>
@@ -60,14 +62,14 @@ export default function ContactHero() {
           lineHeight: 1.1,
           marginBottom: '20px',
         }}>
-          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Mari Bangun ' : "Let's Build "}</span>
+          <span style={{ color: 'var(--text-primary)' }}>{language === 'id' ? 'Mulai Perjalanan ' : "Start Your "}</span>
           <span style={{
-            background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
+            background: 'linear-gradient(135deg, #d4af37, #996515)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            {language === 'id' ? 'Sesuatu yang Luar Biasa' : 'Something Great'}
+            {language === 'id' ? 'Eksklusif Anda' : 'Exclusive Journey'}
           </span>
         </h1>
 
@@ -79,8 +81,8 @@ export default function ContactHero() {
           lineHeight: 1.8,
         }}>
           {language === 'id' 
-            ? 'Punya pertanyaan? Butuh demo? Tim kami siap membantu Anda menemukan solusi sempurna untuk perusahaan Anda.'
-            : 'Have questions? Need a demo? Our team is ready to help you find the perfect solution for your enterprise.'}
+            ? 'Siap merencanakan liburan impian? Spesialis perjalanan kami siap membantu menyusun itinerary yang dipersonalisasi khusus untuk Anda.'
+            : 'Ready to plan your dream escape? Our travel specialists are ready to curate a personalized itinerary tailored just for you.'}
         </p>
       </div>
     </section>

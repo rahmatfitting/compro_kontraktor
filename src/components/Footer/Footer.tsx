@@ -8,30 +8,27 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    product: [
-      { label: t.footer.links.features, href: '/products' },
-      { label: t.features.modules.finance.title, href: '/products' },
-      { label: t.features.modules.hr.title, href: '/products' },
-      { label: t.footer.links.pricing, href: '/products' },
-      { label: t.footer.links.solutions, href: '/products' },
+    services: [
+      { label: t.footer.links.features, href: '/#services' },
+      { label: t.footer.links.pricing, href: '/#services' },
+      { label: t.footer.links.solutions, href: '/#destinations' },
+      { label: 'Executive Concierge', href: '/#services' },
     ],
     company: [
-      { label: t.footer.links.about, href: '/' },
-      { label: t.navbar.blog, href: '/blog' },
+      { label: t.footer.links.about, href: '/#about' },
       { label: t.footer.links.careers, href: '/' },
       { label: t.footer.links.contact, href: '/contact' },
     ],
-    resources: [
+    information: [
       { label: t.footer.links.docs, href: '/' },
-      { label: 'API Reference', href: '/' },
       { label: t.footer.links.help, href: '/' },
-      { label: 'Community', href: '/' },
+      { label: t.footer.links.privacy, href: '/' },
     ],
   };
 
   return (
     <footer style={{
-      background: 'linear-gradient(180deg, var(--bg-primary) 0%, rgba(17, 17, 24, 1) 100%)',
+      background: 'linear-gradient(180deg, var(--bg-primary) 0%, white 100%)',
       borderTop: '1px solid var(--border-subtle)',
       position: 'relative',
       overflow: 'hidden',
@@ -44,7 +41,7 @@ export default function Footer() {
         transform: 'translateX(-50%)',
         width: '600px',
         height: '400px',
-        background: 'radial-gradient(ellipse, rgba(99, 102, 241, 0.06) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, rgba(212, 175, 55, 0.08) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -64,28 +61,28 @@ export default function Footer() {
               <div style={{
                 width: '40px',
                 height: '40px',
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.1rem',
+                fontSize: '1.4rem',
                 color: 'white',
                 fontWeight: 800,
                 fontFamily: 'Space Grotesk, sans-serif',
               }}>
-                E
+                L
               </div>
               <span style={{
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontSize: '1.4rem',
                 fontWeight: 700,
-                background: 'linear-gradient(135deg, #f1f1f6, #8b5cf6)',
+                background: 'linear-gradient(135deg, var(--text-primary), #996515)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                ERPPro
+                LuxeVoyage
               </span>
             </Link>
             <p style={{
@@ -99,13 +96,13 @@ export default function Footer() {
             </p>
             {/* Social Icons */}
             <div style={{ display: 'flex', gap: '12px' }}>
-              {['LinkedIn', 'Twitter', 'GitHub', 'YouTube'].map((social) => (
+              {['Instagram', 'Twitter', 'LinkedIn', 'YouTube'].map((social) => (
                 <a key={social} href="#" style={{
                   width: '40px',
                   height: '40px',
                   borderRadius: '10px',
-                  background: 'rgba(255,255,255,0.03)',
-                  border: '1px solid rgba(255,255,255,0.06)',
+                  background: 'white',
+                  border: '1px solid var(--border-default)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -113,16 +110,19 @@ export default function Footer() {
                   color: 'var(--text-muted)',
                   transition: 'all 0.2s ease',
                   fontWeight: 600,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)';
-                  e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.3)';
-                  e.currentTarget.style.color = '#8b5cf6';
+                  e.currentTarget.style.background = 'rgba(212, 175, 55, 0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.3)';
+                  e.currentTarget.style.color = '#996515';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.borderColor = 'var(--border-default)';
                   e.currentTarget.style.color = 'var(--text-muted)';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
                 aria-label={social}
                 >
@@ -132,7 +132,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Links */}
+          {/* Service Links */}
           <div>
             <h4 style={{
               fontFamily: 'Space Grotesk, sans-serif',
@@ -144,13 +144,13 @@ export default function Footer() {
               marginBottom: '20px',
             }}>{t.footer.product}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {footerLinks.product.map((link) => (
+              {footerLinks.services.map((link) => (
                 <Link key={link.label} href={link.href} style={{
                   color: 'var(--text-muted)',
                   fontSize: '0.9rem',
                   transition: 'color 0.2s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#a1a1b5'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#d4af37'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
                 >
                   {link.label}
@@ -177,7 +177,7 @@ export default function Footer() {
                   fontSize: '0.9rem',
                   transition: 'color 0.2s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#a1a1b5'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#d4af37'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
                 >
                   {link.label}
@@ -186,7 +186,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Resources Links */}
+          {/* Information Links */}
           <div>
             <h4 style={{
               fontFamily: 'Space Grotesk, sans-serif',
@@ -198,13 +198,13 @@ export default function Footer() {
               marginBottom: '20px',
             }}>{t.footer.resources}</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {footerLinks.resources.map((link) => (
+              {footerLinks.information.map((link) => (
                 <Link key={link.label} href={link.href} style={{
                   color: 'var(--text-muted)',
                   fontSize: '0.9rem',
                   transition: 'color 0.2s ease',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = '#a1a1b5'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#d4af37'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; }}
                 >
                   {link.label}
@@ -217,7 +217,7 @@ export default function Footer() {
         {/* Divider */}
         <div style={{
           height: '1px',
-          background: 'linear-gradient(90deg, transparent, var(--border-default), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent)',
           marginBottom: '32px',
         }} />
 
@@ -230,7 +230,7 @@ export default function Footer() {
           gap: '16px',
         }}>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-            © {currentYear} ERPPro. {t.footer.rights}
+            © {currentYear} LuxeVoyage. {t.footer.rights}
           </p>
           <div style={{ display: 'flex', gap: '24px' }}>
             <a href="#" style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>{t.footer.links.privacy}</a>

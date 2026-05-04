@@ -21,10 +21,11 @@ export default function CTASection() {
           position: 'relative',
           padding: '80px 60px',
           borderRadius: '28px',
-          background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.05))',
-          border: '1px solid rgba(99, 102, 241, 0.15)',
+          background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05))',
+          border: '1px solid var(--border-accent)',
           textAlign: 'center',
           overflow: 'hidden',
+          boxShadow: '0 20px 50px rgba(0,0,0,0.05)',
         }}>
           {/* Background patterns */}
           <div style={{
@@ -34,7 +35,7 @@ export default function CTASection() {
             width: '400px',
             height: '400px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%)',
             pointerEvents: 'none',
           }} />
           <div style={{
@@ -44,7 +45,7 @@ export default function CTASection() {
             width: '300px',
             height: '300px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(241, 196, 15, 0.1) 0%, transparent 70%)',
             pointerEvents: 'none',
           }} />
 
@@ -53,8 +54,8 @@ export default function CTASection() {
             position: 'absolute',
             inset: 0,
             backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)
+              linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
             `,
             backgroundSize: '40px 40px',
             pointerEvents: 'none',
@@ -70,16 +71,14 @@ export default function CTASection() {
               marginBottom: '16px',
               color: 'var(--text-primary)',
             }}>
-              {language === 'id' 
-                ? t.cta.title.split('Bisnis Anda')[0]
-                : t.cta.title.split('Your Business')[0]}
+              {t.cta.title.split('Cerita Baru')[0]}
               <span style={{
-                background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
+                background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
               }}>
-                {language === 'id' ? 'Bisnis Anda?' : 'Your Business?'}
+                {language === 'id' ? 'Cerita Baru?' : 'New Story?'}
               </span>
             </h2>
             <p style={{
@@ -99,53 +98,26 @@ export default function CTASection() {
                 gap: '8px',
                 padding: '16px 40px',
                 borderRadius: '14px',
-                background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)',
+                background: 'linear-gradient(135deg, #d4af37, #f1c40f, #996515)',
                 color: 'white',
                 fontWeight: 600,
                 fontSize: '1rem',
                 transition: 'all 0.3s ease',
-                boxShadow: '0 4px 20px rgba(99, 102, 241, 0.3)',
+                boxShadow: '0 4px 20px rgba(212, 175, 55, 0.3)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.5)';
+                e.currentTarget.style.boxShadow = '0 8px 30px rgba(212, 175, 55, 0.5)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(99, 102, 241, 0.3)';
+                e.currentTarget.style.boxShadow = '0 4px 20px rgba(212, 175, 55, 0.3)';
               }}
               >
                 {t.cta.button}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </Link>
-
-              <Link href="/contact" style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '16px 40px',
-                borderRadius: '14px',
-                background: 'rgba(255,255,255,0.04)',
-                color: 'var(--text-primary)',
-                fontWeight: 600,
-                fontSize: '1rem',
-                border: '1px solid rgba(255,255,255,0.1)',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255,255,255,0.08)';
-                e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.3)';
-                e.currentTarget.style.transform = 'translateY(-3px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'rgba(255,255,255,0.04)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-              >
-                {t.hero.ctaSecondary}
               </Link>
             </div>
 

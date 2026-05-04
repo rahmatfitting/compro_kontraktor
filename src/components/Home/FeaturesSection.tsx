@@ -7,59 +7,60 @@ export default function FeaturesSection() {
 
   const features = [
     {
-      icon: '💰',
-      title: t.features.modules.finance.title,
-      description: t.features.modules.finance.desc,
-      color: '#10b981',
-      gradient: 'linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.05))',
-      borderColor: 'rgba(16, 185, 129, 0.2)',
+      icon: '✈️',
+      title: t.features.modules.luxury_tours.title,
+      description: t.features.modules.luxury_tours.desc,
+      color: '#996515',
+      gradient: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(241, 196, 15, 0.08))',
+      borderColor: 'rgba(212, 175, 55, 0.2)',
     },
     {
-      icon: '👥',
-      title: t.features.modules.hr.title,
-      description: t.features.modules.hr.desc,
-      color: '#8b5cf6',
-      gradient: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(99, 102, 241, 0.05))',
-      borderColor: 'rgba(139, 92, 246, 0.2)',
+      icon: '🛥️',
+      title: t.features.modules.private_charter.title,
+      description: t.features.modules.private_charter.desc,
+      color: '#b8860b',
+      gradient: 'linear-gradient(135deg, rgba(241, 196, 15, 0.12), rgba(153, 101, 21, 0.08))',
+      borderColor: 'rgba(241, 196, 15, 0.2)',
     },
     {
-      icon: '📦',
-      title: t.features.modules.supply.title,
-      description: t.features.modules.supply.desc,
-      color: '#06b6d4',
-      gradient: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(99, 102, 241, 0.05))',
-      borderColor: 'rgba(6, 182, 212, 0.2)',
+      icon: '🥂',
+      title: t.features.modules.concierge.title,
+      description: t.features.modules.concierge.desc,
+      color: '#996515',
+      gradient: 'linear-gradient(135deg, rgba(153, 101, 21, 0.12), rgba(212, 175, 55, 0.08))',
+      borderColor: 'rgba(153, 101, 21, 0.2)',
     },
     {
-      icon: '🏭',
-      title: t.features.modules.manufacturing.title,
-      description: t.features.modules.manufacturing.desc,
-      color: '#f59e0b',
-      gradient: 'linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(244, 63, 94, 0.05))',
-      borderColor: 'rgba(245, 158, 11, 0.2)',
+      icon: '🛂',
+      title: t.features.modules.visa_logistics.title,
+      description: t.features.modules.visa_logistics.desc,
+      color: '#996515',
+      gradient: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(241, 196, 15, 0.08))',
+      borderColor: 'rgba(212, 175, 55, 0.2)',
     },
     {
-      icon: '📊',
-      title: t.features.modules.analytics.title,
-      description: t.features.modules.analytics.desc,
-      color: '#6366f1',
-      gradient: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.05))',
-      borderColor: 'rgba(99, 102, 241, 0.2)',
+      icon: '🏰',
+      title: t.features.modules.stay.title,
+      description: t.features.modules.stay.desc,
+      color: '#b8860b',
+      gradient: 'linear-gradient(135deg, rgba(241, 196, 15, 0.12), rgba(153, 101, 21, 0.08))',
+      borderColor: 'rgba(241, 196, 15, 0.2)',
     },
     {
-      icon: '🔗',
-      title: t.features.modules.integration.title,
-      description: t.features.modules.integration.desc,
-      color: '#f43f5e',
-      gradient: 'linear-gradient(135deg, rgba(244, 63, 94, 0.1), rgba(245, 158, 11, 0.05))',
-      borderColor: 'rgba(244, 63, 94, 0.2)',
+      icon: '🎨',
+      title: t.features.modules.experience.title,
+      description: t.features.modules.experience.desc,
+      color: '#996515',
+      gradient: 'linear-gradient(135deg, rgba(153, 101, 21, 0.12), rgba(212, 175, 55, 0.08))',
+      borderColor: 'rgba(153, 101, 21, 0.2)',
     },
   ];
 
   return (
-    <section style={{
+    <section id="services" style={{
       padding: '120px 0',
       position: 'relative',
+      background: 'white',
     }}>
       {/* Background glow */}
       <div style={{
@@ -68,7 +69,7 @@ export default function FeaturesSection() {
         left: '-10%',
         width: '400px',
         height: '400px',
-        background: 'radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -79,21 +80,7 @@ export default function FeaturesSection() {
       }}>
         {/* Section Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 16px',
-            borderRadius: '100px',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.15))',
-            border: '1px solid rgba(99, 102, 241, 0.3)',
-            fontSize: '0.8rem',
-            fontWeight: 600,
-            color: '#9eb3ff',
-            textTransform: 'uppercase',
-            letterSpacing: '1.5px',
-            marginBottom: '20px',
-          }}>
+          <div className="section-label">
             ✦ {t.features.badge}
           </div>
           <h2 style={{
@@ -102,12 +89,12 @@ export default function FeaturesSection() {
             fontWeight: 700,
             lineHeight: 1.2,
             marginBottom: '16px',
-            background: 'linear-gradient(135deg, var(--text-primary), #9eb3ff)',
+            background: 'linear-gradient(135deg, var(--text-primary), #996515)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            {t.features.title.split(',')[0]},<br />{t.features.title.split(',')[1]}
+            {t.features.title}
           </h2>
           <p style={{
             fontSize: '1.1rem',
@@ -142,14 +129,15 @@ export default function FeaturesSection() {
                 position: 'relative',
                 overflow: 'hidden',
                 animation: `fadeInUp 0.6s ease ${i * 0.1}s both`,
+                boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-6px)';
-                e.currentTarget.style.boxShadow = `0 12px 40px ${feature.borderColor}`;
+                e.currentTarget.style.boxShadow = `0 12px 40px rgba(212, 175, 55, 0.15)`;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.03)';
               }}
             >
               {/* Icon */}
@@ -157,13 +145,14 @@ export default function FeaturesSection() {
                 width: '56px',
                 height: '56px',
                 borderRadius: '14px',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.06)',
+                background: 'white',
+                border: '1px solid var(--border-subtle)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '1.5rem',
                 marginBottom: '20px',
+                boxShadow: '0 4px 10px rgba(0,0,0,0.05)',
               }}>
                 {feature.icon}
               </div>

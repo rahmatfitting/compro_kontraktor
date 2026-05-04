@@ -5,8 +5,8 @@ import BlogHero from '@/components/Blog/BlogHero';
 import BlogGrid from '@/components/Blog/BlogGrid';
 
 export const metadata: Metadata = {
-  title: 'Blog - ERPPro | Insights & Industry News',
-  description: 'Stay updated with the latest ERP trends, digital transformation insights, and best practices for enterprise resource planning. Expert articles and case studies.',
+  title: 'Blog - LuxeVoyage | Travel Insights & Luxury Lifestyle',
+  description: 'Discover the latest in luxury travel, destination guides, and lifestyle insights from the experts at LuxeVoyage. Expertly curated articles for the discerning traveler.',
 };
 
 export default function BlogPage() {

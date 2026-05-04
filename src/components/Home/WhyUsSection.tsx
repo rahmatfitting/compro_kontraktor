@@ -8,35 +8,29 @@ export default function WhyUsSection() {
   const benefits = [
     {
       number: '01',
-      title: language === 'id' ? 'Arsitektur Cloud-Native' : 'Cloud-Native Architecture',
-      description: language === 'id' ? 'Dibangun khusus untuk cloud. Auto-scaling, multi-tenant, dan disebarkan di pusat data global untuk performa kilat di mana pun Anda beroperasi.' : 'Built from the ground up for the cloud. Auto-scaling, multi-tenant, and deployed across global data centers for lightning-fast performance wherever you operate.',
-      highlights: ['99.99% SLA', 'Auto-scaling', 'Global CDN'],
+      title: t.whyUs.features[0].title,
+      description: t.whyUs.features[0].desc,
+      highlights: ['Global Network', 'Private Access', 'VIP Entrance'],
     },
     {
       number: '02',
-      title: language === 'id' ? 'Otomasi Berbasis AI' : 'AI-Powered Automation',
-      description: language === 'id' ? 'Algoritma machine learning yang memprediksi permintaan, mendeteksi anomali, mengotomatiskan alur kerja, dan memberikan rekomendasi cerdas.' : 'Machine learning algorithms that predict demand, detect anomalies, automate workflows, and provide intelligent recommendations across all business functions.',
-      highlights: ['Predictive Analytics', 'Smart Workflows', 'NLP Processing'],
+      title: t.whyUs.features[1].title,
+      description: t.whyUs.features[1].desc,
+      highlights: ['SOC 2 Security', 'Data Privacy', 'Discreet Service'],
     },
     {
       number: '03',
-      title: language === 'id' ? 'Keamanan Kelas Enterprise' : 'Enterprise-Grade Security',
-      description: language === 'id' ? 'Bersertifikat SOC 2 Type II dengan enkripsi ujung-ke-ujung, kontrol akses berbasis peran, jejak audit, dan kepatuhan GDPR.' : 'SOC 2 Type II certified with end-to-end encryption, role-based access control, audit trails, and compliance with GDPR, HIPAA, and industry regulations.',
-      highlights: ['SOC 2 Certified', 'E2E Encryption', 'GDPR Compliant'],
-    },
-    {
-      number: '04',
-      title: language === 'id' ? 'Implementasi Cepat' : 'Rapid Implementation',
-      description: language === 'id' ? 'Mulai beroperasi dalam hitungan minggu. Pendekatan modular kami memungkinkan Anda mulai dengan apa yang Anda butuhkan dan berkembang seiring waktu.' : 'Go live in weeks, not months. Our modular approach lets you start with what you need and expand over time, with dedicated customer success managers guiding you.',
-      highlights: ['2-Week Setup', 'Modular Deploy', '24/7 Support'],
+      title: t.whyUs.features[2].title,
+      description: t.whyUs.features[2].desc,
+      highlights: ['Custom Itinerary', '24/7 Support', 'Tailored Detail'],
     },
   ];
 
   return (
-    <section style={{
+    <section id="why-us" style={{
       padding: '120px 0',
       position: 'relative',
-      background: 'linear-gradient(180deg, var(--bg-primary) 0%, rgba(17, 17, 24, 1) 50%, var(--bg-primary) 100%)',
+      background: 'linear-gradient(180deg, var(--bg-primary) 0%, white 50%, var(--bg-primary) 100%)',
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -45,21 +39,7 @@ export default function WhyUsSection() {
       }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            padding: '6px 16px',
-            borderRadius: '100px',
-            background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.15))',
-            border: '1px solid rgba(99, 102, 241, 0.3)',
-            fontSize: '0.8rem',
-            fontWeight: 600,
-            color: '#9eb3ff',
-            textTransform: 'uppercase',
-            letterSpacing: '1.5px',
-            marginBottom: '20px',
-          }}>
+          <div className="section-label">
             ◈ {t.whyUs.badge}
           </div>
           <h2 style={{
@@ -68,12 +48,12 @@ export default function WhyUsSection() {
             fontWeight: 700,
             lineHeight: 1.2,
             marginBottom: '16px',
-            background: 'linear-gradient(135deg, var(--text-primary), #9eb3ff)',
+            background: 'linear-gradient(135deg, var(--text-primary), #996515)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
           }}>
-            {t.whyUs.title.split(',')[0]},<br />{t.whyUs.title.split(',')[1]}
+            {t.whyUs.title}
           </h2>
           <p style={{
             fontSize: '1.1rem',
@@ -102,23 +82,24 @@ export default function WhyUsSection() {
                 gap: '32px',
                 padding: '40px',
                 borderRadius: '20px',
-                background: 'rgba(20, 20, 32, 0.5)',
-                border: '1px solid rgba(255,255,255,0.04)',
+                background: 'white',
+                border: '1px solid var(--border-subtle)',
                 backdropFilter: 'blur(12px)',
                 transition: 'all 0.3s ease',
                 alignItems: 'flex-start',
                 animation: `fadeInUp 0.6s ease ${i * 0.15}s both`,
+                boxShadow: '0 4px 15px rgba(0,0,0,0.03)',
               }}
               className="benefit-card"
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(99, 102, 241, 0.2)';
+                e.currentTarget.style.borderColor = 'rgba(212, 175, 55, 0.2)';
                 e.currentTarget.style.transform = 'translateX(8px)';
-                e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.08)';
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(212, 175, 55, 0.1)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)';
+                e.currentTarget.style.borderColor = 'var(--border-subtle)';
                 e.currentTarget.style.transform = 'translateX(0)';
-                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.03)';
               }}
             >
               {/* Number */}
@@ -126,7 +107,7 @@ export default function WhyUsSection() {
                 fontFamily: 'Space Grotesk, sans-serif',
                 fontSize: '2rem',
                 fontWeight: 800,
-                background: 'linear-gradient(135deg, #6366f1, #06b6d4)',
+                background: 'linear-gradient(135deg, #d4af37, #996515)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -159,11 +140,11 @@ export default function WhyUsSection() {
                     <span key={h} style={{
                       padding: '4px 12px',
                       borderRadius: '6px',
-                      background: 'rgba(99, 102, 241, 0.1)',
-                      border: '1px solid rgba(99, 102, 241, 0.15)',
+                      background: 'rgba(212, 175, 55, 0.08)',
+                      border: '1px solid rgba(212, 175, 55, 0.1)',
                       fontSize: '0.75rem',
                       fontWeight: 600,
-                      color: '#9eb3ff',
+                      color: '#996515',
                     }}>
                       {h}
                     </span>
