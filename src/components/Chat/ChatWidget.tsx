@@ -123,7 +123,7 @@ export default function ChatWidget() {
           color: '#1a1a25',
           fontWeight: 500,
           animation: 'fadeInUp 0.5s ease both',
-          border: '1px solid rgba(99, 102, 241, 0.2)',
+          border: '1px solid var(--accent-gold)',
         }}>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
             <div style={{
@@ -180,7 +180,7 @@ export default function ChatWidget() {
           {/* Header */}
           <div style={{
             padding: '24px',
-            background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+            background: 'var(--gradient-gold)',
             color: 'white',
             display: 'flex',
             justifyContent: 'space-between',
@@ -188,7 +188,7 @@ export default function ChatWidget() {
           }}>
             <div>
               <h4 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 700, fontFamily: 'Space Grotesk, sans-serif' }}>
-                ERPPro Support
+                Arkana Assistant
               </h4>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
@@ -222,7 +222,7 @@ export default function ChatWidget() {
                 }}
               >
                 <div style={{
-                  background: msg.sender === 'bot' ? 'rgba(255,255,255,0.06)' : 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                  background: msg.sender === 'bot' ? 'rgba(255,255,255,0.06)' : 'var(--gradient-gold)',
                   padding: '12px 16px',
                   borderRadius: msg.sender === 'bot' ? '0 18px 18px 18px' : '18px 18px 0 18px',
                   fontSize: '0.9rem',
@@ -306,7 +306,7 @@ export default function ChatWidget() {
                 outline: 'none',
                 transition: 'all 0.2s ease',
               }}
-              onFocus={(e) => e.currentTarget.style.borderColor = '#6366f1'}
+              onFocus={(e) => e.currentTarget.style.borderColor = 'var(--accent-gold)'}
               onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'}
             />
             <button
@@ -316,7 +316,7 @@ export default function ChatWidget() {
                 width: '44px',
                 height: '44px',
                 borderRadius: '12px',
-                background: inputValue.trim() ? 'linear-gradient(135deg, #6366f1, #8b5cf6)' : 'rgba(255,255,255,0.05)',
+                background: inputValue.trim() ? 'var(--gradient-gold)' : 'rgba(255,255,255,0.05)',
                 border: 'none',
                 color: 'white',
                 cursor: inputValue.trim() ? 'pointer' : 'default',
@@ -342,9 +342,9 @@ export default function ChatWidget() {
           width: '64px',
           height: '64px',
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+          background: 'var(--gradient-gold)',
           border: 'none',
-          boxShadow: '0 8px 30px rgba(99, 102, 241, 0.4)',
+          boxShadow: 'var(--shadow-gold)',
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
