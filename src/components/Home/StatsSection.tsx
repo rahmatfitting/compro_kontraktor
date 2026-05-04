@@ -42,7 +42,7 @@ function AnimatedCounter({ value, suffix, duration = 2000 }: { value: number; su
       fontFamily: 'Space Grotesk, sans-serif',
       fontSize: 'clamp(2rem, 4vw, 3rem)',
       fontWeight: 800,
-      background: 'linear-gradient(135deg, #f1f1f6, #8b5cf6)',
+      background: 'linear-gradient(135deg, #d4af37, #996515)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text',
@@ -57,16 +57,37 @@ export default function StatsSection() {
   const { t, language } = useLanguage();
 
   const stats = [
-    { value: 500, suffix: '+', label: language === 'id' ? 'Perusahaan' : 'Enterprises', description: language === 'id' ? 'Dipercaya di seluruh dunia' : 'Trust ERPPro worldwide' },
-    { value: 99.9, suffix: '%', label: t.stats.uptime, description: language === 'id' ? 'Ketersediaan terjamin' : 'Guaranteed availability' },
-    { value: 2, suffix: 'M+', label: language === 'id' ? 'Transaksi' : 'Transactions', description: language === 'id' ? 'Diproses setiap hari' : 'Processed daily' },
-    { value: 45, suffix: '%', label: language === 'id' ? 'Pengurangan Biaya' : 'Cost Reduction', description: language === 'id' ? 'Rata-rata penghematan' : 'Average savings' },
+    { 
+      value: 120, 
+      suffix: '+', 
+      label: t.stats.destinations, 
+      description: language === 'id' ? 'Destinasi eksklusif di seluruh dunia' : 'Exclusive destinations worldwide' 
+    },
+    { 
+      value: 15, 
+      suffix: '+', 
+      label: t.stats.experience, 
+      description: language === 'id' ? 'Tahun pengalaman di industri mewah' : 'Years of experience in luxury industry' 
+    },
+    { 
+      value: 98, 
+      suffix: '%', 
+      label: t.stats.clients, 
+      description: language === 'id' ? 'Tingkat kepuasan klien VVIP' : 'VVIP client satisfaction rate' 
+    },
+    { 
+      value: 24, 
+      suffix: '/7', 
+      label: t.stats.support, 
+      description: language === 'id' ? 'Layanan concierge setiap saat' : 'Concierge service at any time' 
+    },
   ];
 
   return (
     <section style={{
       padding: '0 0 80px',
       position: 'relative',
+      background: 'var(--bg-primary)',
     }}>
       <div style={{
         maxWidth: '1280px',
@@ -86,9 +107,9 @@ export default function StatsSection() {
               textAlign: 'center',
               padding: '40px 24px',
               borderRadius: '20px',
-              background: 'rgba(20, 20, 32, 0.5)',
-              border: '1px solid rgba(255,255,255,0.04)',
-              backdropFilter: 'blur(12px)',
+              background: 'white',
+              border: '1px solid var(--border-subtle)',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
               position: 'relative',
               overflow: 'hidden',
               transition: 'all 0.3s ease',
@@ -102,7 +123,7 @@ export default function StatsSection() {
                 transform: 'translateX(-50%)',
                 width: '200px',
                 height: '200px',
-                background: 'radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%)',
                 pointerEvents: 'none',
               }} />
 
